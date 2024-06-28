@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/css/welcome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap" />
+</head>
+<body>
+        <div class="screen active" id="screen1">
+            <div class="section">
+                <h5 class="title">Learning by Doing</h5>
+            </div>
+            <div class="quiz-section">
+                <img src="/images/Group 15.png" alt="Quiz">
+            </div>
+            <div class="container center-align" id="container">
+                <div class="footer">
+                    <p>Learn from mistakes through hands-on practice, where active participation enhances understanding.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="screen2">
+            <div class="section">
+                <h5 class="title white-text bg-red">Discovery Learning</h5>
+            </div>
+            <div class="hypothesis-section">
+                <img src="/images/Group 16.png" alt="Dropdown">
+            </div>
+            <div class="container center-align" id="container">
+                <div class="footer">
+                    <p>Discover answers with supportive guidance. Staying engaged and curious by making your own hypothesis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen" id="screen3">
+            <div class="section">
+                <h5 class="title white-text bg-blue ">Hands-on Virtual Lab</h5>
+            </div>
+            <div class="lab-section">
+                <img src="/images/Group 17.png" alt="Virtual Lab">
+            </div>
+            <div class="container center-align" id="container">
+                <div class="footer">
+                    <p>Explore the exciting world of hands-on virtual labs, where learning becomes an immersive adventure!</p>
+                </div>
+            </div>   
+        </div>
+
+        <div class="screen" id="screen4">
+            <div class="header">
+                <div class="header-content">
+                    <span class="material-icons roadmap-icon">close</span>
+                    <h1>Course Overview</h1>
+                </div>
+            </div>
+            <section class="course-overview-section">
+                <h2>Topic: The Figure of Merit of Galvanometer</h2>
+                <p>This course integrates evidence-based learning strategies to deepen your understanding of the figure of merit of galvanometer lab experiment.</p>
+                <div class="tags">
+                    <span>Hands-on Learning</span>
+                    <span>Practical Exam</span>
+                    <span>Galvanometer</span>
+                    <span>Physics Lab</span>
+                </div>
+                <div class="expectations">
+                    <div class="time">
+                        <h3>Time: 1.5 hours</h3>
+                    </div>
+                    <div class="format">
+                        <h3>Format: Learning by doing</h3>
+                    </div>
+                </div>
+                <button class="button" onclick="startCourse()">I'm Ready</button>
+            </section>
+        </div>
+    </div>
+    
+    <div class="container center-align" id="container">
+        <nav class="navigation">
+            <div class="dot" onclick="showScreen(1)"></div>
+            <div class="dot" onclick="showScreen(2)"></div>
+            <div class="dot" onclick="showScreen(3)"></div>
+        </nav>
+    </div>
+
+    <script src="/javascript/welcome.js"></script>
+</body>
+</html>

@@ -1,25 +1,24 @@
-//Load HTTP module
-const http = require("http");
 const express = require("express");
-// import path from "path";
 const path = require("path");
+
 const hostname = "127.0.0.1";
 const port = 3000;
 
 const app = express();
-app.set('view engine', 'ejs')
+
+// Set the view engine to EJS and specify the views directory
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
 
-
-//Create HTTP server and listen on port 3000 for requests
+// Route for the home page
 app.get('/', (req, res) => {
-    res.render("home")
-})
+    res.render("welcome");  // Make sure the 'welcome.ejs' file exists in the 'views' directory
+});
 
-
-//listen for request on port 3000, and as a callback function have the port listened on logged
+// Start the server
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
