@@ -23,6 +23,20 @@ function showScreen(screenNumber) {
     }
     document.body.style.backgroundColor = colors[screenNumber];
     currentScreen = screenNumber;
+
+    // Hide navigation dots on screen 4
+    const navigation = document.querySelector('.navigation');
+    if (screenNumber === 4) {
+        navigation.style.display = 'none';
+    } else {
+        navigation.style.display = 'flex';
+    }
+}
+
+function goBack() {
+    if (currentScreen > 1) {
+        showScreen(currentScreen - 1);
+    }
 }
 
 function startCourse() {

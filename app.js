@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
     res.render("welcome");  // Make sure the 'welcome.ejs' file exists in the 'views' directory
 });
 
+// Route for the introduction_to_g page
+app.get('/introduction_to_g', (req, res) => {
+    res.render("introduction_to_g");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+});
+
 // Start the server
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);

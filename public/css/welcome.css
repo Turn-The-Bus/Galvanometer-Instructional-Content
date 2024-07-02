@@ -8,8 +8,28 @@ body {
 
 
 p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px; /* Adjust this value to control the gap */
+}
+
+h1 {
+    margin: 0;
     font-size: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    margin-bottom: 10px; /* Adjust this value to control the gap */
+    color: #4153AF;
     line-height: 32px;
+    font-size: 24px;
+}
+
+
+h4 {    
+    color: #ffffff;
+    font-size: 24px;
 }
 
 .container {
@@ -19,15 +39,43 @@ p {
     margin: 0 auto;
 }
 
-.header {
-    padding: 20px;
-    text-align: left;
+.header-content h1 {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures that the overflow is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
 }
+
+.header {
+    background-color: #757FE1;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+.header-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+   
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
 
 .section {
     padding: 20px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 16px 0;
     position: relative;
 }
 
@@ -60,13 +108,21 @@ p {
     background-color: #4153AF;
 }
 
-.quiz-section, .hypothesis-section, .lab-section, .course-overview-section {
+.quiz-section, .hypothesis-section, .lab-section {
     padding: 40px;
     border-radius: 10px;
     margin: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.course-overview-section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Ensures content is stacked vertically */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    align-items: flex-start; /* Align items to the start of the container horizontally */
 }
 
 .quiz-section img, .hypothesis-section img, .lab-section img {
@@ -76,6 +132,7 @@ p {
     border-radius: 10px;
     margin: 20px 0;
 }
+
 
 .footer {
     padding: 10px;
@@ -114,47 +171,77 @@ p {
     display: block;
 }
 
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+.expectations {
+    display: flex;
+    flex-direction: column; /* Stack the .time and .format vertically */
+    gap: 10px; /* Add some space between the .time and .format sections */
+    margin-bottom: 40px;
+    width: 100%; /* Ensure the expectations container takes the full viewport width */
+    padding: 0 10px; /* Add padding to the container to prevent content from touching the edges */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+.time, .format {
+    display: flex;
+    width: 100%; /* Ensure the boxes take the full width of the expectations container */
+    align-items: center; /* Align items (image and text) in the center vertically */
+    gap: 10px; /* Add some space between the image and the text */
+    border: 2.5px solid #E3E6FF; /* Ensure the border style and color are specified */
     border-radius: 10px;
+    padding: 10px; /* Add padding to make the content look better inside the border */
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+.time img, .format img {
+    max-width: 40px; /* Adjust the size of the image as needed */
+    height: auto;
+}
+
+.time p, .format p {
+    margin: 0; /* Remove default margin from the paragraph */
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.tags {
+    width: 100%; /* Ensure it takes the full width of the container */
+    margin-bottom: 20px;
 }
 
 .tags span {
     display: inline-block;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 5px;
-    font-size: 14px;
+    padding: 5px 10px; /* Smaller padding */
+    margin: 5px 5px 5px 0; /* Add bottom margin for spacing between rows */
+    font-size: 14px; /* Smaller font size */
+    border: 2px solid #4153AF; /* Ensure the border style and color are specified */
+    border-radius: 20px;
+    color: #4153AF;
+    font-weight: bold;
 }
 
-.expectations {
+
+.button {
+    width: 100%;
+    position: relative;
+    border-radius: 100px;
+    background-color: #6750a4;
+    height: 40px;
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.expectations .time, .expectations .format {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.expectations .time h3, .expectations .format h3 {
-    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-size: 16px;
-    font-weight: normal;
+    color: #fff;
+    font-weight: bold;
 }
+    
 
 .roadmap-icon {
     cursor: pointer;
     font-size: 24px;
 }
+
