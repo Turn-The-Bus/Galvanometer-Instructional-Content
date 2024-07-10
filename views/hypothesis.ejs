@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hypothesis</title>
+  <link rel="stylesheet" href="/css/conclusion.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-content">
+      <span class="material-symbols-outlined roadmap-icon">close</span>
+      <h1>Hypothesis</h1>
+    </div>
+  </div>
+
+  <div class="instruction-content">
+    <div id="fd-intro">
+      <h2>Make Your Hypothesis</h2>
+      <p>
+      Since our goal is to determine the figure of merit of the galvanometer, let’s make a hypothesis about it and test the hypothesis using the lab simulation. 
+      </p>  
+      <p> 
+      There is no right or wrong answer to the hypothesis, so feel free to write whatever you want to discover as the hypothesis!
+      </p>
+
+      <h2><i>Your Hypothesis</i></h2>
+      <div class="if-i-the-container">
+          <ul class="if-i">
+              <li class="if-i1">
+                  <span>If I choose a</span>
+                  <span class="dropdown-menu-inline">
+                      <select class="select-dropdown">
+                          <option value="increase">Increase</option>
+                          <option value="decrease">Decrease</option>
+                      </select>
+                  </span>
+                  <span> initial deflection, the figure of merit of the galvanometer will</span>
+                  <span class="dropdown-menu-inline">
+                      <select class="select-dropdown">
+                          <option value="left">Left</option>
+                          <option value="right">Right</option>
+                      </select>
+                  </span>
+                  <span>.</span>
+              </li>
+          </ul>
+      </div>
+
+      <div class="building-blockscard-statesel">
+        <h2>Tips for Making a Hypothesis</h2>
+        <ul>
+            <li>What is figure of merit?</li>
+            <li>Do you think the figure of merit is a constant or a variable?</li>
+            <li>What parameters, such as the resistance of the galvanometer, might affect the figure of merit?</li>
+        </ul>
+      </div>
+    
+    
+      <div class="button-container">
+        <md-outlined-button class="fd-next-button">Next Page</md-outlined-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Javascript Code -->
+  <script src="/javascript/hypothesis.js"></script>
+</body>
+</html>

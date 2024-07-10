@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working Principle</title>
+  <link rel="stylesheet" href="/css/working_principle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-content">
+      <span class="material-symbols-outlined roadmap-icon">close</span>
+      <h1>Introduction</h1>
+    </div>
+  </div>
+
+  <div class="instruction-content">
+    <div id="fd-intro">
+      <h2>Advanced Topic: Galvanometer‘s Working Principle</h2>
+      <p>In the previous section, we learned that the deflection of the galvanometer is directly proportional to the current passing through it. Additionally, the direction of deflection in a galvanometer is reversed if the direction of current is reversed.</p>
+        
+      <p>How does that work? Actually, it all comes down to the galvanometer's working principle. While this is an advanced topic and not required for this lab, you're welcome to explore it if you're curious. Just read through this page to learn more!</p>
+
+      <div class="button-container">
+        <md-outlined-button class="fd-next-button" data-key="next_section_k">Next</md-outlined-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Javascript Code -->
+  <script src="/javascript/working_principle.js"></script>
+</body>
+</html>

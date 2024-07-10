@@ -21,7 +21,7 @@ h1 {
 
 h2 {
     margin-bottom: 10px; /* Adjust this value to control the gap */
-    color: #4153AF;
+    color: #013355;
     line-height: 32px;
     font-size: 24px;
 }
@@ -46,7 +46,7 @@ h4 {
 }
 
 .header {
-    background-color: #757FE1;
+    background-color: #047DB7;
     height: 70px;
     display: flex;
     align-items: center;
@@ -215,9 +215,9 @@ h4 {
     padding: 5px 10px; /* Smaller padding */
     margin: 5px 5px 5px 0; /* Add bottom margin for spacing between rows */
     font-size: 14px; /* Smaller font size */
-    border: 2px solid #4153AF; /* Ensure the border style and color are specified */
+    border: 2px solid #047DB7; /* Ensure the border style and color are specified */
     border-radius: 20px;
-    color: #4153AF;
+    color: #047DB7;
     font-weight: bold;
 }
 
@@ -226,7 +226,7 @@ h4 {
     width: 100%;
     position: relative;
     border-radius: 100px;
-    background-color: #6750a4;
+    background-color: #004A76;
     height: 40px;
     overflow: hidden;
     display: flex;
@@ -235,7 +235,7 @@ h4 {
     justify-content: center;
     text-align: center;
     font-size: 16px;
-    color: #fff;
+    color: #ffffff;
     font-weight: bold;
 }
     

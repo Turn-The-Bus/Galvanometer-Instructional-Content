@@ -4,88 +4,63 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const contentMap = {
-        next_section_principle: `
-            <div id="principle">
-                <p>Which principle does a galvanometer operate on?</p>
+        next_section_k: `
+            <div class="but-what-is-container">
+            <p class="but-what-is-k">
+            <span class="but-what-is">But, what is </span>
+            <i class="k">k</i>
+            <span>?</span>
+            </p>
+            <p>What does k mean in the context of this formula?</p>
+            </div>
+    
                 <div class="mc-question">
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c1">
-                            <span class="mc-button-text">A) It measures voltage directly by using a voltage divider.</span>
+                        <md-outlined-button class="mc-button" data-key="kq1c1">
+                            <span class="mc-button-text">A) The maximum current the galvanometer can measure.</span>
                         </md-outlined-button>
                     </div>
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c2">
-                            <span class="mc-button-text">B) A current-carrying coil interacts with a magnetic field.</span>
+                        <md-outlined-button class="mc-button" data-key="kq1c2">
+                            <span class="mc-button-text">B) The current needed to move the needle by one division.</span>
                         </md-outlined-button>
                     </div>
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c3">
-                            <span class="mc-button-text">C) It detects changes in electrical resistance.</span>
+                        <md-outlined-button class="mc-button" data-key="kq1c3">
+                            <span class="mc-button-text">C) The resistance of the galvanometer.</span>
                         </md-outlined-button>
                     </div>
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c4">
+                        <md-outlined-button class="mc-button" data-key="kq1c4">
                             <span>D) I don’t know yet.</span>
                         </md-outlined-button>
                     </div>
-
+    
                     <div class="feedback"></div>
+
+                    <div class="k-known-as-container">
+                    <p class="k-known-as-the-figure-of-merit">
+                    <i class="k"><b>k</b></i>
+                    <span class="known-as-the">, known as the </span>
+                    <i class="k"><b>figure of merit</b></i>
+                    <span>, is defined as the current needed to nudge the needle by one division on the scale. </span>
+                    </p>
+                    <p class="k-known-as-the-figure-of-merit">Figure of merit is an important concept that measures the sensitivity of a galvanometer. In other words, the figure of merit indicates how responsive the galvanometer is to small currents. </p>
+                    </div>  
+
                 </div>
                 <div class="button-container hidden-button">
-                    <md-outlined-button class="fd-next-button" data-key="next_section_ECG">Next</md-outlined-button>
+                    <md-outlined-button class="fd-next-button">Next Page</md-outlined-button>
                 </div>
             </div>
         `,
-
-        next_section_ECG: `
-            <div id="ECG">
-                <p>The sensitivity makes galvanometers indispensable in applications requiring precision, such as scientific research and medical equipment like ECG machines.</p>
-                <div class="ECG-section">
-                <img src="/images/image 8.png" alt="ECG">
-                <p class="legend">(Galvanometer)</p>
-                </div>
-                <p>How is a galvanometer used in an ECG machine?</p>
-                <div class="mc-question">
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c1">
-                            <span class="mc-button-text">A) It generates electrical currents to stimulate the heart.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c2">
-                            <span class="mc-button-text">B) It detects small currents produced by the heart and converts them into visible deflections on the ECG monitor.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c3">
-                            <span class="mc-button-text">C) It creates images of the heart using magnetic resonance.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c4">
-                            <span>D) I don’t know yet.</span>
-                        </md-outlined-button>
-                    </div>
-
-                    <div class="feedback"></div>
-                </div>
-                <div class="button-container hidden-button">
-                    <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Next Page</md-outlined-button>
-                </div>
-            </div>
-        `
     };
-
-    const answerKey = {
-        "principleq1c1": ["incorrect", "Incorrect. A voltmeter measures voltage directly, not a galvanometer."],
-        "principleq1c2": ["correct", "Correct. A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
-        "principleq1c3": ["incorrect", "Incorrect. An ohmmeter detects changes in electrical resistance, not a galvanometer."],
-        "principleq1c4": ["info", "It’s okay! A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
     
-        "principleq2c1": ["incorrect", "Incorrect. Galvanometers do not generate electrical currents. Instead, they measure the tiny electrical currents produced by the heart."],
-        "principleq2c2": ["correct", "Correct. In an ECG machine, the galvanometer detects the small currents generated by the heart and converts them into visible deflections on the monitor."],
-        "principleq2c3": ["incorrect", "Incorrect. Creating images of the heart using magnetic resonance is the function of an MRI machine, not a galvanometer."],
-        "principleq2c4": ["info", "It’s okay! In an ECG machine, the galvanometer detects the small currents generated by the heart and converts them into visible deflections on the monitor."]
+    const answerKey = {
+        "kq1c1": ["incorrect", "Incorrect. The maximum current the galvanometer can measure is the full-scale deflection current, not the figure of merit. The figure of merit is related to the current needed for one division deflection. We will learn more later."],
+        "kq1c2": ["correct", "Correct. The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
+        "kq1c3": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
+        "kq1c4": ["info", "It’s okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."]
     };
 
     document.body.addEventListener('click', (event) => {
@@ -155,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedbackDiv.innerHTML = `<b>Feedback:</b> ${feedbackText}`;
                 nextButton.classList.remove("hidden-button");
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
             }
         }
     });

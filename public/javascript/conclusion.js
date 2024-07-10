@@ -6,32 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentMap = {
         next_section_principle: `
             <div id="principle">
-                <p>Which principle does a galvanometer operate on?</p>
-                <div class="mc-question">
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c1">
-                            <span class="mc-button-text">A) It measures voltage directly by using a voltage divider.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c2">
-                            <span class="mc-button-text">B) A current-carrying coil interacts with a magnetic field.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c3">
-                            <span class="mc-button-text">C) It detects changes in electrical resistance.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq1c4">
-                            <span>D) I don’t know yet.</span>
-                        </md-outlined-button>
-                    </div>
+                <h2>Lab Findings on the Figure of Merit</h2>
+                <p>The figure of merit (k) is a physical property of the galvanometer that defines its sensitivity.</p> 
 
-                    <div class="feedback"></div>
+                <p>It is a constant that represents the amount of current needed to deflect the needle by one division on the scale.</p> 
+
+                <p>This property is inherent to the design and construction of the galvanometer, including factors such as the number of turns in the coil, the strength of the magnetic field, and the area of the coil.</p>
+                
+                <div class="G-section">
+                <img src="/images/image9.png" alt="G">
                 </div>
-                <div class="button-container hidden-button">
+                
+                <p class="legend">(Construction of the Galvanometer)</p>
+
+                <p>Since these physical characteristics do not change during the experiment, the figure of merit remains constant. It consistently represents the relationship between the current and the resulting deflection of the needle.</p>
+                
+                <p>Therefore, figure of merit is important in accurately measuring small currents, ensuring the reliability and precision of the galvanometer in various applications.</p>
+                </div>
+                <div class="button-container">
                     <md-outlined-button class="fd-next-button" data-key="next_section_ECG">Next</md-outlined-button>
                 </div>
             </div>
@@ -39,38 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         next_section_ECG: `
             <div id="ECG">
-                <p>The sensitivity makes galvanometers indispensable in applications requiring precision, such as scientific research and medical equipment like ECG machines.</p>
-                <div class="ECG-section">
-                <img src="/images/image 8.png" alt="ECG">
-                <p class="legend">(Galvanometer)</p>
-                </div>
-                <p>How is a galvanometer used in an ECG machine?</p>
-                <div class="mc-question">
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c1">
-                            <span class="mc-button-text">A) It generates electrical currents to stimulate the heart.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c2">
-                            <span class="mc-button-text">B) It detects small currents produced by the heart and converts them into visible deflections on the ECG monitor.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c3">
-                            <span class="mc-button-text">C) It creates images of the heart using magnetic resonance.</span>
-                        </md-outlined-button>
-                    </div>
-                    <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="principleq2c4">
-                            <span>D) I don’t know yet.</span>
-                        </md-outlined-button>
-                    </div>
-
-                    <div class="feedback"></div>
-                </div>
-                <div class="button-container hidden-button">
-                    <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Next Page</md-outlined-button>
+                <h2>Summary</h2>
+                <p>Now, think back to your initial hypotheses. Did your predictions align with the results? Science is all about making guesses, testing them out, and sometimes, being surprised by what you find.</p>
+    
+                <div class="button-container">
+                    <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Finish the Lab</md-outlined-button>
                 </div>
             </div>
         `

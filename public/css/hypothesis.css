@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-    color: #004A76;
+    color: #082C7F;
     font-family: Roboto;
     font-size: 20px;
     font-style: normal;
@@ -62,7 +62,6 @@ p, span {
     object-fit: scale-down; /* Ensure the entire image is visible without being cropped */
     position: relative;
 }
-
 
 .legend {
     width: 100%; /* Ensure the legend takes the full width of the container */
@@ -225,13 +224,11 @@ li {
     justify-content: flex-start; /* Ensure flex container aligns items to the start */
 }
 
-
 .mc-button-text {
     text-align: left;
     width: 100%;
     display: block;
 }
-
 
 .status-icon {
     position: absolute;
@@ -266,7 +263,7 @@ li {
 
 .ECG-section {
     margin-bottom: 20px;
-    }
+}
 
 .ECG-section img {
     width: 100%;
@@ -276,8 +273,89 @@ li {
     overflow: hidden;
     height: 218px;
     object-fit: cover;
-    }
+}
 
-fd-next-button {
-    color: #047DB7;
+.G-section {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 4px #319036;
+    border-radius: 8px;
+    background-color: #fff;
+    height: auto; /* Keep the bounding box height fixed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.G-section img {
+    width: 75%; /* Reduce the image size to 75% of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: scale-down; /* Ensure the entire image is visible without being cropped */
+    position: relative;
+}
+
+p {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu-inline {
+    display: inline-block;
+    margin-left: 5px; /* Adjust margin as needed */
+}
+
+.select-dropdown {
+    width: 100px;
+    height: 38px;
+    border-radius: 12px;
+    border: 1px solid #a1a1a1;
+    box-sizing: border-box;
+    padding: 7px 17px;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    color: #000;
+    padding: 2px 5px;
+    margin: 0 5px;
+}
+
+.select-dropdown option {
+    color: #047db7; /* Change the color of the dropdown menu options */
+}
+
+.building-blockscard-statesel {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    background-color: #f7fcff;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.if-i {
+    list-style-type: none;
+    padding: 0;
+}
+
+.if-i1 {
+    line-height: 1.6; /* Adjust the line height as needed */
+}
+
+.button fd-next-button {
+    width: 100%;
+    position: relative;
+    border-radius: 100px;
+    background-color: #004a76;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    font-family: Roboto;
 }
