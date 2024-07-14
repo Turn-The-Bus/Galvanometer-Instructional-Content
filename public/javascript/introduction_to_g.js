@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     MathJax.typeset();
+    initializeEventListeners();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Next Page</md-outlined-button>
                 </div>
             </div>
-        `
+        `,
+
+        next_fd_goal_current: '/interactive_simulation'
     };
 
     const answerKey = {
@@ -159,3 +162,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+function loadPage(pageName) {
+    console.log(`Loading page: ${pageName}`);
+    
+    fetch(pageName)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            // Replace the entire body content with the new page content
+            document.body.innerHTML = html;
+
+            // Re-initialize any necessary scripts
+            MathJax.typeset();
+
+            // Reinitialize event listeners
+            initializeEventListeners();
+
+            // Scroll to the top of the new content
+            window.scrollTo(0, 0);
+
+            // If there's any specific initialization needed for interactive_simulation.ejs, call it here
+            if (pageName === 'interactive_simulation.ejs') {
+                initializeInteractiveSimulation();
+            }
+        })
+        .catch(error => {
+            console.error('Error loading page:', error);
+            // Optionally, display an error message to the user
+            alert('Failed to load the next page. Please try again.');
+        });
+}
+
+
+function initializeInteractiveSimulation() {
+    console.log('Initializing interactive simulation');
+}
+
+document.addEventListener('DOMContentLoaded', initializeEventListeners);
