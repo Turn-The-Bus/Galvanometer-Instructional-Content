@@ -33,6 +33,12 @@ app.get('/introduction_to_figure_of_merit', (req, res) => {
     res.render("introduction_to_figure_of_merit");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
+// Route for the half deflection method page
+app.get('/half_deflection', (req, res) => {
+    res.render("half_deflection");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+});
+
+
 // Route for the working principle page
 app.get('/working_principle', (req, res) => {
     res.render("working_principle");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory

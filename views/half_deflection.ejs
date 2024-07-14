@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Half Deflection Method</title>
+  <link rel="stylesheet" href="/css/half_deflection.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-content">
+      <span class="material-symbols-outlined roadmap-icon">close</span>
+      <h1>The Half Deflection Method</h1>
+    </div>
+  </div>
+
+  <div class="instruction-content">
+    <div id="fd-intro">
+      <h2>What is the Half-Deflection Method?</h2>
+      <p>
+        In this lab, our goal is to determine k, which is the figure of merit of the galvanometer. 
+        To do this, we will use a method called the half-deflection method. 
+      </p>
+
+      <div class="button-container">
+        <md-outlined-button class="fd-next-button" data-key="next_section_k">Next</md-outlined-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Javascript Code -->
+  <script src="/javascript/half_deflection.js"></script>
+</body>
+</html>
