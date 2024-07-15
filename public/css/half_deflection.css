@@ -183,7 +183,8 @@ li {
     border-radius: 10px; /* Rounded corners */
     margin-top: 10px; /* Space above the feedback box */
     margin-bottom: 10px;
-    display: none;
+    display: None;
+    
 }
 
 .button-container {
@@ -199,23 +200,28 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .mc-button {
     width: 100%;
-    height: 45px;
+    height: auto; /* Allow height to adjust based on content */
     --md-outlined-button-container-shape: 10px;
     --md-outlined-button-label-text-weight: 400;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align text to the top */
     justify-content: flex-start; /* Ensure flex container aligns items to the start */
+    white-space: normal; /* Allow text to wrap */
 }
 
 .mc-button span {
     display: inline-block; /* Ensure the span takes the correct width */
     text-align: left; /* Align text inside span to the left */
     width: 100%;
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break words if necessary */
 }
+
 
 .mc-button-wrapper {
     width: 100%;
