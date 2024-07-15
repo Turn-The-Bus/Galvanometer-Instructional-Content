@@ -49,6 +49,12 @@ app.get('/hypothesis', (req, res) => {
     res.render("hypothesis");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
+
+// Route for the hypothesis page
+app.get('/lab_simulation', (req, res) => {
+    res.render("lab_simulation");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+});
+
 // Route for the conclusion page
 app.get('/conclusion', (req, res) => {
     res.render("conclusion");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
