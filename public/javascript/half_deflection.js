@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="mc-button-text">Measure a 0.5 deflection in the galvanometer</span>
                         </md-outlined-button>
                     </div>
+                    <div class="mc-button-wrapper">
+                        <md-outlined-button class="mc-button" data-key="kq1c3">
+                            <span class="mc-button-text">I don’t know yet</span>
+                        </md-outlined-button>
+                    </div>
         
                     <div class="feedback"></div>
 
@@ -74,16 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 <div class="mc-question">
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="kq1c1">
+                        <md-outlined-button class="mc-button" data-key="kq2c1">
                             <span class="mc-button-text">Reduce the current flowing through the galvanometer</span>
                         </md-outlined-button>
                     </div>
                     <div class="mc-button-wrapper">
-                        <md-outlined-button class="mc-button" data-key="kq1c2">
+                        <md-outlined-button class="mc-button" data-key="kq2c2">
                             <span class="mc-button-text">Reduce the voltage the power source supplies to the galvanometer</span>
                         </md-outlined-button>
                     </div>
-        
+                    <div class="mc-button-wrapper">
+                        <md-outlined-button class="mc-button" data-key="kq2c3">
+                            <span class="mc-button-text">I don’t know yet</span>
+                        </md-outlined-button>
+                    </div>
                     <div class="feedback"></div>
 
                 </div>
@@ -103,10 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const answerKey = {
-        "kq1c1": ["incorrect", "Incorrect. The maximum current the galvanometer can measure is the full-scale deflection current, not the figure of merit. The figure of merit is related to the current needed for one division deflection. We will learn more later."],
-        "kq1c2": ["correct", "Correct. The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
-        "kq1c3": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
-        "kq1c4": ["info", "It’s okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."]
+        "kq1c1": ["correct", "That’s correct."],
+        "kq1c2": ["incorrect", "Actually, the ‘half’ does not mean 0.5. Read on to learn more."],
+        "kq1c3": ["info", "Let’s read on to learn more."], 
+        "kq2c1": ["correct", "That’s correct."],
+        "kq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2V power supply and cannot change it."],
+        "kq2c3": ["info", "The correct answer is the first one. Read on to learn more."]
     };
 
     document.body.addEventListener('click', (event) => {
