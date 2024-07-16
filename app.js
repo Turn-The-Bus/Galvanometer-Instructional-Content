@@ -44,6 +44,12 @@ app.get('/working_principle', (req, res) => {
     res.render("working_principle");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
+
+// Route for the circuit diagram page
+app.get('/circuit', (req, res) => {
+    res.render("circuit_diagram");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+});
+
 // Route for the hypothesis page
 app.get('/hypothesis', (req, res) => {
     res.render("hypothesis");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
@@ -64,6 +70,7 @@ app.get('/conclusion', (req, res) => {
 app.get('/result', (req, res) => {
     res.render("result");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
+
 
 // Start the server
 app.listen(port, hostname, () => {

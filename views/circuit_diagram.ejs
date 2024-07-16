@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circuit Diagram</title>
+    <link rel="stylesheet" href="/css/circuit_diagram.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+    </script>
+    <script type="module">
+      import "@material/web/all.js";
+      import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-content">
+        <span class="material-symbols-outlined roadmap-icon">close</span>
+        <h1>Circuit Setup</h1>
+      </div>
+    </div>
+
+    <div class="instruction-content">
+      <div id="ic-circuit-intro">
+        <h2>Lab Circuit Setup</h2>
+        
+        <p>
+          Let's learn how to set up the circuit we'll need to find the figure of merit of the galvanometer.
+        </p>
+
+        <div class="circuit-diagram-container">
+          <img class="circuit-diagram-image" src="/images/circuit-diagram-1.svg" alt="circuit-diagram">
+
+          <div class="circuit-diagram-buttons">
+            <md-outlined-button class="circuit-button hidden" id="circuit-button-back">Back</md-outlined-button>
+            <md-outlined-button class="circuit-button" id="circuit-button-next">Next</md-outlined-button>
+          </div>
+  
+          <div class="circuit-diagram-caption">
+            <p>We start with a battery to power our circuit.</p>
+            <p></span><img class="circuit-diagram-icon-inline" src="images/diagram-battery.svg" alt="battery">represents the battery. The + and &#8722; indicate the positive and negative terminals.</p>
+          </div>
+        </div>
+
+
+        <div class="button-container hidden">
+          <md-filled-button class="fd-next-section-button" data-key="next_ic_sim_activity">Next Section</md-filled-button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Import Javascript Code -->
+    <script src="/javascript/circuit_diagram.js"></script>
+  </body>
+</html>
