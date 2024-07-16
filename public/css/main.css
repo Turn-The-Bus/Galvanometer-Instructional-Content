@@ -130,6 +130,7 @@ li {
 .instruction-content {
     margin-left: 16px;
     width: calc(100% - 32px);
+    padding-bottom: 80px;
 }
 
 .diagram-container {
@@ -215,18 +216,22 @@ li {
 .next-button {
     margin-top: 10px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .next-page-button {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .next-section-button {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .finish-button {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .fd-complete-lesson {

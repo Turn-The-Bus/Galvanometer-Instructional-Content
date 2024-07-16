@@ -1,21 +1,4 @@
-const correctColorDark = "#2B7D2F";
-const correctColorLight = "#E9FAEA";
-const incorrectColorDark = "#C92525";
-const incorrectColorLight = "#FFEFEF";
-const sysColorPrimaryDark = "#004A76";
-const sysColorPrimaryBright = "#047DB7";
-const sysColorPrimaryLight = "#DFF3FF";
-const sysOutlineColor = "#79747E";
-
-document.addEventListener("DOMContentLoaded", function() {
-    MathJax.typeset();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    const contentMap = {
-        
-    };
 
     const circuitDiagramMap = {
         circuit_diagram_1: `
@@ -60,25 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         
     };
-
-    document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-button')) {
-            const button = event.target;
-            const key = button.getAttribute('data-key');
-            const newContent = contentMap[key];
-            const instructionContainer = document.querySelector('.instruction-content');
-            
-            if (newContent) {
-                const textContainer = document.createElement('div');
-                textContainer.innerHTML = newContent;
-                instructionContainer.appendChild(textContainer);
-                button.parentElement.remove();
-                textContainer.style.scrollMarginTop = '150px';
-                textContainer.scrollIntoView({ behavior: 'smooth' });
-                MathJax.typeset();
-            }
-        }
-    });
 
 
     document.body.addEventListener('click', (event) => {
@@ -131,21 +95,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
-
-    // Next Section Button
-    document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('next-section-button')) {
-            const button = event.target;
-            const key = button.getAttribute('data-key');
-            
-            window.location.href = key;
-        }
-    });
-
-
-
-    
-
-    
     
 });
