@@ -1,3 +1,12 @@
+const correctColorDark = "#2B7D2F";
+const correctColorLight = "#E9FAEA";
+const incorrectColorDark = "#C92525";
+const incorrectColorLight = "#FFEFEF";
+const sysColorPrimaryDark = "#004A76";
+const sysColorPrimaryBright = "#047DB7";
+const sysColorPrimaryLight = "#DFF3FF";
+const sysOutlineColor = "#79747E";
+
 document.addEventListener("DOMContentLoaded", function() {
     MathJax.typeset();
 });
@@ -121,6 +130,69 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextButton.classList.remove("hidden-button");
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
+        }
+    });
+
+    // content map for dropdown
+    const dropdownAnswerKey = {
+        
+    };
+
+    // Giving Feedback for Dropdown
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('dropdown-button')) {
+            let button = event.target;
+
+            const menuEl = button.parentElement.querySelector('md-menu');
+            const arrow = button.parentElement.querySelector('.dropdown-arrow');
+
+            menuEl.open = !menuEl.open;
+
+            menuEl.querySelectorAll('md-menu-item').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    // Remove background color from previously selected items
+                    menuEl.querySelectorAll('md-menu-item').forEach(item => {
+                        item.style.backgroundColor = '';
+                    });
+    
+                    // Change background color of the selected item
+                    event.currentTarget.style.backgroundColor = sysColorPrimaryLight;
+    
+                    const mathContent = event.currentTarget.getAttribute('data-value');
+                    button.innerHTML = mathContent;
+                    menuEl.open = false;
+    
+                    // Trigger MathJax to re-process the updated button content
+                    MathJax.typesetPromise([button]).catch((err) => console.log(err.message));
+    
+                    // Check if the answer is correct
+                    const answerKey = dropdownAnswerKey[button.id];
+                    if (mathContent==="Select") {
+                        button.style.setProperty('--_label-text-color', '');
+                        button.style.setProperty('--_focus-label-text-color', '');
+                        button.style.setProperty('--_hover-label-text-color', '');
+                        button.style.setProperty('--_outline-color', '');
+                        button.style.backgroundColor = '';
+                        arrow.style.setProperty('color','');
+                    } else if (answerKey.includes(mathContent)) {
+                        button.style.setProperty('--_label-text-color', correctColorDark);
+                        button.style.setProperty('--_focus-label-text-color', correctColorDark);
+                        button.style.setProperty('--_hover-label-text-color', correctColorDark);
+                        button.style.setProperty('--_outline-color', correctColorDark);
+                        button.style.backgroundColor = correctColorLight;
+                        arrow.style.setProperty('color',correctColorDark);
+    
+                    } else {
+                        button.style.setProperty('--_label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_outline-color', incorrectColorDark);
+                        button.style.backgroundColor = incorrectColorLight;
+                        arrow.style.setProperty('color',incorrectColorDark);
+                    }
+                });
+            });
+
         }
     });
 });

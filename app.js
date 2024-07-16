@@ -19,61 +19,60 @@ app.get('/', (req, res) => {
 });
 
 // Route for the introduction_to_g page
-app.get('/introduction_to_g', (req, res) => {
+app.get('/introduction-to-galvanometers', (req, res) => {
     res.render("introduction_to_g");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
 // Route for the interactive simulation page
-app.get('/interactive_simulation', (req, res) => {
-    res.render("interactive_simulation");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+app.get('/galvanometer-deflection', (req, res) => {
+    res.render("interactive_simulation");  
+});
+
+// Route for the working principle page
+app.get('/working-principle', (req, res) => {
+    res.render("working_principle");  
 });
 
 // Route for the introduction_to_f page
-app.get('/introduction_to_figure_of_merit', (req, res) => {
-    res.render("introduction_to_figure_of_merit");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+app.get('/figure-of-merit', (req, res) => {
+    res.render("introduction_to_figure_of_merit"); 
 });
 
 // Route for the half deflection method page
-app.get('/half_deflection', (req, res) => {
-    res.render("half_deflection");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
-});
-
-
-// Route for the working principle page
-app.get('/working_principle', (req, res) => {
-    res.render("working_principle");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+app.get('/half-deflection-method', (req, res) => {
+    res.render("half_deflection");  
 });
 
 
 // Route for the circuit diagram page
-app.get('/circuit', (req, res) => {
-    res.render("circuit_diagram");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+app.get('/circuit-setup', (req, res) => {
+    res.render("circuit_diagram"); 
 });
 
 // Route for the formula derivation page
 app.get('/deriving-our-formula', (req, res) => {
-    res.render("formula");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+    res.render("formula"); 
 });
 
 // Route for the hypothesis page
 app.get('/hypothesis', (req, res) => {
-    res.render("hypothesis");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+    res.render("hypothesis"); 
 });
 
 
 // Route for the hypothesis page
-app.get('/lab_simulation', (req, res) => {
-    res.render("lab_simulation");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+app.get('/lab-simulation-prep', (req, res) => {
+    res.render("lab_simulation");
 });
 
 // Route for the conclusion page
 app.get('/conclusion', (req, res) => {
-    res.render("conclusion");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+    res.render("conclusion");  
 });
 
 // Route for the result page
 app.get('/result', (req, res) => {
-    res.render("result");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+    res.render("result"); 
 });
 
 

@@ -9,7 +9,7 @@ const sysOutlineColor = "#79747E";
 
 // Define the content for each next button
 const contentMap = {
-    next_section_fd_intro: `
+    next_page_fd_intro: `
         <div id="fd-intro">
             <h2>Introduction</h2>
             <p>In this activity, we will learn more about the formulas we can use in the Figure of Merit of a Galvanometer lab.</p>
@@ -29,7 +29,7 @@ const contentMap = {
             <div class="hidden" id="learning-path-begin">
                 <p>At any point, you can click on the progress bar to jump between the content and the summary.</p>
                 <div class="button-container">
-                    <md-filled-button class="learning-path-begin-button" data-key="next_section_fd_goal">Next Page</md-filled-button>
+                    <md-filled-button class="learning-path-begin-button" data-key="next_page_fd_goal">Next Page</md-filled-button>
                 </div>
 
             </div>
@@ -41,16 +41,16 @@ const contentMap = {
         <img class="toolbox-icon icon-inline" src="images/toolbox_icon.svg" alt="toolbox" >
         <span>in the upper left corner to view the formulas.</span> 
         <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_fd_intro_roadmap">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_fd_intro_roadmap">Next</md-outlined-button>
         </div>
     `,
     next_fd_intro_roadmap: `
         <p>The roadmap gives an overview of the steps you have taken so far. Click on the roadmap icon <md-icon class="icon-inline">conversion_path</md-icon> in the upper left corner to review your steps throughout the activity.</p>
         <div class="button-container">
-            <md-filled-button class="fd-next-section-button" data-key="next_section_fd_goal">Next Section</md-filled-button>
+            <md-filled-button class="next-page-button" data-key="next_page_fd_goal">Next Section</md-filled-button>
         </div>
     `,
-    next_section_fd_goal: `
+    next_page_fd_goal: `
         <div id="fd-goal">
             <div class="toolbox-tooltip hidden">
                 The formula toolbox contains helpful formulas for you to use throughout the activity.
@@ -81,7 +81,7 @@ const contentMap = {
             </div>
             
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_current">Next</md-outlined-button>
             </div>
 
         </div>
@@ -113,7 +113,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_findk">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_findk">Next</md-outlined-button>
             </div>
 
         </div>
@@ -149,7 +149,7 @@ const contentMap = {
             </div>
         
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current_ohms_law">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_current_ohms_law">Next</md-outlined-button>
             </div>
 
         </div> 
@@ -180,7 +180,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_voltage">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_voltage">Next</md-outlined-button>
             </div>
 
         </div>
@@ -222,7 +222,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_resistance">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_resistance">Next</md-outlined-button>
             </div>
 
         </div> 
@@ -305,7 +305,7 @@ const contentMap = {
             </div>
         
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_resistance_equation">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_resistance_equation">Next</md-outlined-button>
             </div>
 
         </div> 
@@ -341,7 +341,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_update_formula">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_goal_update_formula">Next</md-outlined-button>
             </div>
     
 
@@ -381,12 +381,12 @@ const contentMap = {
             
 
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_eliminating_intro" >Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_eliminating_intro" >Next Section</md-filled-button>
             </div>
 
         </div>   
     `,
-    next_section_fd_eliminating_intro: `
+    next_page_fd_eliminating_intro: `
         <div id="fd-eliminating-intro">
             <h2>Eliminating the Unknown Current</h2>
             <p>In the last section, we discovered that we can't solve for the current \\((I)\\) using the \\(I = kθ\\) formula or the \\(I = \\frac{E}{(R+G)}\\) formula since there are too many unknowns.  </p>
@@ -426,7 +426,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_eliminating_unknowns">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_eliminating_unknowns">Next</md-outlined-button>
             </div>
 
         </div>
@@ -456,7 +456,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_eliminating_unknowns_diagram">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_eliminating_unknowns_diagram">Next</md-outlined-button>
             </div>
     
 
@@ -503,7 +503,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_eliminating_review_knowns">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_eliminating_review_knowns">Next</md-outlined-button>
             </div>
 
         </div>
@@ -520,7 +520,7 @@ const contentMap = {
             </ul>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_eliminating_two_sets">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_eliminating_two_sets">Next</md-outlined-button>
             </div>
         </div>
     `,
@@ -562,7 +562,7 @@ const contentMap = {
             </div>
             
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_eliminating_conclusion">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_eliminating_conclusion">Next</md-outlined-button>
             </div>
                 
         </div>
@@ -574,11 +574,11 @@ const contentMap = {
             <p>In the next section, we will learn how adding a shunt resistance box will help us get the half deflection value and our second equation.</p>
 
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_secondeq_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_secondeq_intro">Next Section</md-filled-button>
             </div>
         </div>
     `,
-    next_section_fd_secondeq_intro: `
+    next_page_fd_secondeq_intro: `
         <div id="fd-secondeq-intro">
             <h2>Getting a Second Equation</h2>
             <p>When drawing the circuit diagram, we added a shunt resistance to decrease the current flowing to the galvanometer.</p>
@@ -702,7 +702,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_split">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_split">Next</md-outlined-button>
             </div>
 
 
@@ -807,7 +807,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_ig">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_ig">Next</md-outlined-button>
             </div>
 
         </div>
@@ -840,7 +840,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_ig_toolbox">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_ig_toolbox">Next</md-outlined-button>
             </div>
 
         </div>
@@ -858,7 +858,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_current">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_current">Next</md-outlined-button>
             </div>
 
         </div>
@@ -895,7 +895,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_know_v">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_know_v">Next</md-outlined-button>
             </div>
 
         </div>
@@ -935,7 +935,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_add_r">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_add_r">Next</md-outlined-button>
             </div>
 
         </div>
@@ -986,7 +986,7 @@ const contentMap = {
             </div>
         
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_find_r">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_find_r">Next</md-outlined-button>
             </div>
             
         </div>
@@ -1173,7 +1173,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_r_parallel">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_r_parallel">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1200,7 +1200,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_isolate">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_isolate">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1266,7 +1266,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_r_formula">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_r_formula">Next</md-outlined-button>
             </div>
 
             
@@ -1294,7 +1294,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_secondeq_plug_in">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_secondeq_plug_in">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1388,12 +1388,12 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_ig_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_ig_intro">Next Section</md-filled-button>
             </div>
 
         </div>
     `,
-    next_section_fd_ig_intro: `
+    next_page_fd_ig_intro: `
         <div id="fd-ig-intro">
             <h2>Solving for \\(I_G\\)</h2>
             <p>Now that we've solved for \\(I\\), we are one step closer to solving for \\(I_G\\). Next, we need to solve for \\(I_S\\).</p>
@@ -1497,7 +1497,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_ohms">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_ohms">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1617,7 +1617,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_v_toolbox">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_v_toolbox">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1635,7 +1635,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_voltage">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_voltage">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1672,7 +1672,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_combine">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_combine">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1721,7 +1721,7 @@ const contentMap = {
             </div>
             
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_eliminate">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_eliminate">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1807,7 +1807,7 @@ const contentMap = {
             </div>
             
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_isolate">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_isolate">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1866,7 +1866,7 @@ const contentMap = {
             </div>
     
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_plug_in">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_plug_in">Next</md-outlined-button>
             </div>
 
         </div>
@@ -1936,7 +1936,7 @@ const contentMap = {
         
         
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_simplify">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_simplify">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2002,7 +2002,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_ig_conc">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_ig_conc">Next</md-outlined-button>
             </div>
         
         </div>
@@ -2012,11 +2012,11 @@ const contentMap = {
             <p>Now, we have a second equation for the current! On the next page, we'll see how we can combine it with our first equation for the current.</p>
 
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_solve_g_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_g_intro">Next Section</md-filled-button>
             </div>
         </div>
     `,
-    next_section_fd_solve_g_intro: `
+    next_page_fd_solve_g_intro: `
         <div id="fd-solve-g-intro">
             <h2>Solving for \\(G\\)</h2>
             <p>When drawing the circuit diagram, we added a shunt resistance to decrease the current flowing to the galvanometer.</p>
@@ -2150,7 +2150,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fg_solve_g_half_constant">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fg_solve_g_half_constant">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2201,7 +2201,7 @@ const contentMap = {
             </div>
         
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_solve_g_plug_in">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_solve_g_plug_in">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2262,7 +2262,7 @@ const contentMap = {
             
     
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_solve_g_isolate">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_solve_g_isolate">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2347,12 +2347,12 @@ const contentMap = {
             </div>
     
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_solve_k_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_k_intro">Next Section</md-filled-button>
             </div>
 
         </div>
     `,
-    next_section_fd_solve_k_intro: `
+    next_page_fd_solve_k_intro: `
         <div id="fd-solve-k-intro">
             <h2>Solving for \\(k\\)</h2>
 
@@ -2392,7 +2392,7 @@ const contentMap = {
             </div>
     
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_solve_k_goal">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_solve_k_goal">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2488,7 +2488,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_solve_k_unknowns">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_solve_k_unknowns">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2519,7 +2519,7 @@ const contentMap = {
             </div>
 
             <div class="button-container hidden-button">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_solve_k_conc">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_solve_k_conc">Next</md-outlined-button>
             </div>
 
         </div>
@@ -2559,12 +2559,12 @@ const contentMap = {
             
 
             <div class="button-container">
-                <md-filled-button class="fd-next-section-button" data-key="next_section_fd_summary_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_summary_intro">Next Section</md-filled-button>
             </div>
 
         </div>
     `,
-    next_section_fd_summary_intro: `
+    next_page_fd_summary_intro: `
         <div id="fd-summary-intro">
             <h2>Summary</h2>
             <p>Let's do a quick review of how to find the formulas we'll use in the Figure of Merit of a Galvanometer Lab.</p>
@@ -2572,7 +2572,7 @@ const contentMap = {
             <p>But, why can't we find k with just one measurement?</p>
 
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_fd_summary_init_deflection" >Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_fd_summary_init_deflection" >Next</md-outlined-button>
             </div>
 
         </div>   
@@ -2665,7 +2665,7 @@ const contentMap = {
         </div>
 
         <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_fd_summary_init_deflection_conclusion">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_fd_summary_init_deflection_conclusion">Next</md-outlined-button>
         </div>
     `,
     next_fd_summary_init_deflection_conclusion: `
@@ -2681,7 +2681,7 @@ const contentMap = {
         </div>
 
         <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_fd_summary_half_deflection">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_fd_summary_half_deflection">Next</md-outlined-button>
         </div>
     `,
     next_fd_summary_half_deflection: `
@@ -2786,7 +2786,7 @@ const contentMap = {
         </div>
 
         <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_fd_summary_combining">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_fd_summary_combining">Next</md-outlined-button>
         </div>
     `,
     next_fd_summary_combining: `
@@ -2841,7 +2841,7 @@ const contentMap = {
         </div>
 
         <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_fd_summary_conclusion">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_fd_summary_conclusion">Next</md-outlined-button>
         </div>
     `,
     next_fd_summary_conclusion: `
@@ -2886,14 +2886,14 @@ const contentMap = {
 };
 
 const sectionMap = {
-    "next_section_fd_intro": 0,
-    "next_section_fd_goal": 1,
-    "next_section_fd_eliminating_intro": 2,
-    "next_section_fd_secondeq_intro": 3,
-    "next_section_fd_ig_intro": 4,
-    "next_section_fd_solve_g_intro": 5,
-    "next_section_fd_solve_k_intro": 6,
-    "next_section_fd_summary_intro": 7
+    "next_page_fd_intro": 0,
+    "next_page_fd_goal": 1,
+    "next_page_fd_eliminating_intro": 2,
+    "next_page_fd_secondeq_intro": 3,
+    "next_page_fd_ig_intro": 4,
+    "next_page_fd_solve_g_intro": 5,
+    "next_page_fd_solve_k_intro": 6,
+    "next_page_fd_summary_intro": 7
 }
 
 const progressCircles = [
@@ -3180,13 +3180,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             button.style.backgroundColor = sysColorPrimaryLight;
 
             if (buttonID == 'lp-full-activity') {
-                nextButton.setAttribute('data-key','next_section_fd_goal');
+                nextButton.setAttribute('data-key','next_page_fd_goal');
                 
                 const otherButton = document.getElementById('lp-summary');
                 otherButton.style.backgroundColor = "white";
                 
             } else if (buttonID == 'lp-summary') {
-                nextButton.setAttribute('data-key','next_section_fd_summary_intro');
+                nextButton.setAttribute('data-key','next_page_fd_summary_intro');
 
                 const otherButton = document.getElementById('lp-full-activity');
                 otherButton.style.backgroundColor = "white";
@@ -3208,7 +3208,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const destination = button.getAttribute('data-key');
 
-            if (destination == "next_section_fd_goal") {
+            if (destination == "next_page_fd_goal") {
                 // add toolbox tooltip
                 let tempDiv = document.createElement('div');
                 tempDiv.innerHTML = contentMap[destination];
@@ -3244,7 +3244,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Next Button
     document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-button')) {
+        if (event.target && event.target.classList.contains('next-button')) {
             const button = event.target;
             const key = button.getAttribute('data-key');
             const newContent = contentMap[key];
@@ -3278,7 +3278,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Next section Button
     document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-section-button')) {
+        if (event.target && event.target.classList.contains('next-page-button')) {
             const button = event.target;
             const key = button.getAttribute('data-key');
 

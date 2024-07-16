@@ -4,16 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const contentMap = {
-        next_section_k: `
-            <div class="but-what-is-container">
-            <p class="but-what-is-k">
-            <span class="but-what-is">But, what is </span>
-            <i class="k">k</i>
-            <span>?</span>
-            </p>
-            <p>What does k mean in the context of this formula?</p>
-            </div>
-    
+        next_fm_k: `
+            <div>
+                <p>But, what is \\(\\boldsymbol{k}\\)?</p>
+                <p>What does \\(k\\) mean in the context of this formula?</p>
+
                 <div class="mc-question">
                     <div class="mc-button-wrapper">
                         <md-outlined-button class="mc-button" data-key="kq1c1">
@@ -32,39 +27,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="mc-button-wrapper">
                         <md-outlined-button class="mc-button" data-key="kq1c4">
-                            <span>D) I don’t know yet.</span>
+                            <span>D) I don't know yet.</span>
                         </md-outlined-button>
                     </div>
-    
+
                     <div class="feedback"></div>
-
-                    <div class="k-known-as-container">
-                    <p class="k-known-as-the-figure-of-merit">
-                    <i class="k"><b>k</b></i>
-                    <span class="known-as-the">, known as the </span>
-                    <i class="k"><b>figure of merit</b></i>
-                    <span>, is defined as the current needed to nudge the needle by one division on the scale. </span>
-                    </p>
-                    <p class="k-known-as-the-figure-of-merit">Figure of merit is an important concept that measures the sensitivity of a galvanometer. In other words, the figure of merit indicates how responsive the galvanometer is to small currents. </p>
-                    </div>  
-
                 </div>
+
                 <div class="button-container hidden-button">
-                    <md-outlined-button class="fd-next-button">Next Page</md-outlined-button>
+                    <md-outlined-button class="next-button" data-key="next_fm_conc">Next</md-outlined-button>
                 </div>
+
             </div>
         `,
+        next_fm_conc: `
+            <div>
+                <p>\\(\\boldsymbol{k}\\), known as the <b>figure of merit</b>, is defined as the current needed to nudge the needle by one division on the scale. </p>
+                <p>Figure of merit is an important concept that measures the sensitivity of a galvanometer. In other words, the figure of merit indicates how responsive the galvanometer is to small currents. </p>
+
+                <div class="button-container">
+                    <md-filled-button class="next-section-button" data-key="next_fm_conc" >Next Section</md-filled-button>
+                </div>
+            </div>
+        `
+
     };
     
     const answerKey = {
         "kq1c1": ["incorrect", "Incorrect. The maximum current the galvanometer can measure is the full-scale deflection current, not the figure of merit. The figure of merit is related to the current needed for one division deflection. We will learn more later."],
         "kq1c2": ["correct", "Correct. The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
         "kq1c3": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
-        "kq1c4": ["info", "It’s okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."]
+        "kq1c4": ["info", "It's okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."]
     };
 
     document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-button')) {
+        if (event.target && event.target.classList.contains('next-button')) {
             const button = event.target;
             const key = button.getAttribute('data-key');
             const newContent = contentMap[key];

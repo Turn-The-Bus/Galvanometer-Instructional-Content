@@ -1,3 +1,13 @@
+const correctColorDark = "#2B7D2F";
+const correctColorLight = "#E9FAEA";
+const incorrectColorDark = "#C92525";
+const incorrectColorLight = "#FFEFEF";
+const sysColorPrimaryDark = "#004A76";
+const sysColorPrimaryBright = "#047DB7";
+const sysColorPrimaryLight = "#DFF3FF";
+const sysOutlineColor = "#79747E";
+
+
 document.addEventListener("DOMContentLoaded", function() {
     MathJax.typeset();
 });
@@ -11,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="mc-question">
                     <div class="mc-button-wrapper">
                         <md-outlined-button class="mc-button" data-key="kq1c1">
-                            <span class="mc-button-text">Taking two measurements of the galvanometer’s deflection</span>
+                            <span class="mc-button-text">Taking two measurements of the galvanometer's deflection</span>
                         </md-outlined-button>
                     </div>
                     <div class="mc-button-wrapper">
@@ -21,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="mc-button-wrapper">
                         <md-outlined-button class="mc-button" data-key="kq1c3">
-                            <span class="mc-button-text">I don’t know yet</span>
+                            <span class="mc-button-text">I don't know yet</span>
                         </md-outlined-button>
                     </div>
         
                     <div class="feedback"></div>
 
                 </div>
-                <div class="button-container">
-                    <md-outlined-button class="fd-next-button" data-key="next_section_explanation">Next</md-outlined-button>
+                <div class="button-container hidden-button">
+                    <md-outlined-button class="next-button" data-key="next_section_explanation">Next</md-outlined-button>
                 </div>
             </div>
         `,
@@ -39,36 +49,61 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>The first measurement is called the initial deflection measurement.</p>
             <p>The second measurement is called the half-deflection measurement, and is equal to half the value of the initial deflection.</p>
             <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_section_measurement">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_section_measurement">Next</md-outlined-button>
             </div>
         `,
 
         next_section_measurement: `
+            <md-divider></md-divider>
             <p>A student is using the half-deflection method and took two measurements, pictured below. Label the measurements.</p>
             <div class="grid-container">
                 <div class="grid-item">
                     <img src="/images/Initial Deflection Image.png" alt="Image 1">
                     <p class="legend">Measurement 1</p>
-                    <span class="dropdown-menu-inline">
-                      <select class="select-dropdown">
-                          <option value="Increase">Increase</option>
-                          <option value="Decrease">Decrease</option>
-                      </select>
-                    </span>
+                    <div class="dropdown">
+                        <md-outlined-button class="dropdown-button" style="width: 120px; height: 40px" id="hd_m1">
+                            Select
+                        </md-outlined-button>
+                        <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
+                        
+                        <md-menu id="usage-menu" anchor="hd_m1">
+                            <md-menu-item data-value="Select">
+                                <div slot="headline">Select</div>
+                            </md-menu-item >
+                            <md-menu-item data-value="Initial Deflection">
+                                <div slot="headline">Initial Deflection</div>
+                            </md-menu-item>
+                            <md-menu-item data-value="Half-Deflection">
+                                <div slot="headline">Half-Deflection</div>
+                            </md-menu-item>
+                        </md-menu>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <img src="/images/Half Deflection Image.png" alt="Image 2">
                     <p class="legend">Measurement 2</p>
-                    <span class="dropdown-menu-inline">
-                      <select class="select-dropdown">
-                          <option value="Increase">Increase</option>
-                          <option value="Decrease">Decrease</option>
-                      </select>
-                    </span>
+                    <div class="dropdown">
+                        <md-outlined-button class="dropdown-button" style="width: 120px; height: 40px" id="hd_m2">
+                            Select
+                        </md-outlined-button>
+                        <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
+                        
+                        <md-menu id="usage-menu" anchor="hd_m2">
+                            <md-menu-item data-value="Select">
+                                <div slot="headline">Select</div>
+                            </md-menu-item >
+                            <md-menu-item data-value="Initial Deflection">
+                                <div slot="headline">Initial Deflection</div>
+                            </md-menu-item>
+                            <md-menu-item data-value="Half-Deflection">
+                                <div slot="headline">Half-Deflection</div>
+                            </md-menu-item>
+                        </md-menu>
+                    </div>
                 </div>
-            <div class="button-container">
-                <md-outlined-button class="fd-next-button" data-key="next_section_quiz">Next</md-outlined-button>
             </div>
+            <div class="button-container">
+                <md-outlined-button class="next-button" data-key="next_section_quiz">Next</md-outlined-button>
             </div>
          `,
 
@@ -97,31 +132,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 </div>
                 <div class="button-container">
-                    <md-outlined-button class="fd-next-button" data-key="next_section_page">Next</md-outlined-button>
+                    <md-outlined-button class="next-button" data-key="next_section_page">Next</md-outlined-button>
                 </div>
             </div>
         `,
 
         next_section_page: `
-            <p>Remember the formula I = kθ shows that current (I) is proportional to the galvanometer’s deflection (θ).</p>
-            <p>In the next section, we’ll learn how to set up our circuit in order to reduce the current flowing through the galvanometer.</p>
+            <p>Remember the formula \\(I = k\\theta\\) shows that current \\((I)\\) is proportional to the galvanometer's deflection \\((\\theta)\\).</p>
+            <p>In the next section, we'll learn how to set up our circuit in order to reduce the current flowing through the galvanometer.</p>
             <div class="button-container">
-                <md-outlined-button class="fd-next-button">Next Page</md-outlined-button>
+                <md-filled-button class="next-section-button">Next Section</md-filled-button>
             </div>
         `,
     };
     
     const answerKey = {
-        "kq1c1": ["correct", "That’s correct."],
-        "kq1c2": ["incorrect", "Actually, the ‘half’ does not mean 0.5. Read on to learn more."],
-        "kq1c3": ["info", "Let’s read on to learn more."], 
-        "kq2c1": ["correct", "That’s correct."],
+        "kq1c1": ["correct", "That's correct."],
+        "kq1c2": ["incorrect", "Actually, the 'half' does not mean 0.5. Read on to learn more."],
+        "kq1c3": ["info", "Let's read on to learn more."], 
+        "kq2c1": ["correct", "That's correct."],
         "kq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2V power supply and cannot change it."],
         "kq2c3": ["info", "The correct answer is the first one. Read on to learn more."]
     };
 
     document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-button')) {
+        if (event.target && event.target.classList.contains('next-button')) {
             const button = event.target;
             const key = button.getAttribute('data-key');
             const newContent = contentMap[key];
@@ -189,6 +224,72 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
             }
+        }
+    });
+
+    // content map for dropdown
+    const dropdownAnswerKey = {
+        "hd_m1": ["Initial Deflection"],
+        "hd_m2": ["Half-Deflection"],
+        
+    };
+
+    // Giving Feedback for Dropdown
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('dropdown-button')) {
+            let button = event.target;
+
+            const menuEl = button.parentElement.querySelector('md-menu');
+            const arrow = button.parentElement.querySelector('.dropdown-arrow');
+
+            menuEl.open = !menuEl.open;
+
+
+            menuEl.querySelectorAll('md-menu-item').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    // Remove background color from previously selected items
+                    menuEl.querySelectorAll('md-menu-item').forEach(item => {
+                        item.style.backgroundColor = '';
+                    });
+    
+                    // Change background color of the selected item
+                    event.currentTarget.style.backgroundColor = sysColorPrimaryLight;
+    
+                    const mathContent = event.currentTarget.getAttribute('data-value');
+                    button.innerHTML = mathContent;
+                    menuEl.open = false;
+    
+                    // Trigger MathJax to re-process the updated button content
+                    MathJax.typesetPromise([button]).catch((err) => console.log(err.message));
+    
+                    // Check if the answer is correct
+                    const answerKey = dropdownAnswerKey[button.id];
+                    if (mathContent==="Select") {
+                        button.style.setProperty('--_label-text-color', '');
+                        button.style.setProperty('--_focus-label-text-color', '');
+                        button.style.setProperty('--_hover-label-text-color', '');
+                        button.style.setProperty('--_outline-color', '');
+                        button.style.backgroundColor = '';
+                        arrow.style.setProperty('color','');
+                    } else if (answerKey.includes(mathContent)) {
+                        button.style.setProperty('--_label-text-color', correctColorDark);
+                        button.style.setProperty('--_focus-label-text-color', correctColorDark);
+                        button.style.setProperty('--_hover-label-text-color', correctColorDark);
+                        button.style.setProperty('--_outline-color', correctColorDark);
+                        button.style.backgroundColor = correctColorLight;
+                        arrow.style.setProperty('color',correctColorDark);
+    
+                    } else {
+                        button.style.setProperty('--_label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_outline-color', incorrectColorDark);
+                        button.style.backgroundColor = incorrectColorLight;
+                        arrow.style.setProperty('color',incorrectColorDark);
+                    }
+                });
+            });
+
         }
     });
 });

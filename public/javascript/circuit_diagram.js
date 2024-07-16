@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const backButton = document.getElementById('circuit-button-back');
             const nextButton = document.getElementById('circuit-button-next');
             
-            const nextSectionButton = document.querySelector('.instruction-content').querySelector('.fd-next-section-button');
+            const nextSectionButton = document.querySelector('.instruction-content').querySelector('.next-section-button');
             
             const currentImageEl = button.parentElement.parentElement.querySelector('.circuit-diagram-image');
             const currentImageSRC = String(currentImageEl.getAttribute('src'));
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nextNum >= 8) {
                 nextSectionButton.parentElement.classList.remove('hidden');
                 nextSectionButton.parentElement.style.scrollMarginTop = '150px';
-                nextSectionButton.parentElement.scrollIntoView({ behavior: 'smooth' });
+                currentImageEl.scrollIntoView({ behavior: 'smooth' });
                 nextButton.classList.add('hidden');
                 nextNum = 8;
             } else {

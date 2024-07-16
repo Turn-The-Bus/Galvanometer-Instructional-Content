@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <div id="ic-sim-activity">
             <p>Before starting, make one hypothesis about what will happen when you change the current.</p>
             <div class="block-card">
-            <div class="block-card-content">
-                <h3>Example Hypothesis</h3>
-                <ul>
-                <li><span>If I <b>increase</b> the current, the needle will move to the <b>left</b>.</span></li>
-                <li><span>If the current is flowing in the <b>positive</b> direction and I <b>reverse</b> the current, the needle will move to the <b>right</b>.</span></li>
-                </ul>
-            </div>
+                <div class="block-card-content">
+                    <h3>Example Hypothesis</h3>
+                    <ul>
+                    <li><span>If I <b>increase</b> the current, the needle will move to the <b>left</b>.</span></li>
+                    <li><span>If the current is flowing in the <b>positive</b> direction and I <b>reverse</b> the current, the needle will move to the <b>right</b>.</span></li>
+                    </ul>
+                </div>
             </div>
 
             <div>
@@ -146,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="sim-button sim-minus">&#8722</div>
                 <div class="sim-reading">0 mA</div>
                 <div class="sim-button sim-plus">+</div>
-                <md-text-button class="sim-reset">Reset</md-text-button>
             </div>
 
             <div class="diagram-container">
@@ -219,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="button-container">
-            <md-outlined-button class="fd-next-button" data-key="next_ic_sim_conc">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_ic_sim_conc">Next</md-outlined-button>
             </div>
             
         
@@ -232,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>We can also see that the direction of deflection in a galvanometer is reversed if the direction of current is reversed. In other words, if the current is flowing in the positive direction, an increase in current results in the needle moving to the right, while a decrease in current causes the needle to move to the left. Conversely, <b>if the current is flowing in the negative direction, the deflection direction is reversed</b>. </p>
                 <p>Great job on testing your hypothesis! Every step, even the wrong ones, brings you closer to understanding the truth.</p>
                 <div class="button-container">
-                    <md-filled-button class="fd-next-section-button" data-key="next_ic_sim_conc">Next Page</md-filled-button>
+                    <md-filled-button class="next-section-button" data-key="next_ic_sim_conc">Next Page</md-filled-button>
                 </div>
             </div>
         `,
@@ -246,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     document.body.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('fd-next-button')) {
+        if (event.target && event.target.classList.contains('next-button')) {
             const button = event.target;
             const key = button.getAttribute('data-key');
             const newContent = contentMap[key];
