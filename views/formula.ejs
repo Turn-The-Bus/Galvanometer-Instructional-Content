@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriving Our Formula</title>
+    <link rel="stylesheet" href="/css/formula.css">
+
+    <!-- Import Material Design Symbols (the new version of icons?) -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <!-- From MD3 README -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="overlay-container">
+        <md-dialog id="progress-overlay-dialog">
+            <div slot="headline" id="progress-overlay-top">
+                <div class="overlay-h1">Sections</div>
+                <md-icon-button id="progress-overlay-close"> <md-icon>close</md-icon> </md-icon-button>
+            </div>
+            <div class="progress-overlay-content" slot="content">
+                <md-list style="max-width: 300px">
+                    <md-list-item id="toc-intro" data-key="next_section_fd_intro" class="toc-section current-section"> Introduction</md-list-item>
+                    <md-list-item id="toc-fm" data-key="next_section_fd_goal" class="toc-section"> Finding the Figure of Merit </md-list-item>
+                    <md-list-item id="toc-elim" data-key="next_section_fd_eliminating_intro" class="toc-section"> Eliminating the Unknown Current </md-list-item>
+                    <md-list-item id="toc-2nd" data-key="next_section_fd_secondeq_intro" class="toc-section"> Getting a Second Equation </md-list-item>
+                    <md-list-item id="toc-ig" data-key="next_section_fd_ig_intro" class="toc-section"> Solving for \(I_G\) </md-list-item>
+                    <md-list-item id="toc-g" data-key="next_section_fd_solve_g_intro" class="toc-section"> Solving for \(G\)</md-list-item>
+                    <md-list-item id="toc-k" data-key="next_section_fd_solve_k_intro" class="toc-section"> Solving for \(k\)</md-list-item>
+                    <md-list-item id="toc-summary" data-key="next_section_fd_summary_intro" class="toc-section"> Summary</md-list-item>
+                </md-list>
+            </div>
+            
+        </md-dialog>
+    </div>
+
+    <div class="overlay-container">
+        <md-dialog id="toolbox-overlay-dialog">
+            <div slot="headline" id="toolbox-overlay-top">
+                <div class="overlay-h1">Formula Toolbox</div>
+                <md-icon-button id="toolbox-overlay-close"> <md-icon>close</md-icon> </md-icon-button>
+            </div>
+            <div class="toolbox-overlay-content" slot="content">
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Ohm's Law</div>
+                    <div class="toolbox-eq">\(V = IR\)</div>
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Figure of Merit</div>
+                    <div class="toolbox-eq">\(I = k\theta\)</div>
+                </div>
+                <div class="overlay-h2">Series Circuits</div>
+                <div class="toolbox-circuit">                    
+                    <img src="images/toolbox_series_circuit.svg" alt="series circuit image" >
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Voltage</div>
+                    <div class="toolbox-eq">\(V=V_1+V_2\)</div>
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Current</div>
+                    <div class="toolbox-eq">\(I=I_1=I_2\)</div>
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Resistance</div>
+                    <div class="toolbox-eq">\(R=R_1+R_2\)</div>
+                </div>
+                <div class="overlay-h2">Parallel Circuits</div>
+                <div class="toolbox-circuit">
+                    <img src="images/toolbox_parallel_circuit.svg" alt="parallel circuit image" >
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Voltage</div>
+                    <div class="toolbox-eq">\(V=V_1=V_2\)</div>
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Current</div>
+                    <div class="toolbox-eq">\(I=I_1+I_2\)</div>
+                </div>
+                <div class="toolbox-row">
+                    <div class="toolbox-eq-name">Resistance</div>
+                    <div class="toolbox-eq">\(\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}\)</div>
+                </div>
+               
+            
+            </div>
+            
+        </md-dialog>
+    </div>
+    
+    <div class="header">
+        <div class="header-content">
+            <span class="material-symbols-outlined close-icon">close</span>
+            <h1>Deriving Our Formula</h1>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-content">
+            <img id="header-toolbox-icon" class="toolbox-icon" src="images/toolbox_icon.svg" alt="toolbox" >
+            <span id="header-roadmap-icon" class="material-symbols-outlined roadmap-icon">conversion_path</span>
+            <div id="progress-bar-container" style="position: relative; width: 100%;">
+                <div style="position: absolute; top: -6px; left: -1px; display: flex; z-index: 10;">
+                    <svg class="progress-circle-complete" id="pc-intro" width="7%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-fm" width="18%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-elim" width="13%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-2nd" width="22%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-ig" width="18%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-g" width="10%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-k" width="10%" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                    <svg class="progress-circle-incomplete" id="pc-summary" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7" cy="7" r="6" stroke="white" stroke-width="2" />
+                    </svg>
+                </div>
+                <svg id="progress-bar-base" style="position: absolute; top: -4px; z-index: 1;" xmlns="http://www.w3.org/2000/svg" width="100%" height="10" fill="none">
+                    <rect width="100%" height="10" rx="5" fill="#BCE2F9"/>
+                </svg>
+                <svg id="progress-bar" style="position: absolute; top: -4px; z-index: 2;" xmlns="http://www.w3.org/2000/svg" width="100%" height="10" fill="none">
+                    <rect width="0%" height="10" rx="5" fill="#047DB7"/>
+                </svg>
+        </div>
+            
+        </div>
+    </div>
+
+    <div class="instruction-content">
+        <div id="fd-intro">
+            <h2>Introduction</h2>
+            <p>In this activity, we will learn more about the formulas we can use in the Figure of Merit of a Galvanometer lab.</p>
+            
+            <p>First, <b>choose your learning path:</b></p>
+            <div>
+                <md-outlined-button class="learning-path-button" id="lp-full-activity">
+                    <div class="lp-header">Full Activity (~25 min)</div>
+                    <div class="lp-content">Dive deep with interactive activities. Ideal for those who want a comprehensive understanding.</div>
+                </md-outlined-button>
+                <md-outlined-button class="learning-path-button" id="lp-summary">
+                    <div class="lp-header">Summary (~5 min)</div>
+                    <div class="lp-content">Concise summary of key points. Ideal for those who prefer a quick overview.</div>
+                </md-outlined-button>
+            </div>
+            
+            <div class="hidden" id="learning-path-begin">
+                <p>At any point, you can click on the progress bar to jump between the content and the summary.</p>
+                <div class="button-container">
+                    <md-filled-button class="learning-path-begin-button" data-key="next_section_fd_goal">Next Page</md-filled-button>
+                </div>
+
+            </div>
+
+        </div> 
+        
+        <!-- <div id="fd-goal">
+            <div class="toolbox-tooltip hidden">
+                The formula toolbox contains helpful formulas for you to use throughout the activity.
+                <div class="tooltip-triangle"></div>
+            </div>
+            <h2>Finding the Figure of Merit</h2>
+            <p>Our goal is to find the <b>figure of merit</b> of the galvanometer, indicated by the variable <b>k</b>. </p>
+            <p>If we want to find <b>k</b>, which formula should we start with?</p>
+            
+            <div class="mc-question">
+                <div class="mc-button-wrapper">
+                    <md-outlined-button class="mc-button" data-key="fdgoalq1c1">
+                        <span class="button-text">Ohm's Law: \\( V = IR \\) </span>
+                    </md-outlined-button>
+                </div>
+                <div class="mc-button-wrapper">
+                    <md-outlined-button class="mc-button" data-key="fdgoalq1c2">
+                        <span class="button-text">Figure of Merit: \\( I = k \\theta \\) </span>
+                    </md-outlined-button>
+                </div>
+                <div class="mc-button-wrapper">
+                    <md-outlined-button class="mc-button" data-key="fdgoalq1c3">
+                        <span class="button-text">Series Resistance: \\( R_T = R_1 + R_2 \\) </span>
+                    </md-outlined-button>
+                </div>
+
+                <div class="feedback"></div>
+            </div>
+            
+            <div class="button-container hidden-button">
+                <md-outlined-button class="fd-next-button" data-key="next_fd_goal_current">Next</md-outlined-button>
+            </div>
+
+        </div>  -->
+
+    </div>
+
+
+    
+    <!-- Import Javascript Code -->
+    <script src="javascript/formula.js"></script>
+        
+</body>
+
+</html>

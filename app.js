@@ -50,6 +50,11 @@ app.get('/circuit', (req, res) => {
     res.render("circuit_diagram");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
+// Route for the formula derivation page
+app.get('/deriving-our-formula', (req, res) => {
+    res.render("formula");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
+});
+
 // Route for the hypothesis page
 app.get('/hypothesis', (req, res) => {
     res.render("hypothesis");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
