@@ -1,0 +1,337 @@
+body {
+    background-color: white;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #082C7F;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.3px;
+}
+
+h3 {
+    color: #04272D;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 0.4px;
+    margin-top: 40px;
+}
+
+p, span {
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.4px;
+}
+
+.Galvanometer-section {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 4px #319036;
+    border-radius: 8px;
+    background-color: #fff;
+    height: auto; /* Keep the bounding box height fixed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Galvanometer-section img {
+    width: 75%; /* Reduce the image size to 75% of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: scale-down; /* Ensure the entire image is visible without being cropped */
+    position: relative;
+}
+
+
+.legend {
+    width: 100%; /* Ensure the legend takes the full width of the container */
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif; /* Ensure the font family is properly quoted and generic fallback is provided */
+    color: #7b7b7b;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    text-align: center;
+}
+
+.header-content h1 {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures that the overflow is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+}
+
+.header {
+    background-color: #047db7;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.progress {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 70px; /* This ensures it appears just below the header */
+    z-index: 999; /* Ensure it is above other elements but below the header */
+}
+
+.progress-content {
+    color: #757FE1;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.toolbox-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.roadmap-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+}
+
+.instruction-content {
+    margin-left: 16px;
+    width: calc(100% - 32px);
+}
+
+.arrow {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    marker-end: url(#arrowhead);
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.diagram-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+li {
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.4px;
+}
+
+.feedback {
+    background-color: #dff3ff; /* Purple background */
+    color: #013355; /* White text */
+    padding: 10px 15px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 10px; /* Space above the feedback box */
+    margin-bottom: 10px;
+    display: none;
+}
+
+.button-container {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.hidden-button {
+    display: none;
+}
+
+.mc-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mc-button {
+    width: 100%;
+    height: 45px;
+    --md-outlined-button-container-shape: 10px;
+    --md-outlined-button-label-text-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure flex container aligns items to the start */
+}
+
+.mc-button span {
+    display: inline-block; /* Ensure the span takes the correct width */
+    text-align: left; /* Align text inside span to the left */
+    width: 100%;
+}
+
+.mc-button-wrapper {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start; /* Ensure flex container aligns items to the start */
+}
+
+
+.mc-button-text {
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+
+.status-icon {
+    position: absolute;
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.check-icon {
+    background-color: #319036;
+}
+
+.x-icon {
+    background-color: #C92525;
+}
+
+.status-icon .material-symbols-outlined {
+    font-size: 12px; /* Adjust the size of the icon */
+    line-height: 12px; /* Ensure the icon is vertically centered */
+    font-weight: bold;
+}
+
+.ECG-section {
+    margin-bottom: 20px;
+    }
+
+.ECG-section img {
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 218px;
+    object-fit: cover;
+    }
+
+.i-k {
+    align-items: center;
+    width: 93px;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    display: inline-block;
+    font-weight: 700;
+    font-family: Roboto;
+    color: #04272d;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+
+    .i {
+        font-weight: 700;
+  }
+  .in-this-formula-container {
+        width: 328px;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        line-height: 24px;
+        color: #000;
+        text-align: left;
+        display: inline-block;
+        height: 96px;
+        font-family: Roboto;
+  }
+  
+  
+  .k {
+    font-weight: 700;
+    font-family: Roboto;
+}
+.known-as-the {
+    font-family: Roboto;
+}
+.k-known-as-the-figure-of-meri {
+    margin: 0;
+}
+.k-known-as-container {
+    width: 100%;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    color: #000;
+    text-align: left;
+    display: inline-block;
+    height: 216px;
+    font-family: Roboto;
+}
+
+

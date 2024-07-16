@@ -1,0 +1,671 @@
+body {
+    background-color: white;
+}
+
+:root {
+  --md-sys-color-primary: #004A76;
+  --md-sys-color-secondary-container: #DFF3FF;
+  --md-sys-color-on-secondary-container: #013355;
+  --md-sys-color-surface-container-high: #FFFFFF;
+  --md-sys-color-surface: #ffffff;
+  --md-menu-container-color: #ffffff;
+  --md-focus-ring-duration: 0;
+  --md-focus-ring-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #082C7F;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.3px;
+}
+
+h3 {
+    color: #04272D;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: 0.4px;
+    margin-top: 40px;
+}
+
+p, span{
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.4px;
+}
+
+.icon-inline {
+    height: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: -3px;
+    font-size: 18px;
+    color:#047DB7;
+}
+
+.arrow {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    marker-end: url(#arrowhead);
+}
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+li {
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.4px;
+}
+
+.header {
+    background-color: #047DB7;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+.header-content h1 {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures that the overflow is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+}
+
+.header-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.overlay-container {
+    z-index: 1000;
+    position: sticky;
+    --md-dialog-headline-size: 20px;
+    --md-dialog-headline-weight: 600;
+}
+
+.overlay-h1 {
+    width: 230px;
+    color: #013355;
+}
+
+.overlay-h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: #013355;
+}
+
+#toolbox-overlay-dialog {
+    height: 400px;
+    width: 320px;
+}
+
+#toolbox-overlay-top {
+    padding-left: 24px;
+}
+
+#toolbox-overlay-close {
+    color: #848484;
+}
+
+.toolbox-overlay-content {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.toolbox-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.toolbox-eq-name {
+    color: black;
+    width: 120px;
+    font-weight: 400;
+}
+
+.toolbox-eq {
+    color: black;
+}
+
+
+.toolbox-circuit {
+    display: flex;
+    justify-content: center;
+}
+
+
+.toolbox-circuit img {
+    width: 150px;
+}
+
+.progress-overlay-content {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Adjust alignment as needed */
+    gap: 10px; /* Adjust spacing between items as needed */
+}
+
+
+#progress-overlay-close {
+    color: #848484;
+}
+
+.toc-section {
+    cursor: pointer;
+}
+
+.current-section {
+    background-color: #DFF3FF;
+    --md-list-item-label-text-color: #013355;
+    --md-list-item-label-text-weight: 500;
+    border-radius: 4px; /* Optional: for rounded corners */
+}
+
+.progress {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 70px; /* This ensures it appears just below the header */
+    z-index: 400; /* Ensure it is above other elements but below the header */
+    
+}
+
+.progress-content {
+    color: #047DB7;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header-toolbox-icon {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 22px;
+}
+
+.toolbox-tooltip {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    z-index: 600;
+    text-align: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-color: #DFF3FF;
+    color: #013355;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.tooltip-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #DFF3FF;
+    position: absolute;
+    top: -15px;
+    z-index: 650;
+}
+
+.roadmap-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#progress-bar-container {
+    cursor: pointer;
+}
+
+#progress-bar-base {
+    width: 100%;
+}
+
+.progress-circle-incomplete {
+    fill: #BCE2F9;
+}
+
+.progress-circle-complete {
+    fill: #047DB7;
+}
+
+.instruction-content {
+    margin-left: 16px;
+    width: calc(100% - 32px);
+}
+
+.diagram-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.feedback {
+    background-color: #DFF3FF; /* Purple background */
+    color: black; /* White text */
+    padding: 10px 15px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 10px; /* Space above the feedback box */
+    margin-bottom: 10px;
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.fd-next-button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.fd-next-section-button {
+    width: 100%;
+}
+
+.fd-complete-lesson {
+    width: 100%;
+}
+
+.hidden-button {
+    display: none;
+}
+
+.mc-button {
+    width: 100%;
+    height: 45px;
+
+    --md-outlined-button-container-shape: 10px;
+    
+    --md-outlined-button-label-text-weight: 400;
+
+}
+
+.mc-button-wrapper {
+    width: 100%;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    position: relative;
+    display: inline-block;
+}
+
+.status-icon {
+    position: absolute;
+    top: -7px; /* Adjust as needed */
+    left: -7px; /* Adjust as needed */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #C92525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size:8px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.check-icon {
+    background-color: #2B7D2F;
+}
+
+.x-icon {
+    background-color: #C92525;
+}
+
+.status-icon .material-symbols-outlined {
+    font-size: 16px; /* Adjust the size of the icon */
+    line-height: 16px; /* Ensure the icon is vertically centered */
+    font-weight: bold;
+}
+
+.multi-select-wrapper {
+    width: 100%;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    position: relative;
+    display: inline-block;
+
+}
+
+.multi-select-button {
+    width: 100%;
+    height: 45px;
+
+    --md-outlined-button-container-shape: 10px;
+    
+    --md-outlined-button-label-text-weight: 400;
+    background-color: #FFFFFF;
+
+    --md-outlined-button-hover-label-text-color: #FFFFFF;
+
+}
+
+.multi-select-checkbox {
+    position: absolute;
+    pointer-events: none; /* Ensure the checkbox doesn’t intercept clicks intended for the button */
+    z-index: 10;
+
+    --md-checkbox-selected-container-color: #FFFFFF;
+    --md-checkbox-selected-icon-color: #047DB7;
+
+}
+
+.multi-status-icon {
+    position: absolute;
+    top: -7px; /* Adjust as needed */
+    right: -7px; /* Adjust as needed */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size:8px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.multi-status-icon .material-symbols-outlined {
+    font-size: 16px; /* Adjust the size of the icon */
+    line-height: 16px; /* Ensure the icon is vertically centered */
+    font-weight: bold;
+}
+
+.multi-select-submit-button {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.dropdown-row-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.dropdown-row {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-button {
+    --md-outlined-button-container-shape: 10px;
+    --md-outlined-button-label-text-weight: 400;
+    --md-outlined-button-trailing-space: 32px;
+    --md-outlined-button-leading-space: 5px;
+
+    --md-outlined-button-label-text-color: black;
+    --md-outlined-button-focus-label-text-color: black;
+    --md-outlined-button-hover-label-text-color: black;
+    
+}
+
+
+.dropdown-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.dropdown-inline-text {
+    line-height: 260%;
+}
+
+.dropdown-inline {
+    display: inline;
+}
+
+.dropdown-button-inline {
+    margin-bottom: 10px;
+
+}
+
+/* @keyframes  move {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+} */
+
+#igg-form1, #igg-form3, #igg-form2, #igg-arrow1, #igg-arrow2, #igg-arrow3, 
+#igg-form4-1, #igg-form4-2, #igg-form4-3, #igg-form4-4, #igg-rect1, #igg-rect2, #igg-rect3 {
+    opacity: 0;
+}
+
+#ohms-rectV, #ohms-rectR, #ohms-form1, #ohms-form2, #ohms-form3-v1, 
+#ohms-form3-v2, #ohms-form3-v3, #ohms-text1, #ohms-text2, #ohms-form4, #ohms-form4-move,
+#ohms-form5, #ohms-form5-move {
+    opacity: 0;
+}
+
+.replay-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.replay-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: left; /* If you want to center horizontally as well */
+    height: 100%; /* Ensures the button takes the full height of its container */
+    margin-bottom: 10px;
+}
+
+.replay-button span {
+    display: flex;
+    align-items: center;
+    margin-right: 3px; /* Adjust spacing between icon and text */
+}
+
+.equation-caption {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    width: 100%;
+    font-style: italic;
+}
+
+.equation {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.equation-large {
+    font-size: 20px;
+}
+
+.eqcol1 {
+    width: 47%;
+    text-align: right;
+}
+
+.eqcol1-right {
+    width: 20%;
+    text-align: right;
+}
+
+.eqcol2 {
+    width: 6%;
+    text-align: center;
+}
+
+.eqcol3 {
+    width: 47%;
+    text-align: left;
+}
+
+.eqcol3-right {
+    width: 74%;
+    text-align: left;
+}
+
+.steps {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.reveal-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6f0ff;
+    border: 1px solid #b3d1ff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+.reveal-steps {
+    --md-filled-tonal-button-container-shape: 10px;
+}
+
+.dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.dot {
+    height: 3px;
+    width: 3px;
+    background-color: #013355;
+    border-radius: 50%;
+    margin: 2px 0;
+}
+
+/* .dropdown-submit-button{
+    width: 100%;
+}     */
+
+/* .dropdown-inline-text{
+    display: inline-block;
+}
+
+.dropdown-inline {
+    display: inline-block;
+} */
+
+/* .dropdown-inline-container {
+    display: flex;
+    align-items: center;
+} */
+
+.learning-path-button {
+    width: 100%;
+    max-width: 500px;
+    --md-outlined-button-container-shape: 10px;
+    --md-outlined-button-outline-color: #013355;
+    display: inline-block;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.lp-header {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 5px;
+    letter-spacing: 0.4px;
+}
+
+.lp-content {
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    white-space: normal;
+    letter-spacing: 0.4px;
+
+}
+
+#learning-path-begin {
+    margin-top: -10px;
+}
+
+.learning-path-begin-button {
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    opacity: 0;
+}
