@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>We can also see that the direction of deflection in a galvanometer is reversed if the direction of current is reversed. In other words, if the current is flowing in the positive direction, an increase in current results in the needle moving to the right, while a decrease in current causes the needle to move to the left. Conversely, <b>if the current is flowing in the negative direction, the deflection direction is reversed</b>. </p>
                 <p>Great job on testing your hypothesis! Every step, even the wrong ones, brings you closer to understanding the truth.</p>
                 <div class="button-container">
-                    <md-filled-button class="next-section-button" data-key="next_ic_sim_conc">Next Page</md-filled-button>
+                    <md-filled-button class="next-section-button" data-key="/working-principle">Next Section</md-filled-button>
                 </div>
             </div>
         `,
@@ -450,6 +450,16 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 warning.classList.remove('sim-hidden');
             }
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
     

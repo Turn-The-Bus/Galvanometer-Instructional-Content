@@ -208,6 +208,10 @@ li {
     justify-content: center;
 }
 
+.start-button {
+    width: 100%;
+}
+
 .next-button {
     margin-top: 10px;
     width: 100%;

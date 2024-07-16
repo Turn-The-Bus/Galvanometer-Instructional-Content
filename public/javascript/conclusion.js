@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Now, think back to your initial hypotheses. Did your predictions align with the results? Science is all about making guesses, testing them out, and sometimes, being surprised by what you find.</p>
     
                 <div class="button-container">
-                    <md-filled-button class="finish-button" >Finish</md-filled-button>
+                    <md-filled-button class="next-section-button" data-key="/result">Finish</md-filled-button>
                 </div>
             </div>
         `
@@ -198,4 +198,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
+        }
+    });
+    
 });

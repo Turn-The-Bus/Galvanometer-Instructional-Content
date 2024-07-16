@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="/css/welcome.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap" />
-    <!-- Import Material Design Symbols (the new version of icons?) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-
-    <!-- From MD3 README -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-</head>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/welcome.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    
+    <script type="importmap">
+        {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+        }
+    </script>
+    <script type="module">
+        import "@material/web/all.js";
+        import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
 
 <body>
     <div class="screen active" id="screen1">
@@ -67,12 +72,12 @@
 
         <div class="header">
             <div class="header-content">
-              <span class="material-symbols-outlined roadmap-icon" onclick="goBack()">close</span>
+              <span class="material-symbols-outlined close-icon" onclick="goBack()">close</span>
               <h1>Course Overview</h1>
             </div>
         </div>
       
-        <div class="course-overview-section">
+        <div class="instruction-content">
             <h2>Topic: The Figure of Merit of Galvanometer</h2>
             <p>This course integrates evidence-based learning strategies to deepen your understanding of the figure of merit of galvanometer lab experiment.</p>
             <div class="tags">
@@ -92,8 +97,11 @@
                     <p><b>Format:</b> Learning by doing</p>
                 </div>
             </div>
-            <button class="button"> <a href="/introduction_to_g">I'm Ready</a></button>
+            <div class="button-container">
+                <md-filled-button class="start-button" data-key="next_section_principle">I'm Ready</md-filled-button>
+            </div>
         </div>
+        
     </div>
 
     <div class="container center-align" id="container">

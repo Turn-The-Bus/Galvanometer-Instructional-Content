@@ -47,7 +47,7 @@ const contentMap = {
     next_fd_intro_roadmap: `
         <p>The roadmap gives an overview of the steps you have taken so far. Click on the roadmap icon <md-icon class="icon-inline">conversion_path</md-icon> in the upper left corner to review your steps throughout the activity.</p>
         <div class="button-container">
-            <md-filled-button class="next-page-button" data-key="next_page_fd_goal">Next Section</md-filled-button>
+            <md-filled-button class="next-page-button" data-key="next_page_fd_goal">Next Page</md-filled-button>
         </div>
     `,
     next_page_fd_goal: `
@@ -381,7 +381,7 @@ const contentMap = {
             
 
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_eliminating_intro" >Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_eliminating_intro" >Next Page</md-filled-button>
             </div>
 
         </div>   
@@ -571,10 +571,10 @@ const contentMap = {
         <div id="fd-eliminating-conclusion">
             <p>Unfortunately, <b>the available high resistance box values are usually not enough</b> to achieve a half-deflection in the galvanometer.</p>
             <p>To get a half-deflection, we need to significantly reduce the current flowing through the galvanometer. So, we will <b>add a shunt resistance in parallel</b> to the galvanometer. This will allow us to fine-tune the amount of current diverted away from the galvanometer.</p>
-            <p>In the next section, we will learn how adding a shunt resistance box will help us get the half deflection value and our second equation.</p>
+            <p>In the Next Page, we will learn how adding a shunt resistance box will help us get the half deflection value and our second equation.</p>
 
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_secondeq_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_secondeq_intro">Next Page</md-filled-button>
             </div>
         </div>
     `,
@@ -1388,7 +1388,7 @@ const contentMap = {
             </div>
 
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_ig_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_ig_intro">Next Page</md-filled-button>
             </div>
 
         </div>
@@ -2012,7 +2012,7 @@ const contentMap = {
             <p>Now, we have a second equation for the current! On the next page, we'll see how we can combine it with our first equation for the current.</p>
 
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_g_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_g_intro">Next Page</md-filled-button>
             </div>
         </div>
     `,
@@ -2347,7 +2347,7 @@ const contentMap = {
             </div>
     
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_k_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_solve_k_intro">Next Page</md-filled-button>
             </div>
 
         </div>
@@ -2559,7 +2559,7 @@ const contentMap = {
             
 
             <div class="button-container">
-                <md-filled-button class="next-page-button" data-key="next_page_fd_summary_intro">Next Section</md-filled-button>
+                <md-filled-button class="next-page-button" data-key="next_page_fd_summary_intro">Next Page</md-filled-button>
             </div>
 
         </div>
@@ -2880,7 +2880,7 @@ const contentMap = {
         </div>
 
         <div class="button-container">
-            <md-filled-button class="fd-complete-lesson">Complete Lesson</md-filled-button>
+            <md-filled-button class="next-section-button" data-key="/hypothesis">Complete Activity</md-filled-button>
         </div>
     `
 };
@@ -3276,7 +3276,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Next section Button
+    // Next Page Button
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('next-page-button')) {
             const button = event.target;
@@ -3599,6 +3599,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (event.target && event.target.classList.contains('formula-toolbox-button')) {
             document.getElementById('toolbox-overlay-dialog').setAttribute('open', '');
         };
+    });
+
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
+        }
     });
 });
 

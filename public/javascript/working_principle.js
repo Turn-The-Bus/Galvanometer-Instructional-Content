@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="button-container">
-                <md-filled-button class="next-section-button" data-key="next_fd_goal_current">Next Page</md-filled-button>
+                <md-filled-button class="next-section-button" data-key="/figure-of-merit">Next Section</md-filled-button>
             </div>
         `
 
@@ -164,6 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
             }
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
 });

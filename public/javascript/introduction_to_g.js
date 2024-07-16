@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="feedback"></div>
                 </div>
                 <div class="button-container hidden-button">
-                    <md-filled-button class="next-section-button" data-key="next_fd_goal_current">Next Section</md-filled-button>
+                    <md-filled-button class="next-section-button" data-key="/galvanometer-deflection">Next Section</md-filled-button>
                 </div>
             </div>
         `,
@@ -159,6 +159,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextButton.classList.remove("hidden-button");
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
 });

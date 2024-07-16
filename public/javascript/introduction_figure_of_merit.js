@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     const contentMap = {
         next_fm_k: `
             <div>
-                <p>But, what is \\(\\boldsymbol{k}\\)?</p>
+                <p>But, what is \\(k\\)?</p>
                 <p>What does \\(k\\) mean in the context of this formula?</p>
 
                 <div class="mc-question">
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Figure of merit is an important concept that measures the sensitivity of a galvanometer. In other words, the figure of merit indicates how responsive the galvanometer is to small currents. </p>
 
                 <div class="button-container">
-                    <md-filled-button class="next-section-button" data-key="next_fm_conc" >Next Section</md-filled-button>
+                    <md-filled-button class="next-section-button" data-key="/half-deflection-method" >Next Section</md-filled-button>
                 </div>
             </div>
         `
@@ -129,6 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
             }
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
 });

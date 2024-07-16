@@ -1,3 +1,77 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px; /* Adjust this value to control the gap */
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    margin-bottom: 10px; /* Adjust this value to control the gap */
+    color: #013355;
+    line-height: 32px;
+    font-size: 24px;
+}
+
+
+h4 {    
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures that the overflow is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+}
+
+.header {
+    background-color: #047DB7;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+.header-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+   
+}
+
+.close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
 .section {
     padding: 20px;
     border-radius: 10px;

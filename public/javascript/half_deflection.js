@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="feedback"></div>
 
                 </div>
-                <div class="button-container">
+                <div class="button-container hidden-button">
                     <md-outlined-button class="next-button" data-key="next_section_page">Next</md-outlined-button>
                 </div>
             </div>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Remember the formula \\(I = k\\theta\\) shows that current \\((I)\\) is proportional to the galvanometer's deflection \\((\\theta)\\).</p>
             <p>In the next section, we'll learn how to set up our circuit in order to reduce the current flowing through the galvanometer.</p>
             <div class="button-container">
-                <md-filled-button class="next-section-button">Next Section</md-filled-button>
+                <md-filled-button class="next-section-button" data-key="/circuit-setup">Next Section</md-filled-button>
             </div>
         `,
     };
@@ -290,6 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
 });

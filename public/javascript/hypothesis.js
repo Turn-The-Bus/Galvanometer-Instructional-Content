@@ -195,4 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
+        }
+    });
+    
 });

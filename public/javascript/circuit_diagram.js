@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    
     const contentMap = {
         
     };
@@ -128,6 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // update image
             currentImageEl.src = `/images/circuit-diagram-${nextNum}.svg`
 
+        }
+    });
+
+    // Next Section Button
+    document.body.addEventListener('click', (event) => {
+        if (event.target && event.target.classList.contains('next-section-button')) {
+            const button = event.target;
+            const key = button.getAttribute('data-key');
+            
+            window.location.href = key;
         }
     });
 

@@ -78,3 +78,7 @@ function handleSwipeGesture() {
         }
     }
 }
+
+document.querySelector(".start-button").addEventListener("click", function() {
+    window.location.href = "/introduction-to-galvanometers";
+});
