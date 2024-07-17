@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // MathJax.typeset();
+    MathJax.startup.promise.then(() => {
+      MathJax.typesetPromise()
+        .then(() => {
+          console.log('MathJax typesetting complete.');
+        })
+        .catch((err) => {
+          console.error('MathJax typesetting failed:', err);
+        });
+    });
+  });
+
+
 const correctColorDark = "#2B7D2F";
 const correctColorLight = "#E9FAEA";
 const incorrectColorDark = "#C92525";
@@ -3592,10 +3606,10 @@ const dropdownAnswerKey = {
     'c_2': ['not change'],
 };
 
-// Render Mathjax
-document.addEventListener("DOMContentLoaded", function() {
-    MathJax.typeset();
-});
+// // Render Mathjax
+// document.addEventListener("DOMContentLoaded", function() {
+//     MathJax.typeset();
+// });
 
 // Jump to Page (formula derivation)
 function jumpToSection(sectionName, animate) {
@@ -3717,6 +3731,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 textContainer.innerHTML = newContent;                
 
                 instructionContainer.appendChild(textContainer);
+                MathJax.startup.promise.then(() => {
+                    MathJax.typesetPromise([textContainer])
+                      .then(() => {
+                        console.log('MathJax re-typesetting complete.');
+                      })
+                      .catch((err) => {
+                        console.error('MathJax re-typesetting failed:', err);
+                      });
+                  });
+                MathJax.typeset()
 
                 // Remove the button container div
                 button.parentElement.remove();
@@ -3730,7 +3754,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 
                 textContainer.scrollIntoView({ behavior: 'smooth' });
 
-                MathJax.typeset();
+                MathJax.startup.promise.then(() => {
+                    MathJax.typesetPromise([textContainer])
+                      .then(() => {
+                        console.log('MathJax re-typesetting complete.');
+                      })
+                      .catch((err) => {
+                        console.error('MathJax re-typesetting failed:', err);
+                      });
+                  });
+                  MathJax.typeset()
 
                 // Check if newContent contains specific animation triggers and play the corresponding animation
                 if (textContainer.querySelector('.formula-animation-container')) {
