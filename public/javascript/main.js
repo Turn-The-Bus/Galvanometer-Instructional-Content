@@ -60,7 +60,7 @@ const introductionContentMap = {
         <div id="ECG">
             <p>The sensitivity makes galvanometers indispensable in applications requiring precision, such as scientific research and medical equipment like ECG machines.</p>
             <div class="ECG-section">
-            <img src="/images/image 8.png" alt="ECG">
+            <img src="/images/ecg-machine.png" alt="ECG Machine">
             <p class="legend">(ECG Machines)</p>
             </div>
             <p>How is a galvanometer used in an ECG machine?</p>
@@ -324,7 +324,7 @@ const principleContentMap = {
     next_section_k: `
         <p>A galvanometer contains a magnet, which is a core component of its operation. The interaction between the magnetic field from this magnet and the current flowing through the coil is what makes the galvanometer work.</p>
         <div class="instruction-image-container">
-            <img src="/images/image 10.png" alt="structure">
+            <img src="/images/galvanometer-magnet.png" alt="galvanometer magnet structure">
             <p class="instruction-image-label">(Inside structure of the Galvanometer)</p>
         </div>
 
@@ -500,7 +500,7 @@ const halfDeflectionContentMap = {
         <p>A student is using the half-deflection method and took two measurements, pictured below. Label the measurements.</p>
         <div class="grid-container">
             <div class="grid-item">
-                <img src="/images/Initial Deflection Image.png" alt="Image 1">
+                <img src="/images/initial-deflection-image.svg" alt="30 Deflection">
                 <p class="legend">Measurement 1</p>
                 <div class="dropdown">
                     <md-outlined-button class="dropdown-button" style="width: 120px; height: 40px" id="hd_m1">
@@ -522,7 +522,7 @@ const halfDeflectionContentMap = {
                 </div>
             </div>
             <div class="grid-item">
-                <img src="/images/Half Deflection Image.png" alt="Image 2">
+                <img src="/images/half-deflection-image.svg" alt="15 Deflection">
                 <p class="legend">Measurement 2</p>
                 <div class="dropdown">
                     <md-outlined-button class="dropdown-button" style="width: 120px; height: 40px" id="hd_m2">
@@ -3478,7 +3478,7 @@ const conclusionContentMap = {
             <p>This property is inherent to the design and construction of the galvanometer, including factors such as the number of turns in the coil, the strength of the magnetic field, and the area of the coil.</p>
             
             <div class="G-section">
-                <img src="/images/image9.png" alt="G">
+                <img src="/images/galvanometer-inside.png" alt="Inside of Galvanometer Diagram">
             </div>
             
             <p class="instruction-image-label">(Construction of the Galvanometer)</p>
@@ -4000,6 +4000,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             menuEl.open = !menuEl.open;
 
+            if (menuEl.open) {
+                arrow.classList.add('open');
+            } else {
+                arrow.classList.remove('open');
+            }
+
 
             menuEl.querySelectorAll('md-menu-item').forEach(item => {
                 item.addEventListener('click', (event) => {
@@ -4014,6 +4020,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const mathContent = event.currentTarget.getAttribute('data-value');
                     button.innerHTML = mathContent;
                     menuEl.open = false;
+                    arrow.classList.remove('open');
     
                     // Trigger MathJax to re-process the updated button content
                     MathJax.typesetPromise([button]).catch((err) => console.log(err.message));

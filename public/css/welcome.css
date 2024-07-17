@@ -114,7 +114,7 @@ h5 {
     width: 100%; /* Ensure the boxes take the full width of the expectations container */
     align-items: center; /* Align items (image and text) in the center vertically */
     gap: 10px; /* Add some space between the image and the text */
-    border: 2.5px solid #E3E6FF; /* Ensure the border style and color are specified */
+    border: 2.5px solid #DFF3FF; /* Ensure the border style and color are specified */
     border-radius: 10px;
     padding: 10px; /* Add padding to make the content look better inside the border */
     position: relative;
@@ -122,9 +122,9 @@ h5 {
 
 }
 
-.time img, .format img {
-    max-width: 40px; /* Adjust the size of the image as needed */
-    height: auto;
+.overview-icon {
+    width: 35px; /* Adjust the size of the image as needed */
+    padding: 5px;
 }
 
 .time p, .format p {

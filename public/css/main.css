@@ -392,7 +392,13 @@ li {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
+    /* transition: transform 0.3s ease; */
 }
+
+/* .dropdown-arrow.open {
+    transform: rotate(180deg);
+    top: -4px;
+} */
 
 .dropdown-inline-text {
     line-height: 260%;
