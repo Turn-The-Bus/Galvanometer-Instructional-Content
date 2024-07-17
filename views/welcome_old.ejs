@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+    <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/welcome.css" />
     
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -26,56 +26,46 @@
     </head>
 
 <body>
-    <div class="feature-container">
-        <div class="screen active" id="screen1">
-            <div class="section-title-container">
-                <div class="section-title bg-yellow">
-                    <h5 class="title" style="color: #4D4108">Learning by Doing</h5>
-                </div>
-            </div>
-            
-            <div class="feature-image-container">
-                <img class="feature-image" src="/images/welcome-learning-by-doing.svg" alt="learning by doing">
-            </div>
-
-            <div class="feature-caption-container center-align" id="container">
-                <div class="feature-caption">
-                    <p>Learn from mistakes through hands-on practice, where active participation enhances understanding.</p>
-                </div>
+    <div class="screen active" id="screen1">
+        <div class="section">
+            <h5 class="title">Learning by Doing</h5>
+        </div>
+        <div class="quiz-section">
+            <img src="/images/Group 15.png" alt="Quiz">
+        </div>
+        <div class="container center-align" id="container">
+            <div class="footer">
+                <p>Learn from mistakes through hands-on practice, where active participation enhances understanding.</p>
             </div>
         </div>
+    </div>
 
-        <div class="screen" id="screen2">
-            <div class="section-title-container">
-                <div class="section-title bg-red">
-                    <h5 class="title white-text">Discovery Learning</h5>
-                </div>
-            </div>
-            <div class="feature-image-container">
-                <img class="feature-image" src="/images/welcome-discovery-learning.svg" alt="discovery learning">
-            </div>
-            <div class="feature-caption-container center-align" id="container">
-                <div class="feature-caption white-text">
-                    <p>Discover answers with supportive guidance. Staying engaged and curious by making your own hypothesis.</p>
-                </div>
+    <div class="screen" id="screen2">
+        <div class="section">
+            <h5 class="title white-text bg-red">Discovery Learning</h5>
+        </div>
+        <div class="hypothesis-section">
+            <img src="/images/Group 16.png" alt="Dropdown">
+        </div>
+        <div class="container center-align" id="container">
+            <div class="footer">
+                <p>Discover answers with supportive guidance. Staying engaged and curious by making your own hypothesis.</p>
             </div>
         </div>
+    </div>
 
-        <div class="screen" id="screen3">
-            <div class="section-title-container">
-                <div class="section-title bg-blue">
-                    <h5 class="title white-text ">Hands-on Virtual Lab</h5>
-                </div>
-            </div>
-            <div class="feature-image-container">
-                <img class="feature-image" src="/images/welcome-virtual-lab.svg" alt="virtual learning">
-            </div>
-            <div class="feature-caption-container center-align" id="container">
-                <div class="feature-caption white-text">
-                    <p>Explore the exciting world of hands-on virtual labs, where learning becomes an immersive adventure!</p>
-                </div>
-            </div>   
+    <div class="screen" id="screen3">
+        <div class="section">
+            <h5 class="title white-text bg-blue">Hands-on Virtual Lab</h5>
         </div>
+        <div class="lab-section">
+            <img src="/images/Group 17.png" alt="Virtual Lab">
+        </div>
+        <div class="container center-align" id="container">
+            <div class="footer">
+                <p>Explore the exciting world of hands-on virtual labs, where learning becomes an immersive adventure!</p>
+            </div>
+        </div>   
     </div>
 
     <div class="screen" id="screen4">
@@ -114,7 +104,7 @@
         
     </div>
 
-    <div class="dot-container center-align" id="container">
+    <div class="container center-align" id="container">
         <nav class="navigation">
             <div class="dot" onclick="showScreen(1)"></div>
             <div class="dot" onclick="showScreen(2)"></div>

@@ -28,8 +28,10 @@ function showScreen(screenNumber) {
     const navigation = document.querySelector('.navigation');
     if (screenNumber === 4) {
         navigation.style.display = 'none';
+        document.body.style.overflow = 'visible';
     } else {
         navigation.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -53,18 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
 let touchstartX = 0;
 let touchendX = 0;
 
-const container = document.getElementById('container');
+const container = document.querySelector('.feature-container');
 
 container.addEventListener('touchstart', e => {
     touchstartX = e.changedTouches[0].screenX;
+    console.log(touchstartX);
 });
 
 container.addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX;
     handleSwipeGesture();
+    console.log(touchendX);
 });
 
 function handleSwipeGesture() {
+
     if (touchendX < touchstartX) {
         // Swiped left
         if (currentScreen < totalScreens) {
@@ -77,6 +82,7 @@ function handleSwipeGesture() {
             showScreen(currentScreen - 1);
         }
     }
+
 }
 
 document.querySelector(".start-button").addEventListener("click", function() {

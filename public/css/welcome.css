@@ -1,21 +1,44 @@
-.section {
-    padding: 20px;
-    border-radius: 10px;
-    margin: 16px 0;
+.section-title-container {
     position: relative;
+    height: 20vh;
 }
 
-.title {
-    margin-top: 20px;
+.section-title {
+    position: absolute;
+    bottom: 0;
+    padding: 15px 25px;
+    display: inline-block;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 20px;
+}
+
+h5 {
     font-size: 24px;
     font-weight: bold;
-    position: absolute;
-    top: 0px; /* Adjust top padding to ensure consistent position */
-    left: 0px; /* Adjust left padding to ensure consistent position */
-    width: auto;
-    background-color: #FFD300;
-    padding: 10px;
-    border-radius: 0 10px 10px 0;
+    line-height: 28px;
+    letter-spacing: 0.3px;
+    margin: 0px;
+}
+
+.feature-image-container {
+    height: 40vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}
+
+.feature-image {
+    max-height: 100%;
+    max-width: 90%;
+}
+
+.feature-caption {
+    padding: 10px 40px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 300;
 }
 
 .white-text {
@@ -26,6 +49,10 @@
     color: #000;
 }
 
+.bg-yellow {
+    background-color: #FFD300;
+}
+
 .bg-red {
     background-color: #E25141;
 }
@@ -34,37 +61,12 @@
     background-color: #4153AF;
 }
 
-.quiz-section, .hypothesis-section, .lab-section {
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .course-overview-section {
     padding: 10px;
     display: flex;
     flex-direction: column; /* Ensures content is stacked vertically */
     justify-content: flex-start; /* Align items to the start of the flex container */
     align-items: flex-start; /* Align items to the start of the container horizontally */
-}
-
-.quiz-section img, .hypothesis-section img, .lab-section img {
-    max-width: 100%;
-    height: auto;
-    align-items: center;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-
-.footer {
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    height: 100px; /* Fixed height for footer to avoid content jumping */
 }
 
 .navigation {
@@ -76,8 +78,8 @@
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     margin: 0 5px;
     background-color: #ffffff;
     border-radius: 50%;
@@ -153,7 +155,7 @@
     position: relative;
     border-radius: 100px;
     background-color: #004A76;
-    height: 40px;
+    /* height: 40px; */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -164,10 +166,74 @@
     color: #ffffff;
     font-weight: bold;
 }
-    
 
-.roadmap-icon {
-    cursor: pointer;
+
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+
+:root {
+  --md-sys-color-primary: #004A76;
+  --md-sys-color-secondary-container: #DFF3FF;
+  --md-sys-color-on-secondary-container: #013355;
+  --md-sys-color-surface-container-high: #FFFFFF;
+  --md-sys-color-surface: #ffffff;
+  --md-menu-container-color: #ffffff;
+  --md-focus-ring-duration: 0;
+  --md-focus-ring-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header {
+    background-color: #047DB7;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+.header-content h1 {
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Ensures that the overflow is hidden */
+    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
+}
+
+.header-content {
+    color: white;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+}
+
+.close-icon {
     font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.instruction-content {
+    margin-left: 16px;
+    width: calc(100% - 32px);
+    padding-bottom: 80px;
+}
+
+.start-button {
+    width: 100%;
 }
 
