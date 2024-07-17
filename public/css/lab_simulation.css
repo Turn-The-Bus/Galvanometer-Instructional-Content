@@ -20,11 +20,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto; /* Center the ellipse div and add top margin */
+    margin: 50px auto;
 }
 
 
 .description {
     margin: 16px;
 
+}
+
+
+.lab-simulation-content p {
+    text-align: center;
+}
+
+.enter-lab-button {
+    width: 100%;
 }
