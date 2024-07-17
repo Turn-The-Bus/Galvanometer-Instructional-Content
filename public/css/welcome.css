@@ -1,6 +1,6 @@
 .section-title-container {
     position: relative;
-    height: 20vh;
+    height: 17vh;
 }
 
 .section-title {
@@ -21,7 +21,7 @@ h5 {
 }
 
 .feature-image-container {
-    height: 40vh;
+    height: 32vh;
     align-items: center;
     display: flex;
     justify-content: center;

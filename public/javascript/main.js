@@ -3780,12 +3780,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const [correctFlag, feedbackText] = answerKey[choiceID];
                 const feedbackDiv = questionDiv.querySelector('.feedback');
                 const nextButton = questionDiv.parentElement.querySelector('.button-container');
+                MathJax.typeset();
 
                 // Reset buttons in the same parent div
                 const siblingButtons = questionDiv.querySelectorAll('.mc-button');
                 siblingButtons.forEach(sib => {
                     sib.style.setProperty('--_focus-label-text-color', '');
                     sib.style.setProperty('--_label-text-color', '');
+                    sib.style.setProperty('--_hover-label-text-color', '');
                     sib.style.setProperty('--_outline-color', '');
                     sib.style.backgroundColor = '';
                     const icon = sib.parentElement.querySelector('.status-icon');
@@ -3795,6 +3797,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let icon;
                 if (correctFlag === 'correct') {
                     button.style.setProperty('--_focus-label-text-color', correctColorDark);
+                    button.style.setProperty('--_hover-label-text-color', correctColorDark);
                     button.style.setProperty('--_label-text-color', correctColorDark);
                     button.style.setProperty('--_outline-color', correctColorDark);
                     button.style.backgroundColor = correctColorLight;
@@ -3803,6 +3806,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     icon.innerHTML = '<span class="material-symbols-outlined">check</span>';
                 } else if (correctFlag === 'incorrect') {
                     button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
+                    button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
                     button.style.setProperty('--_label-text-color', incorrectColorDark);
                     button.style.setProperty('--_outline-color', incorrectColorDark);
                     button.style.backgroundColor = incorrectColorLight;
@@ -3811,6 +3815,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     icon.innerHTML = '<span class="material-symbols-outlined">close</span>';
                 } else if (correctFlag === 'info') {
                     button.style.setProperty('--_focus-label-text-color', '#FFF');
+                    button.style.setProperty('--_hover-label-text-color', '#FFF');
                     button.style.setProperty('--_label-text-color', '#FFF');
                     button.style.setProperty('--_outline-color', sysColorPrimaryBright);
                     button.style.backgroundColor = sysColorPrimaryBright;
@@ -3827,8 +3832,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Display the next button and scroll to it
                 if (nextButton.classList.contains('hidden-button')) {
                     nextButton.classList.remove("hidden-button"); 
-                    nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    // nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
                 }
+                MathJax.typeset();
                 
             } else {
                 console.error(`No answer key found for choiceID ${choiceID}`);

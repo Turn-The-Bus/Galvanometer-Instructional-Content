@@ -59,24 +59,22 @@ const container = document.querySelector('.feature-container');
 
 container.addEventListener('touchstart', e => {
     touchstartX = e.changedTouches[0].screenX;
-    console.log(touchstartX);
 });
 
 container.addEventListener('touchend', e => {
     touchendX = e.changedTouches[0].screenX;
     handleSwipeGesture();
-    console.log(touchendX);
 });
 
 function handleSwipeGesture() {
 
-    if (touchendX < touchstartX) {
+    if (touchendX < touchstartX - 50) {
         // Swiped left
         if (currentScreen < totalScreens) {
             showScreen(currentScreen + 1);
         }
     }
-    if (touchendX > touchstartX) {
+    if (touchendX > touchstartX + 50) {
         // Swiped right
         if (currentScreen > 1) {
             showScreen(currentScreen - 1);
