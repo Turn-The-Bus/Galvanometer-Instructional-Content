@@ -57,7 +57,7 @@ function iggAnimation() {
         .to("#igg-form4-2", { duration: animationDuration, opacity: 0 })
         .to("#igg-rect1", { duration: animationDuration, opacity: 0 })
         .to("#igg-rect2", { duration: 1, width: 72 }, `-=${animationDuration}`)
-        .to("#igg-form4-4", { duration: 1, x: 48 }, `-=${animationDuration}`)
+        .to("#igg-form4-4-container, #igg-form4-4", { duration: 1, x: 48 }, `-=${animationDuration}`)
         .to("#igg-form4-3", { duration: 1, opacity: 1 })
         .to("#igg-rect2", { duration: 1, opacity: 0 });
     
@@ -78,6 +78,7 @@ function iggReset() {
 
     // Reset specific positions
     gsap.set("#igg-form4-4", { x: 0 });
+    gsap.set("#igg-form4-4-container", { x: 0 });
     gsap.set("#igg-rect2", { width: 25 });
 }
 
@@ -91,14 +92,14 @@ function ohmsAnimation() {
 
         .to("#ohms-rectV, #ohms-text1, #ohms-form4", { duration: animationDuration, opacity: 1})
         .to("#ohms-form4-move", { duration: 0, opacity: 1})
-        .to("#ohms-form4-move", { duration: animationDuration, x: -106, y: -10})
+        .to("#ohms-form4-move-container", { duration: animationDuration, x: -106, y: -10})
         .to("#ohms-form3-v1, #ohms-form4-move", { duration: 0, opacity: 0})
         .to("#ohms-form3-v2", { duration: 0, opacity: 1 })
         .to("#ohms-rectV, #ohms-text1, #ohms-form4", { duration: animationDuration, opacity: 0})
 
         .to("#ohms-rectR, #ohms-text2, #ohms-form5", { duration: animationDuration, opacity: 1})
         .to("#ohms-form5-move", { duration: 0, opacity: 1})
-        .to("#ohms-form5-move", { duration: animationDuration, x: -120, y: 10})
+        .to("#ohms-form5-move-container", { duration: animationDuration, x: -120, y: 10})
         .to("#ohms-rectR", { duration: 1, width: 67, height: 25 }, `-=${animationDuration}`)
         .to("#ohms-form3-v2, #ohms-form5-move", { duration: 0, opacity: 0})
         .to("#ohms-form3-v3", { duration: 0, opacity: 1 })
@@ -121,8 +122,8 @@ function ohmsReset() {
     });
 
     // Reset specific positions
-    gsap.set("#ohms-form4-move", { x: 0 });
-    gsap.set("#ohms-form5-move", { x: 0 });
+    gsap.set("#ohms-form4-move-container", { x: 0 });
+    gsap.set("#ohms-form5-move-container", { x: 0 });
     gsap.set("#ohms-rectR", { width: 20 });
 }
 
@@ -134,6 +135,15 @@ function playAnimation(animationName) {
         gsap.globalTimeline.clear(); // Clear any existing animations
         animationMap[animationName].create(); // Start the selected animation
     }
+    MathJax.startup.promise.then(() => {
+        MathJax.typesetPromise()
+          .then(() => {
+            console.log('MathJax typesetting complete.');
+          })
+          .catch((err) => {
+            console.error('MathJax typesetting failed:', err);
+          });
+    });
 }
 
 // progress bar animation

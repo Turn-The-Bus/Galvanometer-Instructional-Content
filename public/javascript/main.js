@@ -1907,60 +1907,60 @@ const formulaContentMap= {
                         <rect id="ohms-rectV" x="47" y="89" rx="5" ry="5" width="20" height="20" fill="#DFF3FF" />
                         <rect id="ohms-rectR" x="47" y="107" rx="5" ry="5" width="20" height="20" fill="#DFF3FF" />
                 
-                        <foreignObject id="ohms-form1" x="5" y="5" width="100" height="20">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 18px;">\\(V = IR\\)</span>
+                        <foreignObject  x="5" y="5" width="100" height="20">
+                            <div  id="ohms-form1-container "xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form1"class="mathjax" style="font-size: 18px;">\\(V = IR\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="ohms-form2"x="7" y="50" width="100" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 18px;">\\(I = \\frac{V}{R} \\)</span>
+                        <foreignObject x="7" y="50" width="100" height="30">
+                            <div id="ohms-form2-container "xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form2" class="mathjax" style="font-size: 18px;">\\(I = \\frac{V}{R} \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form3-v1"x="7" y="95" width="100" height="50">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 18px;">\\(I = \\frac{V}{R} \\)</span>
+                        <foreignObject x="7" y="95" width="100" height="50">
+                            <div id="ohms-form3-v1-container "xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form3-v1" class="mathjax" style="font-size: 18px;">\\(I = \\frac{V}{R} \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form3-v2"x="7" y="95" width="100" height="50">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 18px;">\\(I = \\frac{E}{R} \\)</span>
+                        <foreignObject x="7" y="95" width="100" height="50">
+                            <div id="ohms-form3-v2-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form3-v2"class="mathjax" style="font-size: 18px;">\\(I = \\frac{E}{R} \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form3-v3"x="7" y="95" width="100" height="50">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 18px;">\\(I = \\frac{E}{R + \\frac{GS}{G+S}} \\)</span>
+                        <foreignObject id="ohms-form3-v3" x="7" y="95" width="100" height="50">
+                            <div id="ohms-form3-v3-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form3-v3" class="mathjax" style="font-size: 18px;">\\(I = \\frac{E}{R + \\frac{GS}{G+S}} \\)</span>
                             </div>
                         </foreignObject>
 
                         <text id="ohms-text1" x="95" y="115" font-family="Roboto" font-size="16" font-style="italic">voltage: </text>
                         <text id="ohms-text2" x="115" y="115" font-family="Roboto" font-size="16" font-style="italic">resistance: </text>
 
-                        <foreignObject id="ohms-form4"x="155" y="100" width="200" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 14px">\\( E \\)</span>
+                        <foreignObject x="155" y="100" width="200" height="30">
+                            <div id="ohms-form4-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form4" class="mathjax" style="font-size: 14px">\\( E \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form4-move"x="155" y="100" width="200" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 14px">\\( E \\)</span>
+                        <foreignObject x="155" y="100" width="200" height="30">
+                            <div id="ohms-form4-move-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form4-move" class="mathjax" style="font-size: 14px">\\( E \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form5"x="195" y="98" width="200" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 12px">\\( R + \\frac{GS}{G+S} \\)</span>
+                        <foreignObject x="195" y="98" width="200" height="30">
+                            <div id="ohms-form5-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form5" class="mathjax" style="font-size: 12px">\\( R + \\frac{GS}{G+S} \\)</span>
                             </div>
                         </foreignObject>
 
-                        <foreignObject id="ohms-form5-move"x="175" y="98" width="200" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax" style="font-size: 12px">\\( R + \\frac{GS}{G+S} \\)</span>
+                        <foreignObject x="175" y="98" width="200" height="30">
+                            <div id="ohms-form5-move-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="ohms-form5-move" class="mathjax" style="font-size: 12px">\\( R + \\frac{GS}{G+S} \\)</span>
                             </div>
                         </foreignObject>
 
@@ -2338,45 +2338,45 @@ const formulaContentMap= {
                         <text x="25" y="12" font-family="Roboto" font-size="16" font-style="italic">Formula 1</text>
                         <text x="190" y="12" font-family="Roboto" font-size="16" font-style="italic">Formula 2</text>
                 
-                        <foreignObject id="igg-form1" x="20" y="20" width="100" height="20">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax">\\(I = I_G + I_S\\)</span>
+                        <foreignObject  x="20" y="20" width="100" height="20">
+                            <div id="igg-form1-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="igg-form1" class="mathjax">\\(I = I_G + I_S\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form2"x="20" y="90" width="100" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax">\\(I_S = I_G - I\\)</span>
+                        <foreignObject  x="20" y="90" width="100" height="30">
+                            <div id="igg-form2-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="igg-form2" class="mathjax">\\(I_S = I_G - I\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form3" x="180" y="20" width="100" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax">\\(I_G G = I_S S\\)</span>
+                        <foreignObject  x="180" y="20" width="100" height="30">
+                            <div id="igg-form3-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="igg-form3" class="mathjax">\\(I_G G = I_S S\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form4-1" x="180" y="170" width="180" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax">\\(I_G G = \\)</span>
+                        <foreignObject  x="180" y="170" width="180" height="30">
+                            <div id="igg-form4-1-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="igg-form4-1" class="mathjax">\\(I_G G = \\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form4-2" x="240" y="170" width="180" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
+                        <foreignObject  x="240" y="170" width="180" height="30">
+                            <div id="igg-form4-2-container" xmlns="http://www.w3.org/1999/xhtml">
                                 <span id="igg-form4-2" class="mathjax">\\(I_S\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form4-3" x="240" y="170" width="180" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
+                        <foreignObject x="240" y="170" width="180" height="30">
+                            <div  id="igg-form4-3-container" xmlns="http://www.w3.org/1999/xhtml">
                                 <span id="igg-form4-3" class="mathjax">\\((I_G - I)\\)</span>
                             </div>
                         </foreignObject>
                 
-                        <foreignObject id="igg-form4-4" x="260" y="170" width="180" height="30">
-                            <div xmlns="http://www.w3.org/1999/xhtml">
-                                <span class="mathjax">\\(S\\)</span>
+                        <foreignObject  x="260" y="170" width="180" height="30">
+                            <div id="igg-form4-4-container" xmlns="http://www.w3.org/1999/xhtml">
+                                <span id="igg-form4-4" class="mathjax">\\(S\\)</span>
                             </div>
                         </foreignObject>
                 
