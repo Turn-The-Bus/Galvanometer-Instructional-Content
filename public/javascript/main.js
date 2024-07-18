@@ -1548,7 +1548,7 @@ const formulaContentMap= {
                 <div class="multi-select-wrapper">
                     <md-checkbox class="multi-select-checkbox" touch-target="wrapper" data-key="fdseqm1c4"></md-checkbox>
                     <md-outlined-button class="multi-select-button"> 
-                        <span>Low Resistance Box</span>
+                        <span>Shunt Resistance Box</span>
                     </md-outlined-button>
                 </div>
                 <div class="multi-select-wrapper">
@@ -1687,8 +1687,8 @@ const formulaContentMap= {
                                 <md-menu-item data-value="High Resistance Box">
                                     <div slot="headline">High Resistance Box</div>
                                 </md-menu-item>
-                                <md-menu-item data-value="Low Resistance Box">
-                                    <div slot="headline">Low Resistance Box</div>
+                                <md-menu-item data-value="Shunt Resistance Box">
+                                    <div slot="headline">Shunt Resistance Box</div>
                                 </md-menu-item>
                             </md-menu>
                         </div>
@@ -1713,8 +1713,8 @@ const formulaContentMap= {
                                 <md-menu-item data-value="High Resistance Box">
                                     <div slot="headline">High Resistance Box</div>
                                 </md-menu-item>
-                                <md-menu-item data-value="Low Resistance Box">
-                                    <div slot="headline">Low Resistance Box</div>
+                                <md-menu-item data-value="Shunt Resistance Box">
+                                    <div slot="headline">Shunt Resistance Box</div>
                                 </md-menu-item>
                             </md-menu>
                         </div>
@@ -1739,8 +1739,8 @@ const formulaContentMap= {
                                 <md-menu-item data-value="High Resistance Box">
                                     <div slot="headline">High Resistance Box</div>
                                 </md-menu-item>
-                                <md-menu-item data-value="Low Resistance Box">
-                                    <div slot="headline">Low Resistance Box</div>
+                                <md-menu-item data-value="Shunt Resistance Box">
+                                    <div slot="headline">Shunt Resistance Box</div>
                                 </md-menu-item>
                             </md-menu>
                         </div>
@@ -3537,57 +3537,68 @@ const answerKey = {
     "hdq1c3": ["info", "Let's read on to learn more."], 
 
     "hdq2c1": ["correct", "That's correct."],
-    "hdq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2V power supply and cannot change it."],
+    "hdq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2\\(V\\) power supply and cannot change it."],
     "hdq2c3": ["info", "The correct answer is the first one. Read on to learn more."],
 
-    "fdgoalq1c1": ["incorrect", "tbd"],
-    "fdgoalq1c2": ["correct", "tbd"],
-    "fdgoalq1c3": ["incorrect", "tbd"],
-    "fdgoalq2c1": ["incorrect", `Not quite. We can get the <b>deflection (θ)</b> from the galvanometer reading, but we don't know the <b>current (I)</b>.`],
-    "fdgoalq2c2": ["incorrect", `Not quite. We can get the <b>deflection (θ)</b> from the galvanometer reading, but we don't know the <b>current (I)</b>.`],
-    "fdgoalq2c3": ["correct", `Correct. We can get the <b>deflection (θ)</b> from the galvanometer reading, but we don't know the <b>current (I)</b>.`],
-    "fdgoalq3c1": ["correct", "tbd"],
-    "fdgoalq3c2": ["incorrect", "tbd"],
-    "fdgoalq3c3": ["incorrect", "tbd"],
-    "fdgoalq5c1": ["incorrect", "tbd"],
-    "fdgoalq5c2": ["correct", "tbd"],
-    "fdgoalq5c3": ["incorrect", "tbd"],
-    "fdeliminatingq1c1": ["incorrect", "tbd"],
-    "fdeliminatingq1c2": ["correct", "tbd"],
-    "fdeliminatingq1c3": ["incorrect", "tbd"],
-    "fdeliminatingq2c1": ["incorrect", "tbd"],
-    "fdeliminatingq2c2": ["correct", "tbd"],
-    "fdeliminatingq2c3": ["incorrect", "tbd"],
-    "fdsecondeqq1c1": ["incorrect", "tbd"],
-    "fdsecondeqq1c2": ["incorrect", "tbd"],
-    "fdsecondeqq1c3": ["correct", "tbd"],
-    "fdsecondeqq2c1": ["correct", "tbd"],
-    "fdsecondeqq2c2": ["incorrect", "tbd"],
-    "fdsecondeqq3c1": ["correct", "tbd"],
-    "fdsecondeqq3c2": ["incorrect", "tbd"],
-    "fdsecondeqq4c1": ["incorrect", "tbd"],
-    "fdsecondeqq4c2": ["correct", "tbd"],
-    "fdsolvekq1c1" : ["correct","tbd"],
-    "fdsolvekq1c2" : ["incorrect","tbd"],
-    "fdsolvekq1c3" : ["incorrect","tbd"],
-    "fdsolvekq1c4" : ["incorrect","tbd"],
-    "fdsolvekq2c1" : ["correct","tbd"],
-    "fdsolvekq2c2" : ["incorrect","tbd"],
-    "fdsolvekq2c3" : ["incorrect","tbd"],
+    "fdgoalq1c1": ["incorrect", "Not quite. Since we want to find \\(k\\), we should start with an equation that has \\(k\\)."],
+    "fdgoalq1c2": ["correct", "That's correct. Let's start with the equation that has \\(k\\) in it."],
+    "fdgoalq1c3": ["incorrect", "Not quite. Since we want to find \\(k\\), we should start with an equation that has \\(k\\)."],
+
+    "fdgoalq2c1": ["incorrect", `Not quite. We can get the <b>deflection \\((\\theta)\\)</b> from the galvanometer reading, but we don't know the <b>current \\((I)\\)</b>.`],
+    "fdgoalq2c2": ["incorrect", `Not quite. The galvanometer reading tells us the deflection \\((\\theta)\\), not the current \\((I)\\) itself.`],
+    "fdgoalq2c3": ["correct", `Correct. We can get the <b>deflection \\((\\theta)\\)</b> from the galvanometer reading, but we don't know the <b>current \\((I)\\)</b>.`],
+    
+    "fdgoalq3c1": ["correct", "That's correct. We found another equation that has \\(I\\) in it."],
+    "fdgoalq3c2": ["incorrect", "Not quite. Since we want to learn more about \\(I\\), we should find an equation that has \\(I\\)."],
+    "fdgoalq3c3": ["incorrect", "Not quite. Since we want to learn more about \\(I\\), we should find an equation that has \\(I\\)."],
+    
+    "fdgoalq5c1": ["incorrect", "Not quite. That would be the formula for the resistance of a parallel circuit."],
+    "fdgoalq5c2": ["correct", "That's correct. Since the high resistance box and galvanometer are in series, we can simply add the resistance values together."],
+    "fdgoalq5c3": ["incorrect", "Not quite. Since the high resistance box and galvanometer are in series, we can simply add the resistance values together."],
+    
+    "fdeliminatingq1c1": ["incorrect", "Not quite. We also do not know \\(G\\), the resistance of the galvanometer."],
+    "fdeliminatingq1c2": ["correct", "That's correct. We do not know \\(k\\) or \\(G\\). We know \\(\\theta\\) (the deflection of the galvanometer), \\(E\\) (the emf of the battery), and \\(R\\) (the resistance of the high resistance box)."],
+    "fdeliminatingq1c3": ["incorrect", "Not quite. We do know the value of \\(\\theta\\) since it is the deflection on the galvanometer."],
+    
+    "fdeliminatingq2c1": ["incorrect", "Not quite. Since we need a different set of values, we need a different deflection value."],
+    "fdeliminatingq2c2": ["correct", "That's correct. Although it doesn't have to be half the deflection, it will make the formula simplification easier later."],
+    "fdeliminatingq2c3": ["incorrect", "Not quite. While any deflection value would technically work, some deflection values are more optimal since they make the math easier."],
+
+    "fdsecondeqq1c1": ["incorrect", "Not quite. \\(I\\) represents the total current before it splits between the two paths."],
+    "fdsecondeqq1c2": ["incorrect", "Not quite. \\(I_S\\) is the current flowing through the shunt resistance path."],
+    "fdsecondeqq1c3": ["correct", "That's correct. \\(I_G\\) is the current flowing through the galvanometer."],
+    
+    "fdsecondeqq2c1": ["correct", "That's correct. The voltage is the emf of the battery, which is usually 2V."],
+    "fdsecondeqq2c2": ["incorrect", "Not quite. The voltage is the emf of the battery, which is usually 2V."],
+    
+    "fdsecondeqq3c1": ["correct", "That's correct. This is the formula we can use to calculate the combined resistance of the galvanometer and shunt resistance."],
+    "fdsecondeqq3c2": ["incorrect", "Not quite. Try looking in the formula toolbox to find the formula for parallel resistances."],
+    
+    "fdsecondeqq4c1": ["incorrect", "Not quite. Since the high resistance box is in series, we can simply add the resistances together."],
+    "fdsecondeqq4c2": ["correct", "That's correct. Since the high resistance box is in series, we can simply add the resistances together."],
+    
+    "fdsolvekq1c1" : ["correct","That's correct. \\(R\\) is the value we set the high resistance box to. \\(S\\) is the value we set the shunt resistance box to."],
+    "fdsolvekq1c2" : ["incorrect","Not quite. We also know \\(S\\). \\(S\\) is the value we set the shunt resistance box to."],
+    "fdsolvekq1c3" : ["incorrect","Not quite. We also know \\(R\\). \\(R\\) is the value we set the high resistance box to."],
+    "fdsolvekq1c4" : ["incorrect","Not quite. We know both \\(R\\) and \\(S\\). \\(R\\) is the value we set the high resistance box to. \\(S\\) is the value we set the shunt resistance box to."],
+
+    "fdsolvekq2c1" : ["correct","That's correct. We know all the other values, so we are able to solve for \\(k\\)"],
+    "fdsolvekq2c2" : ["incorrect","Not quite. In the last step, we determined that we were able to solve for \\(G\\) using the formula \\(G = \\frac{RS}{R-S}\\)"],
+    "fdsolvekq2c3" : ["incorrect","Not quite. \\(\\theta\\) is the deflection reading from the galvanometer. And, we can solve for \\(G\\) using the formula \\(G = \\frac{RS}{R-S}\\)"],
 
     // Add more choices as needed
 };
 
 // content map for multi-select submit
 const multiAnswerKey = {
-    "fdfmm1c1": ["correct", "tbd"],
-    "fdfmm1c2": ["correct", "tbd"],
-    "fdfmm1c3": ["incorrect", "tbd"],
-    "fdseqm1c1": ["correct", "tbd"],
-    "fdseqm1c2": ["correct", "tbd"],
-    "fdseqm1c3": ["incorrect", "tbd"],
-    "fdseqm1c4": ["correct", "tbd"],
-    "fdseqm1c5": ["incorrect", "tbd"],
+    "fdfmm1c1": ["correct", "The role of the high resistance box is to add resistance to the circuit."],
+    "fdfmm1c2": ["correct", "The inside of a galvanometer is a coil of wire, which has its own resistance."],
+    "fdfmm1c3": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
+    "fdseqm1c1": ["correct", "The role of the high resistance box is to add resistance to the circuit."],
+    "fdseqm1c2": ["correct", "The inside of a galvanometer is a coil of wire, which has its own resistance."],
+    "fdseqm1c3": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
+    "fdseqm1c4": ["correct", "The role of the shunt resistance box is to add resistance to the circuit."],
+    "fdseqm1c5": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
     
 };
 
@@ -3600,8 +3611,8 @@ const dropdownAnswerKey = {
     "v_s1": ["\\(I_S\\)"],
     "v_s2": ["\\(S\\)"],
     "r_1": ["High Resistance Box"],
-    "r_2": ["Galvanometer", "Low Resistance Box"],
-    "r_3": ["Galvanometer", "Low Resistance Box"],
+    "r_2": ["Galvanometer", "Shunt Resistance Box"],
+    "r_3": ["Galvanometer", "Shunt Resistance Box"],
     "half_constant": ["\\(\\frac{1}{2}\\)"],
     'c_1': ['not change'],
     'c_2': ['not change'],
