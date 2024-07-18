@@ -1403,17 +1403,17 @@ const formulaContentMap= {
             <div class="mc-question">
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="fdsecondeqq1c1">
-                        <span class="button-text">Ohm's Law: \\( I \\) </span>
+                        <span class="button-text">\\( I \\) </span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="fdsecondeqq1c2">
-                        <span class="button-text">Figure of Merit: \\( I_S \\) </span>
+                        <span class="button-text">\\( I_S \\) </span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="fdsecondeqq1c3">
-                        <span class="button-text">Series Resistance: \\( I_G \\) </span>
+                        <span class="button-text">\\( I_G \\) </span>
                     </md-outlined-button>
                 </div>
 
@@ -3535,6 +3535,7 @@ const answerKey = {
     "hdq1c1": ["correct", "That's correct."],
     "hdq1c2": ["incorrect", "Actually, the 'half' does not mean 0.5. Read on to learn more."],
     "hdq1c3": ["info", "Let's read on to learn more."], 
+
     "hdq2c1": ["correct", "That's correct."],
     "hdq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2V power supply and cannot change it."],
     "hdq2c3": ["info", "The correct answer is the first one. Read on to learn more."],
@@ -3894,6 +3895,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (!checkbox.hasAttribute('checked')) {
                 button.style.setProperty('--_focus-label-text-color', '#FFFFFF');
+                button.style.setProperty('--_hover-label-text-color', '#FFFFFF');
                 button.style.setProperty('--_label-text-color', '#FFFFFF');
                 button.style.setProperty('--_outline-color', sysColorPrimaryBright);
                 button.style.backgroundColor = sysColorPrimaryBright;
@@ -3901,6 +3903,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log("true");
             } else {
                 button.style.setProperty('--_focus-label-text-color', sysColorPrimaryDark);
+                button.style.setProperty('--_hover-label-text-color', sysColorPrimaryDark);
                 button.style.setProperty('--_label-text-color', sysColorPrimaryDark);
                 button.style.setProperty('--_outline-color', sysOutlineColor);
                 button.style.backgroundColor = '#FFFFFF';
@@ -3944,6 +3947,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     if ((isChecked && correctAnswer) || (!isChecked && !correctAnswer)) {
                         feedbackText += `<p><span style="color: ${correctColorDark}; font-weight: 500;">Correct: </span>${feedback}</p>`;
                         button.style.setProperty('--_focus-label-text-color', correctColorDark);
+                        button.style.setProperty('--_hover-label-text-color', correctColorDark);
                         button.style.setProperty('--_disabled-label-text-color', correctColorDark);
                         button.style.setProperty('--_disabled-outline-color', correctColorDark);
                         button.style.setProperty('--_disabled-label-text-opacity', '100');
@@ -3958,6 +3962,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     } else {
                         feedbackText += `<p><span style="color: ${incorrectColorDark}; font-weight: 500;">Incorrect: </span>${feedback}</p>`;
                         button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
+                        button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
                         button.style.setProperty('--_disabled-label-text-color', incorrectColorDark);
                         button.style.setProperty('--_disabled-outline-color', incorrectColorDark);
                         button.style.setProperty('--_disabled-label-text-opacity', '100');
