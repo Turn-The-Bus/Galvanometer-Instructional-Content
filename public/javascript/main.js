@@ -413,22 +413,22 @@ const fomContentMap = {
 
             <div class="mc-question">
                 <div class="mc-button-wrapper">
-                    <md-outlined-button class="mc-button" data-key="kq1c1">
+                    <md-outlined-button class="mc-button" data-key="fmq1c1">
                         <span class="mc-button-text">A) The maximum current the galvanometer can measure.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
-                    <md-outlined-button class="mc-button" data-key="kq1c2">
+                    <md-outlined-button class="mc-button" data-key="fmq1c2">
                         <span class="mc-button-text">B) The current needed to move the needle by one division.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
-                    <md-outlined-button class="mc-button" data-key="kq1c3">
+                    <md-outlined-button class="mc-button" data-key="fmq1c3">
                         <span class="mc-button-text">C) The resistance of the galvanometer.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
-                    <md-outlined-button class="mc-button" data-key="kq1c4">
+                    <md-outlined-button class="mc-button" data-key="fmq1c4">
                         <span>D) I don't know yet.</span>
                     </md-outlined-button>
                 </div>
@@ -3531,6 +3531,11 @@ const answerKey = {
     "kq1c2": ["correct", "Correct. The coil rotates due to the magnetic force created by the current flowing through it, interacting with the magnetic field."],
     "kq1c3": ["incorrect", "Incorrect. The rotation is due to the magnetic force from the current in the presence of a magnetic field."],
     "kq1c4": ["info", " It's okay! The rotation is due to the magnetic force from the current in the presence of a magnetic field."],
+    
+    "fmq1c1": ["incorrect", "Incorrect. The maximum current the galvanometer can measure is the full-scale deflection current, not the figure of merit. The figure of merit is related to the current needed for one division deflection. We will learn more later."],
+    "fmq1c2": ["correct", "Correct. The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
+    "fmq1c3": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
+    "fmq1c4": ["info", " It's okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
     
     "hdq1c1": ["correct", "That's correct."],
     "hdq1c2": ["incorrect", "Actually, the 'half' does not mean 0.5. Read on to learn more."],
