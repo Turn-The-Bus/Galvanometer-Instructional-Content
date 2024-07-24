@@ -38,7 +38,6 @@ const introductionContentMap = {
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
-                <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="principleq1c3">
                         <span class="mc-button-text">C) It detects changes in electrical resistance.</span>
                     </md-outlined-button>
