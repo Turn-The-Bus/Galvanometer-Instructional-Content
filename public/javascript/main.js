@@ -29,14 +29,15 @@ const introductionContentMap = {
             <div class="mc-question">
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="principleq1c1">
-                        <span class="mc-button-text">A) It measures voltage directly by using a voltage divider.</span>
+                        <span class="mc-button-text">A) A current-carrying coil interacts with a magnetic field.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="principleq1c2">
-                        <span class="mc-button-text">B) A current-carrying coil interacts with a magnetic field.</span>
+                        <span class="mc-button-text">B) It measures voltage directly by using a voltage divider.</span>
                     </md-outlined-button>
                 </div>
+                <div class="mc-button-wrapper">
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="principleq1c3">
                         <span class="mc-button-text">C) It detects changes in electrical resistance.</span>
@@ -98,7 +99,7 @@ const introductionContentMap = {
 const deflectionContentMap = {
     next_ic_sim_activity: `
         <div id="ic-sim-activity">
-        <p>Before starting, make one hypothesis about what will happen when you change the current.</p>
+        <p>Before starting, make some hypotheses about what will happen when you change the current.</p>
         <div class="block-card">
             <div class="block-card-content">
                 <h3>Example Hypothesis</h3>
@@ -376,7 +377,7 @@ const principleContentMap = {
     next_section_explanation: `
         <p>The coil rotates until the magnetic torque is balanced by the restoring torque of the spring or torsion wire, given by:</p>
         <div class="centered">
-            \\(\\tau \\cdot r = k \\cdot \\theta \\)
+            \\(\\tau_r = k \\cdot \\theta \\)
         </div>
         <p>where \\(k\\) is the torsion constant of the spring, and \\(\\theta\\) is the angle of deflection. At equilibrium:</p>
         <div class="centered">
@@ -419,12 +420,12 @@ const fomContentMap = {
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="fmq1c2">
-                        <span class="mc-button-text">B) The current needed to move the needle by one division.</span>
+                        <span class="mc-button-text">B) The resistance of the galvanometer.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="fmq1c3">
-                        <span class="mc-button-text">C) The resistance of the galvanometer.</span>
+                        <span class="mc-button-text">C) The current needed to move the needle by one division.</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
@@ -444,7 +445,7 @@ const fomContentMap = {
     `,
     next_fm_conc: `
         <div>
-            <p>\\(\\boldsymbol{k}\\), known as the <b>figure of merit</b>, is defined as the current needed to nudge the needle by one division on the scale. </p>
+            <p>\\(k\\), known as the <b>figure of merit</b>, is defined as the current needed to nudge the needle by one division on the scale. </p>
             <p>Figure of merit is an important concept that measures the sensitivity of a galvanometer. In other words, the figure of merit indicates how responsive the galvanometer is to small currents. </p>
 
             <div class="button-container">
@@ -468,7 +469,7 @@ const halfDeflectionContentMap = {
                 </div>
                 <div class="mc-button-wrapper">
                     <md-outlined-button class="mc-button" data-key="hdq1c2">
-                        <span class="mc-button-text">Measure a 0.5 deflection in the galvanometer</span>
+                        <span class="mc-button-text">Measure a 0.5 division deflection in the galvanometer</span>
                     </md-outlined-button>
                 </div>
                 <div class="mc-button-wrapper">
@@ -638,8 +639,8 @@ const formulaContentMap= {
                 <div class="tooltip-triangle"></div>
             </div>
             <h2>Finding the Figure of Merit</h2>
-            <p>Our goal is to find the <b>figure of merit</b> of the galvanometer, indicated by the variable <b>k</b>. </p>
-            <p>If we want to find <b>k</b>, which formula should we start with?</p>
+            <p>Our goal is to find the <b>figure of merit</b> of the galvanometer, indicated by the variable \\(k\\). </p>
+            <p>If we want to find \\(k\\), which formula should we start with?</p>
             
             <div class="mc-question">
                 <div class="mc-button-wrapper">
@@ -855,7 +856,7 @@ const formulaContentMap= {
                 </svg>
             </div>
 
-            <p>Which elements add resistance to the circuit?</p>
+            <p>Select all elements that add resistance to the circuit:</p>
 
             <div class="multi-select-question">
                 <div class="multi-select-wrapper">
@@ -1524,7 +1525,7 @@ const formulaContentMap= {
     next_fd_secondeq_add_r: `
         <div id="fd-secondeq-add-r">
 
-            <p>Now, let's calculate the resistance \\((R)\\) of the circuit. Which elements add resistance to the circuit?</p>
+            <p>Now, let's calculate the resistance \\((R)\\) of the circuit. Select all elements that add resistance to the circuit:</p>
 
             <div class="multi-select-question">
                 <div class="multi-select-wrapper">
@@ -3149,8 +3150,8 @@ const formulaContentMap= {
         <div id="fd-summary-intro">
             <h2>Summary</h2>
             <p>Let's do a quick review of how to find the formulas we'll use in the Figure of Merit of a Galvanometer Lab.</p>
-            <p>Using the half-deflection method, we take two measurements to find the figure of merit (k).</p>
-            <p>But, why can't we find k with just one measurement?</p>
+            <p>Using the half-deflection method, we take two measurements to find the figure of merit \\((k)\\).</p>
+            <p>But, why can't we find \\(k\\) with just one measurement?</p>
 
             <div class="button-container">
                 <md-outlined-button class="next-button" data-key="next_fd_summary_init_deflection" >Next</md-outlined-button>
@@ -3204,7 +3205,7 @@ const formulaContentMap= {
 
                 </svg>
             </div>
-            <p>Using the formula I = kθ and Ohm's Law (V = IR), we get the following information:</p>
+            <p>Using the formula \\(I = k\\theta\\) and Ohm's Law \\((V = IR)\\), we get the following information:</p>
             <div class="diagram-container">
                 <svg class="formula-block" width="300" height="220">
                     <!-- Arrow marker definition -->
@@ -3251,13 +3252,13 @@ const formulaContentMap= {
     `,
     next_fd_summary_init_deflection_conclusion: `
         <div id="fd-summary-init-deflection-conclusion">
-            <p>Unfortunately, we don't know G (the resistance of the galvanometer). So, we can't solve for k.</p>
+            <p>Unfortunately, we don't know \\(G\\) (the resistance of the galvanometer). So, we can't solve for \\(k\\).</p>
             <ul>
-                <li><em>k: Unknown </em></li>
-                <li>E: emf of the battery</li>
-                <li>R: high resistance box value</li>
-                <li><em>G: Unknown</em></li>
-                <li>&theta;: galvanometer deflection reading</li>
+                <li><em>\\(k\\): Unknown </em></li>
+                <li>\\(E\\): emf of the battery</li>
+                <li>\\(R\\): high resistance box value</li>
+                <li><em>\\(G\\): Unknown</em></li>
+                <li>\\(\\theta\\): galvanometer deflection reading</li>
             </ul>
         </div>
 
@@ -3268,8 +3269,8 @@ const formulaContentMap= {
     next_fd_summary_half_deflection: `
         <div id="fd-summary-half-deflection">
             <h3>Half Deflection</h3>
-            <p>If we can get a second measurement, we will have enough information to solve for G and k.</p>
-            <p>To get the second measurement, we add a shunt resistance in parallel with the galvanometer. That way, we can reduce the current flowing to the galvanometer and get a deflection value that’s half the initial value.</p>
+            <p>If we can get a second measurement, we will have enough information to solve for \\(G\\) and \\(k\\).</p>
+            <p>To get the second measurement, we add a shunt resistance in parallel with the galvanometer. That way, we can reduce the current flowing to the galvanometer and get a deflection value that's half the initial value.</p>
 
             <div class="diagram-container">
                 <svg width="247" height="200" viewBox="0 0 247 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -3373,7 +3374,7 @@ const formulaContentMap= {
     next_fd_summary_combining: `
         <div id="fd-summary-combining">
             <h3>Combining the Measurements</h3>
-            <p>By combining the formulas, we can solve for G.</p>
+            <p>By combining the formulas, we can solve for \\(G\\).</p>
 
             <div class="diagram-container">
                 <svg class="formula-block" width="370" height="270">
@@ -3418,7 +3419,7 @@ const formulaContentMap= {
                 </svg>
             </div>
 
-            <p>Since we know <b>R</b> (the high resistance box value) and <b>S</b> (the shunt resistance box value), we can solve for G.</p>
+            <p>Since we know \\(R\\) (the high resistance box value) and \\(S\\) (the shunt resistance box value), we can solve for \\(G\\).</p>
         </div>
 
         <div class="button-container">
@@ -3427,7 +3428,7 @@ const formulaContentMap= {
     `,
     next_fd_summary_conclusion: `
         <div id="fd-summary-conclusion">
-            <p>Now, we have two helpful formulas. In the lab, you will take measurements and plug them into the formulas to find k.</p>
+            <p>Now, we have two helpful formulas. In the lab, you will take measurements and plug them into the formulas to find \\(k\\).</p>
 
             <div class="diagram-container">
                 <svg class="formula-block" width="310" height="120">
@@ -3471,7 +3472,7 @@ const conclusionContentMap = {
         <div>
             <h2>Lab Findings on the Figure of Merit</h2>
 
-            <p>The figure of merit k is a physical property of the galvanometer that defines its sensitivity.</p> 
+            <p>The figure of merit \\(k\\) is a physical property of the galvanometer that defines its sensitivity.</p> 
 
             <p>It is a constant that represents the amount of current needed to deflect the needle by one division on the scale.</p> 
 
@@ -3517,8 +3518,8 @@ const mainContentMap = {
 
 // content map for multiple choice feedback
 const answerKey = {
-    "principleq1c1": ["incorrect", "Incorrect. A voltmeter measures voltage directly, not a galvanometer."],
-    "principleq1c2": ["correct", "Correct. A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
+    "principleq1c1": ["correct", "Correct. A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
+    "principleq1c2": ["incorrect", "Incorrect. A voltmeter measures voltage directly, not a galvanometer."],
     "principleq1c3": ["incorrect", "Incorrect. An ohmmeter detects changes in electrical resistance, not a galvanometer."],
     "principleq1c4": ["info", "It's okay! A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
 
@@ -3532,17 +3533,18 @@ const answerKey = {
     "kq1c3": ["incorrect", "Incorrect. The rotation is due to the magnetic force from the current in the presence of a magnetic field."],
     "kq1c4": ["info", " It's okay! The rotation is due to the magnetic force from the current in the presence of a magnetic field."],
     
+    
     "fmq1c1": ["incorrect", "Incorrect. The maximum current the galvanometer can measure is the full-scale deflection current, not the figure of merit. The figure of merit is related to the current needed for one division deflection. We will learn more later."],
-    "fmq1c2": ["correct", "Correct. The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
-    "fmq1c3": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
-    "fmq1c4": ["info", " It's okay! The figure of merit (k) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
+    "fmq1c2": ["incorrect", "Incorrect. The resistance of the galvanometer is a different parameter that affects its overall operation. The figure of merit specifically refers to the current needed for one division deflection. We will learn more later."],
+    "fmq1c3": ["correct", "Correct. The figure of merit \\((k)\\) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
+    "fmq1c4": ["info", " It's okay! The figure of merit \\((k)\\) is the current required to cause a deflection of one division on the galvanometer's scale. We will learn more later."],
     
     "hdq1c1": ["correct", "That's correct."],
-    "hdq1c2": ["incorrect", "Actually, the 'half' does not mean 0.5. Read on to learn more."],
+    "hdq1c2": ["incorrect", "Actually, the 'half' does not mean 0.5 divisions. Read on to learn more."],
     "hdq1c3": ["info", "Let's read on to learn more."], 
 
     "hdq2c1": ["correct", "That's correct."],
-    "hdq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2\\(V\\) power supply and cannot change it."],
+    "hdq2c2": ["incorrect", "Incorrect. Usually, we are only given a 2V power supply and cannot change it."],
     "hdq2c3": ["info", "The correct answer is the first one. Read on to learn more."],
 
     "fdgoalq1c1": ["incorrect", "Not quite. Since we want to find \\(k\\), we should start with an equation that has \\(k\\)."],
@@ -3598,12 +3600,12 @@ const answerKey = {
 const multiAnswerKey = {
     "fdfmm1c1": ["correct", "The role of the high resistance box is to add resistance to the circuit."],
     "fdfmm1c2": ["correct", "The inside of a galvanometer is a coil of wire, which has its own resistance."],
-    "fdfmm1c3": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
+    "fdfmm1c3": ["incorrect", "While a key adds a small amount of resistance, it is so small that it is negligible."],
     "fdseqm1c1": ["correct", "The role of the high resistance box is to add resistance to the circuit."],
     "fdseqm1c2": ["correct", "The inside of a galvanometer is a coil of wire, which has its own resistance."],
-    "fdseqm1c3": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
+    "fdseqm1c3": ["incorrect", "While a key adds a small amount of resistance, it is so small that it is negligible."],
     "fdseqm1c4": ["correct", "The role of the shunt resistance box is to add resistance to the circuit."],
-    "fdseqm1c5": ["incorrect", "The key is simply a switch that opens and closes the circuit."],
+    "fdseqm1c5": ["incorrect", "While a key adds a small amount of resistance, it is so small that it is negligible."],
     
 };
 

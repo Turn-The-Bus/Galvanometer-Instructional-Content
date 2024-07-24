@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
             There is no right or wrong answer to the hypothesis, so feel free to write whatever you want to discover as the hypothesis!
         </p>
 
+        <div class="block-card">
+            <div class="block-card-content">
+                <h3>Tips for Making a Hypothesis</h3>
+                <ol>
+                <li>What is figure of merit?</li>
+                <li>Do you think the figure of merit is a constant or a variable?</li>
+                <li>What parameters, such as the resistance of the galvanometer, might affect the figure of merit?</li>
+                </ol>
+            </div>
+        </div>
+
         <h3>Your Hypothesis</h3>
         
         <div>
@@ -75,16 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         
 
-        <div class="block-card">
-            <div class="block-card-content">
-                <h3>Tips for Making a Hypothesis</h3>
-                <ol>
-                <li>What is figure of merit?</li>
-                <li>Do you think the figure of merit is a constant or a variable?</li>
-                <li>What parameters, such as the resistance of the galvanometer, might affect the figure of merit?</li>
-                </ol>
-            </div>
-        </div>
+        
         
         
         <div class="button-container">
