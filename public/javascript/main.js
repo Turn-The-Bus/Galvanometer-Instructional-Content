@@ -3471,7 +3471,7 @@ const conclusionContentMap = {
         <div>
             <h2>Lab Findings on the Figure of Merit</h2>
 
-            <p>The figure of merit \\(k\\) is a physical property of the galvanometer that defines its sensitivity.</p> 
+            <p>The figure of merit k is a physical property of the galvanometer that defines its sensitivity.</p> 
 
             <p>It is a constant that represents the amount of current needed to deflect the needle by one division on the scale.</p> 
 
