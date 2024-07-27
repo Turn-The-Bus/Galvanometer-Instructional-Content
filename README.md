@@ -3,6 +3,8 @@ This is a project in conjunction between Turn the Bus and the Carnegie Mellon Un
 The code is divided into 2 Repos:
 - [this one] Capstone-MVPThreeWebsite: The instructional content that comes before and after the lab
 - ________: The interactive virtual lab
+
+For more information about the code itself, please refer to the Wiki.
   
 
 ## Getting Started
