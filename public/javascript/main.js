@@ -1,5 +1,5 @@
+// Initialize MathJax
 document.addEventListener('DOMContentLoaded', function() {
-    // MathJax.typeset();
     MathJax.startup.promise.then(() => {
       MathJax.typesetPromise()
         .then(() => {
@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
           console.error('MathJax typesetting failed:', err);
         });
     });
-  });
+});
 
-
+// Set the theme colors used throughout the code
 const correctColorDark = "#2B7D2F";
 const correctColorLight = "#E9FAEA";
 const incorrectColorDark = "#C92525";
@@ -21,7 +21,7 @@ const sysColorPrimaryBright = "#047DB7";
 const sysColorPrimaryLight = "#DFF3FF";
 const sysOutlineColor = "#79747E";
 
-// formula derivation content map
+// introduction to galvanometers page content
 const introductionContentMap = {
     next_section_principle: `
         <div id="principle">
@@ -59,10 +59,10 @@ const introductionContentMap = {
     next_section_ECG: `
         <div id="ECG">
             <p>The sensitivity makes galvanometers indispensable in applications requiring precision, such as scientific research and medical equipment like ECG machines.</p>
-            <div class="ECG-section">
-            <img src="/images/ecg-machine.png" alt="ECG Machine">
-            <p class="legend">(ECG Machines)</p>
+            <div class="instruction-image-container-green">
+            <img id="ecg-image" src="/images/ecg-machine.png" alt="ECG Machine">
             </div>
+            <p class="instruction-image-label">(ECG Machines)</p>
             <p>How is a galvanometer used in an ECG machine?</p>
             <div class="mc-question">
                 <div class="mc-button-wrapper">
@@ -95,6 +95,7 @@ const introductionContentMap = {
     `
 }
 
+// galvanometer deflection page content
 const deflectionContentMap = {
     next_ic_sim_activity: `
         <div id="ic-sim-activity">
@@ -320,6 +321,7 @@ const deflectionContentMap = {
     `,
 };
 
+// working principle page content
 const principleContentMap = {
     next_section_k: `
         <p>A galvanometer contains a magnet, which is a core component of its operation. The interaction between the magnetic field from this magnet and the current flowing through the coil is what makes the galvanometer work.</p>
@@ -405,6 +407,7 @@ const principleContentMap = {
 
 };
 
+// figure of merit page content
 const fomContentMap = {
     next_fm_k: `
         <div>
@@ -455,6 +458,7 @@ const fomContentMap = {
 
 };
 
+// half-delfection method page content
 const halfDeflectionContentMap = {
     next_section_k: `
         <p>What do you think is the half-deflection method?</p>
@@ -589,6 +593,7 @@ const halfDeflectionContentMap = {
     `,
 };
 
+// formula derivation page content
 const formulaContentMap= {
     next_page_fd_intro: `
         <div id="fd-intro">
@@ -3466,6 +3471,7 @@ const formulaContentMap= {
     `
 };
 
+// conclusion page content
 const conclusionContentMap = {
     next_section_principle: `
         <div>
@@ -3477,7 +3483,7 @@ const conclusionContentMap = {
 
             <p>This property is inherent to the design and construction of the galvanometer, including factors such as the number of turns in the coil, the strength of the magnetic field, and the area of the coil.</p>
             
-            <div class="G-section">
+            <div class="instruction-image-container-green">
                 <img src="/images/galvanometer-inside.png" alt="Inside of Galvanometer Diagram">
             </div>
             
@@ -3505,6 +3511,10 @@ const conclusionContentMap = {
     `
 };
 
+// Create the mainContentMap that links to each page's content map
+// Each page has its own content map for readability
+// Dictionary structure:
+//     "html data-page-id": contentMapName
 const mainContentMap = {
     "introduction-to-galvanometer" : introductionContentMap,
     "galvanometer-deflection": deflectionContentMap,
@@ -3513,9 +3523,12 @@ const mainContentMap = {
     "half-deflection-method": halfDeflectionContentMap,
     "deriving-our-formula" : formulaContentMap,
     "conclusion": conclusionContentMap
-}
+};
 
-// content map for multiple choice feedback
+// Multiple Choice Answer Key
+// Dictionary Information
+//   key: the 'data-key' html attribute of the multiple choice button
+//   'info' refers to the 'I don't know yet' answer choice  
 const answerKey = {
     "principleq1c1": ["correct", "Correct. A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
     "principleq1c2": ["incorrect", "Incorrect. A voltmeter measures voltage directly, not a galvanometer."],
@@ -3592,10 +3605,11 @@ const answerKey = {
     "fdsolvekq2c2" : ["incorrect","Not quite. In the last step, we determined that we were able to solve for \\(G\\) using the formula \\(G = \\frac{RS}{R-S}\\)"],
     "fdsolvekq2c3" : ["incorrect","Not quite. \\(\\theta\\) is the deflection reading from the galvanometer. And, we can solve for \\(G\\) using the formula \\(G = \\frac{RS}{R-S}\\)"],
 
-    // Add more choices as needed
 };
 
-// content map for multi-select submit
+// Multi-Select Choice Answer Key (check all that apply question)
+// Dictionary Information
+//   key: the 'data-key' html attribute of the multiple choice button
 const multiAnswerKey = {
     "fdfmm1c1": ["correct", "The role of the high resistance box is to add resistance to the circuit."],
     "fdfmm1c2": ["correct", "The inside of a galvanometer is a coil of wire, which has its own resistance."],
@@ -3605,10 +3619,12 @@ const multiAnswerKey = {
     "fdseqm1c3": ["incorrect", "While a key adds a small amount of resistance, it is so small that it is negligible."],
     "fdseqm1c4": ["correct", "The role of the shunt resistance box is to add resistance to the circuit."],
     "fdseqm1c5": ["incorrect", "While a key adds a small amount of resistance, it is so small that it is negligible."],
-    
 };
 
-// content map for dropdown
+// Drop-Down Choice Answer Key
+// Dictionary Information
+//   key: the 'data-key' html attribute of the multiple choice button
+//   value: the list of accepted answers (can be multiple)
 const dropdownAnswerKey = {
     "hd_m1": ["Initial Deflection"],
     "hd_m2": ["Half-Deflection"],
@@ -3624,31 +3640,33 @@ const dropdownAnswerKey = {
     'c_2': ['not change'],
 };
 
-// // Render Mathjax
-// document.addEventListener("DOMContentLoaded", function() {
-//     MathJax.typeset();
-// });
-
-// Jump to Page (formula derivation)
+// Jump to Page (Formula Derivation)
+// This function is called in other functions, like when users click on 
+// the next-section button or click a section in the progress overlay
+//    section name: the section to jump to
+//    animate: a boolean, indicating whether we animate the progress bar or not
 function jumpToSection(sectionName, animate) {
     const progressOverlay = document.getElementById('progress-overlay-dialog');
     const progressSections = progressOverlay.querySelectorAll('md-list-item');
-    
     const currentSection = document.querySelector('.toc-section.current-section');
     const sectionNumber = sectionMap[sectionName];
     const newSection = progressSections[sectionNumber];
 
     const pageId = document.documentElement.getAttribute('data-page-id');
 
+    // if jumping to a new section, update the current section
     if (!(currentSection == newSection)) {
         currentSection.classList.remove('current-section');
         newSection.classList.add('current-section');
     }
 
+    // close the Progress Overlay if it is open
     progressOverlay.removeAttribute('open');
 
+    // grab the new content
     const newContent = mainContentMap[pageId][sectionName];
 
+    // if the new content exists, populate the page
     if (newContent) {
         const instructionContainer = document.querySelector('.instruction-content');
         instructionContainer.innerHTML = '';
@@ -3658,6 +3676,7 @@ function jumpToSection(sectionName, animate) {
 
         instructionContainer.appendChild(textContainer);
 
+        // initialize MathJax
         MathJax.typeset();
 
         // Check if newContent contains specific animation triggers and play the corresponding animation
@@ -3667,10 +3686,8 @@ function jumpToSection(sectionName, animate) {
         }
         
         // update the progress bar
-
         let newWidth = 1;
         let circleWidth = 0;
-
         for (let i = 0; i < sectionNumber+1; i++) {
             let circleName = progressCircles[i];
             let circle = document.getElementById(circleName);
@@ -3678,11 +3695,13 @@ function jumpToSection(sectionName, animate) {
             circleWidth = parseFloat(circle.getAttribute('width').replace('%',''));
             if (i < sectionNumber) {
                 newWidth += circleWidth;
+                // if animation is true, then animate the progress bar
                 if (animate) {
                     animateProgressBar(newWidth);
                 }
             }
-
+            
+            // if animation is true, then do not fill in the circle until the animation is done
             if (animate) {
                 setTimeout(function() {
                     circle.classList.remove('progress-circle-incomplete');
@@ -3693,34 +3712,30 @@ function jumpToSection(sectionName, animate) {
                 circle.classList.add('progress-circle-complete');
             }
 
-            
-        
         }
 
+        // loop through the remaining circles and set them to 'incomplete'
         for (let i = sectionNumber+1; i < progressCircles.length; i++) {
             let circleName = progressCircles[i];
             let circle = document.getElementById(circleName);
-
             circle.classList.remove('progress-circle-complete');
             circle.classList.add('progress-circle-incomplete');
-
         }
 
+        // if animate is false, then update the length of the progress bar instantaneously
         if (!animate) {
-            // update the progress bar length
             const progressBarSVG = document.getElementById('progress-bar');
             const rect = progressBarSVG.querySelector('rect');
             rect.setAttribute('width', newWidth + '%');
-
-            // animateProgressBar(newWidth, 2000);
         }
 
     } else {
-        console.log(`Error: No new content mapping found for button ${key}`)
+        console.log(`Error: No new content mapping found for section ${sectionName}`)
     }
 }
 
-// Progress Overlay jump to page (formula derivation)
+// Progress Overlay event listener
+// Listens for when a user clicks on a section name in the progress overlay
 document.querySelectorAll('.toc-section').forEach(item => {
     item.addEventListener('click', event => {
         const tocItem = event.target.closest('.toc-section');
@@ -3731,24 +3746,33 @@ document.querySelectorAll('.toc-section').forEach(item => {
     });
 });
 
+// Wrapper Event Listener
+// Since most objects are loaded in through AJAX and do not exist when the DOM is loaded in,
+// we use condition handling to listen for when they are clicked
+// For each click, check if it corresponds to the target element
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    // Next Button
+    // Next Button Event Listener
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('next-button')) {
+            // Get information about the clicked button
             const button = event.target;
             const key = button.getAttribute('data-key');
 
+            // Grab the New Content
             const pageId = document.documentElement.getAttribute('data-page-id');
             const newContent = mainContentMap[pageId][key];
             const instructionContainer = document.querySelector('.instruction-content');
             
-
+            // If the new content exists...
+            // Add the new content to the end of the existing instruction-content div
             if (newContent) {
                 const textContainer = document.createElement('div');
                 textContainer.innerHTML = newContent;                
 
                 instructionContainer.appendChild(textContainer);
+
+                // Render MathJax
                 MathJax.startup.promise.then(() => {
                     MathJax.typesetPromise([textContainer])
                       .then(() => {
@@ -3760,10 +3784,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                   });
                 MathJax.typeset()
 
-                // Remove the button container div
+                // Remove the next-button
                 button.parentElement.remove();
 
-                // Scroll the first element in textContainer into view
+                // Scroll the first element in textContainer into view depending on the header height
                 if (pageId == 'deriving-our-formula') {
                     textContainer.style.scrollMarginTop =  '150px';
                 } else {
@@ -3772,6 +3796,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 
                 textContainer.scrollIntoView({ behavior: 'smooth' });
 
+                // Render MathJax again (just in case)
                 MathJax.startup.promise.then(() => {
                     MathJax.typesetPromise([textContainer])
                       .then(() => {
@@ -3788,12 +3813,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const animationName = textContainer.querySelector('.formula-animation-container').getAttribute('data-key');
                     playAnimation(animationName);
                 }
-
             }
         }
     });
 
-    // Next Page Button
+    // Next Page Button Event Listener (for Formula Derivation)
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('next-page-button')) {
             const button = event.target;
@@ -3809,6 +3833,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const button = event.target;
             const key = button.getAttribute('data-key');
             
+            // navigate to the URL indicated in the data-key
             window.location.href = key;
         }
     });
@@ -3818,22 +3843,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let button = event.target;
 
         // Traverse up the DOM to find the nearest button with the 'mc-button' class
+        // Note: this is needed in case a user clicks on the MathJax within a button
         while (button && !button.classList.contains('mc-button')) {
             button = button.parentElement;
         }
 
         if (button) {
+            // Get the choice ID from the button's data-key attribute
             const choiceID = button.getAttribute('data-key');
+            // Get the parent elements for further manipulation
             const wrapperDiv = button.parentElement;
             const questionDiv = wrapperDiv.parentElement;
 
+             // Check if the choice ID exists in the answerKey object
             if (choiceID in answerKey) {
                 const [correctFlag, feedbackText] = answerKey[choiceID];
                 const feedbackDiv = questionDiv.querySelector('.feedback');
                 const nextButton = questionDiv.parentElement.querySelector('.button-container');
                 MathJax.typeset();
 
-                // Reset buttons in the same parent div
+                // Reset styles for sibling buttons in the same question
                 const siblingButtons = questionDiv.querySelectorAll('.mc-button');
                 siblingButtons.forEach(sib => {
                     sib.style.setProperty('--_focus-label-text-color', '');
@@ -3846,6 +3875,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 });
 
                 let icon;
+                // Apply styles and create icon based on the correctness of the answer
                 if (correctFlag === 'correct') {
                     button.style.setProperty('--_focus-label-text-color', correctColorDark);
                     button.style.setProperty('--_hover-label-text-color', correctColorDark);
@@ -3872,6 +3902,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     button.style.backgroundColor = sysColorPrimaryBright;
                 }
 
+                // Insert the correctness icon next to the button
                 if (icon) {
                     wrapperDiv.insertBefore(icon, button);
                 }
@@ -3880,18 +3911,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 feedbackDiv.style.display = 'block';
                 feedbackDiv.innerHTML = `<b>Feedback:</b> ${feedbackText}`;
 
-                // Display the next button and scroll to it
+                // Display the next button and scroll to it smoothly
                 if (nextButton.classList.contains('hidden-button')) {
                     nextButton.classList.remove("hidden-button"); 
-                    // nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
                     window.scrollTo({
                         top: document.body.scrollHeight,
                         behavior: 'smooth'
                     });
                 }
+                
+                // Render MathJax
                 MathJax.typeset();
                 
             } else {
+                // Log an error if the choice ID is not found in the answer key
                 console.error(`No answer key found for choiceID ${choiceID}`);
             }
         }
@@ -3902,14 +3935,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let button = event.target;
 
         // Traverse up the DOM to find the nearest button with the 'mc-button' class
+        // Note: this is needed in case a user clicks on the MathJax within a button
         while (button && !button.classList.contains('multi-select-button')) {
             button = button.parentElement;
         }
 
         if (button) {
+            // grab the selected elements for further manipulation
             const wrapperDiv = button.parentElement;
             const checkbox = wrapperDiv.querySelector('.multi-select-checkbox');
 
+
+            // If the checkbox is not checked, apply the selected styles and check the checkbox
             if (!checkbox.hasAttribute('checked')) {
                 button.style.setProperty('--_focus-label-text-color', '#FFFFFF');
                 button.style.setProperty('--_hover-label-text-color', '#FFFFFF');
@@ -3919,6 +3956,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 checkbox.setAttribute('checked', 'true');
                 console.log("true");
             } else {
+                // If the checkbox is checked, revert to the original styles and uncheck the checkbox
                 button.style.setProperty('--_focus-label-text-color', sysColorPrimaryDark);
                 button.style.setProperty('--_hover-label-text-color', sysColorPrimaryDark);
                 button.style.setProperty('--_label-text-color', sysColorPrimaryDark);
@@ -3936,15 +3974,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (event.target && event.target.classList.contains('multi-select-submit-button')) {
             let submitButton = event.target;
             const questionDiv = submitButton.parentElement.parentElement;
-
             const feedbackDiv = questionDiv.querySelector('.feedback');
             const nextButton = questionDiv.parentElement.querySelector('.hidden-button');
-            console.log(questionDiv.parentElement);
-            console.log(nextButton);
 
-            // feedbackDiv.innerHTML = '';  // Clear previous feedback
+            // Initialize the feedback text
             feedbackText = '';
     
+            // Loop through all the Multi-Select options in the question
+            // For each option, update the color to green or red depending on correctness
             const wrappers = questionDiv.querySelectorAll('.multi-select-wrapper');
                 wrappers.forEach(wrapper => {
                     
@@ -3955,6 +3992,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const feedback = multiAnswerKey[key][1];
                     const button = wrapper.querySelector('.multi-select-button');
 
+                    // disable the multi-select button to prevent users from changing their answer
                     button.disabled = true;
 
                     // Remove previous styles
@@ -3962,6 +4000,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     
                     let icon;
                     if ((isChecked && correctAnswer) || (!isChecked && !correctAnswer)) {
+                        // Provide positive feedback for correct choices
                         feedbackText += `<p><span style="color: ${correctColorDark}; font-weight: 500;">Correct: </span>${feedback}</p>`;
                         button.style.setProperty('--_focus-label-text-color', correctColorDark);
                         button.style.setProperty('--_hover-label-text-color', correctColorDark);
@@ -3977,6 +4016,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         icon.className = 'multi-status-icon check-icon';
                         icon.innerHTML = '<span class="material-symbols-outlined">check</span>';
                     } else {
+                        // Provide negative feedback for incorrect choices
                         feedbackText += `<p><span style="color: ${incorrectColorDark}; font-weight: 500;">Incorrect: </span>${feedback}</p>`;
                         button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
                         button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
@@ -3992,7 +4032,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         icon.className = 'multi-status-icon x-icon';
                         icon.innerHTML = '<span class="material-symbols-outlined">close</span>';
                     }
-
+                    
+                    // Insert the correctness icon next to the button
                     wrapper.insertBefore(icon, button);
 
 
@@ -4007,7 +4048,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 nextButton.classList.remove("hidden-button"); 
                 nextButton.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
-
+            
+            // Hide the submit button since students can't change their answer
             submitButton.classList.add("hidden-button");
         }
     });
@@ -4017,18 +4059,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (event.target && event.target.classList.contains('dropdown-button')) {
             let button = event.target;
 
+            // Get the dropdown menu and arrow elements
             const menuEl = button.parentElement.querySelector('md-menu');
             const arrow = button.parentElement.querySelector('.dropdown-arrow');
 
+            // Toggle the menu open/close state
             menuEl.open = !menuEl.open;
 
+            // Update the arrow icon based on the menu state
             if (menuEl.open) {
                 arrow.classList.add('open');
             } else {
                 arrow.classList.remove('open');
             }
 
-
+            // Add click event listeners to each menu item
             menuEl.querySelectorAll('md-menu-item').forEach(item => {
                 item.addEventListener('click', (event) => {
                     // Remove background color from previously selected items
@@ -4039,8 +4084,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     // Change background color of the selected item
                     event.currentTarget.style.backgroundColor = sysColorPrimaryLight;
     
-                    const mathContent = event.currentTarget.getAttribute('data-value');
-                    button.innerHTML = mathContent;
+                     // Get the selected content and update the button text
+                    const selectedContent = event.currentTarget.getAttribute('data-value');
+                    button.innerHTML = selectedContent;
                     menuEl.open = false;
                     arrow.classList.remove('open');
     
@@ -4049,23 +4095,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
                     // Check if the answer is correct
                     const answerKey = dropdownAnswerKey[button.id];
+                    // If the dropdown has a correct answer, update the styling accordingly
                     if (answerKey) {
-                        if (mathContent==="Select") {
+                        if (selectedContent==="Select") {
+                            // Reset button styles for the default "Select" option
                             button.style.setProperty('--_label-text-color', '');
                             button.style.setProperty('--_focus-label-text-color', '');
                             button.style.setProperty('--_hover-label-text-color', '');
                             button.style.setProperty('--_outline-color', '');
                             button.style.backgroundColor = '';
                             arrow.style.setProperty('color','');
-                        } else if (answerKey.includes(mathContent)) {
+                        } else if (answerKey.includes(selectedContent)) {
+                            // Apply correct styles
                             button.style.setProperty('--_label-text-color', correctColorDark);
                             button.style.setProperty('--_focus-label-text-color', correctColorDark);
                             button.style.setProperty('--_hover-label-text-color', correctColorDark);
                             button.style.setProperty('--_outline-color', correctColorDark);
                             button.style.backgroundColor = correctColorLight;
                             arrow.style.setProperty('color',correctColorDark);
-        
                         } else {
+                            // Apply incorrect styles
                             button.style.setProperty('--_label-text-color', incorrectColorDark);
                             button.style.setProperty('--_focus-label-text-color', incorrectColorDark);
                             button.style.setProperty('--_hover-label-text-color', incorrectColorDark);
@@ -4081,16 +4130,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Learning Path Selection
+    // Learning Path Selection Event Listener (Formula Derivation only)
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('learning-path-button')) {
+            // Get the button that was clicked
             const button = event.target;
             const buttonID = button.getAttribute('id');
             const learningPathBegin = document.getElementById('learning-path-begin');
             const nextButton = learningPathBegin.querySelector('md-filled-button');
 
+            // Highlight the clicked button by changing its background color
             button.style.backgroundColor = sysColorPrimaryLight;
 
+            // Check which learning path button was clicked
+            // Set the data-key attribute for the next button accordingly
+            // Reset the styles of the other button
             if (buttonID == 'lp-full-activity') {
                 nextButton.setAttribute('data-key','next_page_fd_goal');
                 
@@ -4104,34 +4158,44 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 otherButton.style.backgroundColor = "white";
             }
 
+            // Display the learningPathBegin div containing the next button
             learningPathBegin.classList.remove('hidden');
             
+            // Scroll to the learning path section
+            // 150px based on the height of the Formula Derivation header
             learningPathBegin.style.scrollMarginTop =  '150px';
             learningPathBegin.scrollIntoView({ behavior: 'smooth' });
 
         }
     });
 
-    // Learning Path Button
+    // Learning Path Next Button Event Listener (Formula Derivation only)
+    // Jump to the chosen Learning Path page
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('learning-path-begin-button')) {
             const button = event.target;
 
+            // Get the destination key from the button's data attribute
             const destination = button.getAttribute('data-key');
+            // Get the current page ID from the document
             const pageId = document.documentElement.getAttribute('data-page-id');
 
             if (destination == "next_page_fd_goal") {
-                // add toolbox tooltip
+                 // Add toolbox tooltip if the destination is next_page_fd_goal
                 let tempDiv = document.createElement('div');
                 tempDiv.innerHTML = mainContentMap[pageId][destination];
                 
+                // Find the tooltip element and make it visible
                 let tooltip = tempDiv.querySelector('.toolbox-tooltip');
                 tooltip.classList.remove('hidden');
                 
+                // Update the main content map with the new HTML
                 mainContentMap[pageId][destination] = tempDiv.innerHTML;
 
+                // Jump to the specified section with animation since it is the next page
                 jumpToSection(destination, true);
             } else {
+                // Jump to the specified section without animation since we are jumping to the summary page
                 jumpToSection(destination, false);
             }
         }

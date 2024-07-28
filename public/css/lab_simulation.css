@@ -1,18 +1,18 @@
+.body {
+    overflow: hidden;
+}
 
-.result {
-    margin-top: 120px;
-    width: auto;
+.lab-simulation-content {
+    margin-top: 30%;
     position: relative;
-    background-color: #fff;
-    height: auto;
     overflow: hidden;
     text-align: center;
     font-size: 20px;
-    color: #004a76;
     font-family: Roboto;
+    text-align: center;
 }
 
-.ellipse-div {
+.phone-icon-container {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -21,17 +21,6 @@
     justify-content: center;
     align-items: center;
     margin: 50px auto;
-}
-
-
-.description {
-    margin: 16px;
-
-}
-
-
-.lab-simulation-content p {
-    text-align: center;
 }
 
 .enter-lab-button {

@@ -1,3 +1,44 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Root Variables */
+:root {
+    --md-sys-color-primary: #004A76;
+    --md-sys-color-secondary-container: #DFF3FF;
+    --md-sys-color-on-secondary-container: #013355;
+    --md-sys-color-surface-container-high: #FFFFFF;
+    --md-sys-color-surface: #ffffff;
+    --md-menu-container-color: #ffffff;
+    --md-focus-ring-duration: 0;
+    --md-focus-ring-color: #ffffff;
+}
+
+/* Body */
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+/* Headers */
+h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+/* Section Titles */
 .section-title-container {
     position: relative;
     height: 17vh;
@@ -12,21 +53,13 @@
     margin-bottom: 20px;
 }
 
-h5 {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 28px;
-    letter-spacing: 0.3px;
-    margin: 0px;
-}
-
+/* Feature Images */
 .feature-image-container {
     height: 32vh;
     align-items: center;
     display: flex;
     justify-content: center;
     padding: 20px;
-    
 }
 
 .feature-image {
@@ -41,6 +74,7 @@ h5 {
     font-weight: 300;
 }
 
+/* Text Colors */
 .white-text {
     color: #fff;
 }
@@ -49,6 +83,7 @@ h5 {
     color: #000;
 }
 
+/* Background Colors */
 .bg-yellow {
     background-color: #FFD300;
 }
@@ -61,14 +96,7 @@ h5 {
     background-color: #4153AF;
 }
 
-.course-overview-section {
-    padding: 10px;
-    display: flex;
-    flex-direction: column; /* Ensures content is stacked vertically */
-    justify-content: flex-start; /* Align items to the start of the flex container */
-    align-items: flex-start; /* Align items to the start of the container horizontally */
-}
-
+/* Navigation */
 .navigation {
     display: flex;
     justify-content: center;
@@ -77,6 +105,7 @@ h5 {
     background-color: transparent;
 }
 
+/* Dots */
 .dot {
     height: 12px;
     width: 12px;
@@ -91,6 +120,7 @@ h5 {
     background-color: #4153AF;
 }
 
+/* Screens */
 .screen {
     display: none;
 }
@@ -99,104 +129,13 @@ h5 {
     display: block;
 }
 
-.expectations {
-    display: flex;
-    flex-direction: column; /* Stack the .time and .format vertically */
-    gap: 10px; /* Add some space between the .time and .format sections */
-    margin-bottom: 40px;
-    width: 100%; /* Ensure the expectations container takes the full viewport width */
-    padding: 0 10px; /* Add padding to the container to prevent content from touching the edges */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width */
-}
 
-.time, .format {
-    display: flex;
-    width: 100%; /* Ensure the boxes take the full width of the expectations container */
-    align-items: center; /* Align items (image and text) in the center vertically */
-    gap: 10px; /* Add some space between the image and the text */
-    border: 2.5px solid #DFF3FF; /* Ensure the border style and color are specified */
-    border-radius: 10px;
-    padding: 10px; /* Add padding to make the content look better inside the border */
-    position: relative;
-    box-sizing: border-box;
-
-}
-
-.overview-icon {
-    width: 35px; /* Adjust the size of the image as needed */
-    padding: 5px;
-}
-
-.time p, .format p {
-    margin: 0; /* Remove default margin from the paragraph */
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.tags {
-    width: 100%; /* Ensure it takes the full width of the container */
-    margin-bottom: 20px;
-}
-
-.tags span {
-    display: inline-block;
-    padding: 5px 10px; /* Smaller padding */
-    margin: 5px 5px 5px 0; /* Add bottom margin for spacing between rows */
-    font-size: 14px; /* Smaller font size */
-    border: 2px solid #047DB7; /* Ensure the border style and color are specified */
-    border-radius: 20px;
-    color: #047DB7;
-    font-weight: bold;
-}
+/* ------------------------------ */
+/* -----Course Overveiw Page----- */
+/* ------------------------------ */
 
 
-.button {
-    width: 100%;
-    position: relative;
-    border-radius: 100px;
-    background-color: #004A76;
-    /* height: 40px; */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-
-body {
-    background-color: white;
-    overflow: hidden;
-}
-
-
-:root {
-  --md-sys-color-primary: #004A76;
-  --md-sys-color-secondary-container: #DFF3FF;
-  --md-sys-color-on-secondary-container: #013355;
-  --md-sys-color-surface-container-high: #FFFFFF;
-  --md-sys-color-surface: #ffffff;
-  --md-menu-container-color: #ffffff;
-  --md-focus-ring-duration: 0;
-  --md-focus-ring-color: #ffffff;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-h1 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 500;
-}
-
+/* Header */
 .header {
     background-color: #047DB7;
     height: 70px;
@@ -207,12 +146,6 @@ h1 {
     z-index: 500;
 }
 
-.header-content h1 {
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Ensures that the overflow is hidden */
-    text-overflow: ellipsis; /* Adds ellipsis (...) at the end of the text */
-}
-
 .header-content {
     color: white;
     display: flex;
@@ -221,12 +154,19 @@ h1 {
     padding-left: 20px;
 }
 
+.header-content h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .close-icon {
     font-size: 24px;
     cursor: pointer;
     margin-right: 10px;
 }
 
+/* Instruction Content */
 .instruction-content {
     margin-left: 16px;
     width: calc(100% - 32px);
@@ -237,3 +177,69 @@ h1 {
     width: 100%;
 }
 
+.expectations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.time, .format {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    border: 2.5px solid #DFF3FF;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.overview-icon {
+    width: 35px;
+    padding: 5px;
+}
+
+.time p, .format p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Tags */
+.tags {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    font-size: 14px;
+    border: 2px solid #047DB7;
+    border-radius: 20px;
+    color: #047DB7;
+    font-weight: bold;
+}
+
+/* Button */
+.button {
+    width: 100%;
+    position: relative;
+    border-radius: 100px;
+    background-color: #004A76;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+}

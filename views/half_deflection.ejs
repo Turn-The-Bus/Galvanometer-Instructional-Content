@@ -7,22 +7,39 @@
   <link rel="icon" type="image/x-icon" href="/images/ttb-fav-icon.png">
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/half_deflection.css" />
+  
+  <!-- Import Material Symbols font for icon usage -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
+  <!-- Import Roboto font from Google Fonts (taken from MD3 README) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Import map for Material Web Components (taken from MD3 README) -->
   <script type="importmap">
-    {
+      {
       "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
+          "@material/web/": "https://esm.run/@material/web/"
       }
-    }
+      }
   </script>
+  
+  <!-- Import all Material Web Components and typography styles (taken from MD3 README) -->
   <script type="module">
-    import "@material/web/all.js";
-    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+      import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Polyfill for ES6 features, required for some SVG functionalities -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!-- MathJax library for rendering mathematical notation -->
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- GreenSock Animation Platform (GSAP) for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 
 <body>

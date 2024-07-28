@@ -1,3 +1,4 @@
+// commented out since already defined in main.js
 // const correctColorDark = "#2B7D2F";
 // const correctColorLight = "#E9FAEA";
 // const incorrectColorDark = "#C92525";
@@ -7,6 +8,7 @@
 // const sysColorPrimaryLight = "#DFF3FF";
 // const sysOutlineColor = "#79747E";
 
+// Maps each formula section to a corresponding index in the progress circles array
 const sectionMap = {
     "next_page_fd_intro": 0,
     "next_page_fd_goal": 1,
@@ -18,6 +20,9 @@ const sectionMap = {
     "next_page_fd_summary_intro": 7
 }
 
+// Array of progress circle IDs
+// used to map each section to a corresponding progress circle
+// and to reset the progress circles
 const progressCircles = [
     "pc-intro",
     "pc-fm",
@@ -29,10 +34,12 @@ const progressCircles = [
     "pc-summary"
 ]
 
-// animated formulas
+// Set the default animation for each animation step
 const animationDuration = 1.4; // duration in seconds
 
-// animation mapping
+// Map each animation to its creation and reset animation steps
+// The 'create' animation runs the animation
+// The 'reset' animation resets elements, such as opacity and position
 const animationMap = {
     igg: {
         create: iggAnimation,
@@ -42,10 +49,9 @@ const animationMap = {
         create: ohmsAnimation,
         reset: ohmsReset
     }
-    // Add more animations as needed
 };
 
-//// individual animations ////
+//// Individual Animations ////
 
 function iggAnimation() {
     const timeline = gsap.timeline()
@@ -127,14 +133,24 @@ function ohmsReset() {
     gsap.set("#ohms-rectR", { width: 20 });
 }
 
-// official playAnimation function
+// Play the selected animation
 function playAnimation(animationName) {
+    // Check if the specified animation exists in the animationMap
     if (animationMap[animationName]) {
-        gsap.globalTimeline.clear(); // Clear any existing animations
+        // Clear any existing animations in the GSAP global timeline
+        gsap.globalTimeline.clear();
+
+        // Reset the selected animation
         animationMap[animationName].reset();
-        gsap.globalTimeline.clear(); // Clear any existing animations
-        animationMap[animationName].create(); // Start the selected animation
+
+        // Clear again (just in case)
+        gsap.globalTimeline.clear();
+
+        // Create (start) the selected animation
+        animationMap[animationName].create(); 
     }
+
+    // Ensure MathJax typesetting is completed after the animation starts
     MathJax.startup.promise.then(() => {
         MathJax.typesetPromise()
           .then(() => {
@@ -146,11 +162,20 @@ function playAnimation(animationName) {
     });
 }
 
-// progress bar animation
+// Animate the progress bar
 function animateProgressBar(newWidth) {
+    // Get the SVG element with the ID 'progress-bar'
     const progressBarSVG = document.getElementById('progress-bar');
+    
+    // Select the 'rect' element inside the SVG
     const rect = progressBarSVG.querySelector('rect');
-    gsap.to(rect, { duration: 1, attr: { width: newWidth + '%' }, ease: "power1.out" });
+    
+    // Use GSAP to animate the width attribute of the 'rect' element
+    gsap.to(rect, { 
+        duration: 1, // Animation duration in seconds
+        attr: { width: newWidth + '%' }, // New width as a percentage
+        ease: "power1.out" // Easing function for a smooth animation
+    });
 }
 
 // Toolbox Overlay Open
@@ -173,206 +198,68 @@ document.getElementById('progress-overlay-close').addEventListener('click', func
     document.getElementById('progress-overlay-dialog').removeAttribute('open');
 });
 
-// function jumpToSection(sectionName, animate) {
-//     const progressOverlay = document.getElementById('progress-overlay-dialog');
-//     const progressSections = progressOverlay.querySelectorAll('md-list-item');
-    
-//     const currentSection = document.querySelector('.toc-section.current-section');
-//     const sectionNumber = sectionMap[sectionName];
-//     const newSection = progressSections[sectionNumber];
-
-//     if (!(currentSection == newSection)) {
-//         currentSection.classList.remove('current-section');
-//         newSection.classList.add('current-section');
-//     }
-
-//     progressOverlay.removeAttribute('open');
-
-//     const newContent = contentMap[sectionName];
-
-//     if (newContent) {
-//         const instructionContainer = document.querySelector('.instruction-content');
-//         instructionContainer.innerHTML = '';
-        
-//         const textContainer = document.createElement('div');
-//         textContainer.innerHTML = newContent;
-
-//         instructionContainer.appendChild(textContainer);
-
-//         MathJax.typeset();
-
-//         // Check if newContent contains specific animation triggers and play the corresponding animation
-//         if (textContainer.querySelector('.formula-animation-container')) {
-//             const animationName = textContainer.querySelector('.formula-animation-container').getAttribute('data-key');
-//             playAnimation(animationName);
-//         }
-        
-//         // update the progress bar
-
-//         let newWidth = 1;
-//         let circleWidth = 0;
-
-//         for (let i = 0; i < sectionNumber+1; i++) {
-//             let circleName = progressCircles[i];
-//             let circle = document.getElementById(circleName);
-
-//             circleWidth = parseFloat(circle.getAttribute('width').replace('%',''));
-//             if (i < sectionNumber) {
-//                 newWidth += circleWidth;
-//                 if (animate) {
-//                     animateProgressBar(newWidth);
-//                 }
-//             }
-
-//             if (animate) {
-//                 setTimeout(function() {
-//                     circle.classList.remove('progress-circle-incomplete');
-//                     circle.classList.add('progress-circle-complete');
-//                   }, 1000);
-//             } else {
-//                 circle.classList.remove('progress-circle-incomplete');
-//                 circle.classList.add('progress-circle-complete');
-//             }
-
-            
-        
-//         }
-
-//         for (let i = sectionNumber+1; i < progressCircles.length; i++) {
-//             let circleName = progressCircles[i];
-//             let circle = document.getElementById(circleName);
-
-//             circle.classList.remove('progress-circle-complete');
-//             circle.classList.add('progress-circle-incomplete');
-
-//         }
-
-//         if (!animate) {
-//             // update the progress bar length
-//             const progressBarSVG = document.getElementById('progress-bar');
-//             const rect = progressBarSVG.querySelector('rect');
-//             rect.setAttribute('width', newWidth + '%');
-
-//             // animateProgressBar(newWidth, 2000);
-//         }
-
-//     } else {
-//         console.log(`Error: No new content mapping found for button ${key}`)
-//     }
-// }
-
-// // Progress Overlay jump to section
-// document.querySelectorAll('.toc-section').forEach(item => {
-//     item.addEventListener('click', event => {
-//         const tocItem = event.target.closest('.toc-section');
-//         const sectionKey = tocItem.getAttribute('data-key');
-
-//         jumpToSection(sectionKey, false);
-        
-//     });
-// });
-
+// Wrapper Event Listener
+// Since most objects are loaded in through AJAX and do not exist when the DOM is loaded in,
+// we use condition handling to listen for when they are clicked
+// For each click, check if it corresponds to the target element
 document.addEventListener('DOMContentLoaded', (event) => {
     
-    // toolbox tooltip
+    // Close the Toolbox Tooltip when clicking outside of the tooltip
     document.body.addEventListener('click', (event) => {
+        // Check if the clicked element exists and does not have the class 'toolbox-tooltip'
         if (event.target && !(event.target.classList.contains('toolbox-tooltip'))) {
             
-            const tooltip = document.querySelector('.toolbox-tooltip')
+            // Select the element with the class 'toolbox-tooltip'
+            const tooltip = document.querySelector('.toolbox-tooltip');
             
-            if (tooltip) {
+            // Check if the tooltip element exists 
+            // Also, check that the clicked element does not have the class 'learning-path-begin-button'
+            // Otherwise, the tooltip will close right away
+            if (tooltip && !(event.target.classList.contains('learning-path-begin-button'))) {
+                // Add the 'invisible' class to the tooltip element to hide it
                 tooltip.classList.add('invisible');
-                setTimeout(function() {
-                    tooltip.style.display = 'none';
-                }, 500); // Match the transition duration in CSS
+                
+                // Set the display style of the tooltip element to 'none' to hide it
+                tooltip.style.display = 'none';
             }
         }
     });
-
-    // // Learning Path Selection
-    // document.body.addEventListener('click', (event) => {
-    //     if (event.target && event.target.classList.contains('learning-path-button')) {
-    //         const button = event.target;
-    //         const buttonID = button.getAttribute('id');
-    //         const learningPathBegin = document.getElementById('learning-path-begin');
-    //         const nextButton = learningPathBegin.querySelector('md-filled-button');
-
-    //         button.style.backgroundColor = sysColorPrimaryLight;
-
-    //         if (buttonID == 'lp-full-activity') {
-    //             nextButton.setAttribute('data-key','next_page_fd_goal');
-                
-    //             const otherButton = document.getElementById('lp-summary');
-    //             otherButton.style.backgroundColor = "white";
-                
-    //         } else if (buttonID == 'lp-summary') {
-    //             nextButton.setAttribute('data-key','next_page_fd_summary_intro');
-
-    //             const otherButton = document.getElementById('lp-full-activity');
-    //             otherButton.style.backgroundColor = "white";
-    //         }
-
-    //         learningPathBegin.classList.remove('hidden');
-            
-    //         learningPathBegin.style.scrollMarginTop =  '150px';
-    //         learningPathBegin.scrollIntoView({ behavior: 'smooth' });
-
-    //     }
-    // });
-
-    // // Learning Path Button
-    // document.body.addEventListener('click', (event) => {
-    //     if (event.target && event.target.classList.contains('learning-path-begin-button')) {
-    //         const button = event.target;
-
-    //         const destination = button.getAttribute('data-key');
-
-    //         if (destination == "next_page_fd_goal") {
-    //             // add toolbox tooltip
-    //             let tempDiv = document.createElement('div');
-    //             tempDiv.innerHTML = contentMap[destination];
-                
-    //             let tooltip = tempDiv.querySelector('.toolbox-tooltip');
-    //             tooltip.classList.remove('hidden');
-                
-    //             contentMap[destination] = tempDiv.innerHTML;
-
-    //             jumpToSection(destination, true);
-    //         } else {
-    //             jumpToSection(destination, false);
-    //         }
-    //     }
-    // });
     
-    
-    //Reveal Steps
+    // Reveal Steps button Event Listener
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('reveal-steps')) {
+            // Get the entire formula container
             const revealContainer = event.target.parentElement.parentElement;
             const parentDiv = revealContainer.parentElement;
 
+            // Get the steps container
             const steps = parentDiv.querySelector('.steps');
+            // Display the steps, with a fade-in animation
             steps.style.setProperty('display', 'block');
             setTimeout(() => {
                 steps.style.opacity = "1";
             }, 10);
 
+            // Hide the reveal steps button
             revealContainer.style.display = "none";
         }
     });
 
-    // replay animated formulas
+    // Replay Animated Formula Button Event Listener
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('replay-button')) {
             let replayButton = event.target;
+
+            // get the formula container
             const animationContainer = replayButton.parentElement.parentElement;
             const animation = animationContainer.getAttribute('data-key')
 
+            // Call the playAnimation function with the animation key to replay the animation
             playAnimation(animation);
         };
     });
 
-    // open formula toolbox
+    // Open Formula Toolbox Event Listener
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('formula-toolbox-button')) {
             document.getElementById('toolbox-overlay-dialog').setAttribute('open', '');

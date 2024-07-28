@@ -1,5 +1,10 @@
+// Wrapper Event Listener
+// Since most objects are loaded in through AJAX and do not exist when the DOM is loaded in,
+// we use condition handling to listen for when they are clicked
+// For each click, check if it corresponds to the target element
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Captions for each circuit diagram image
     const circuitDiagramMap = {
         circuit_diagram_1: `
             <p>We start with a battery to power our circuit.</p>
@@ -48,49 +53,66 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', (event) => {
         if (event.target && event.target.classList.contains('circuit-button')) {
             const button = event.target;
+            // Determine if they clicked the 'next' or 'back' button
             const action = button.getAttribute('id');
 
             const backButton = document.getElementById('circuit-button-back');
             const nextButton = document.getElementById('circuit-button-next');
             
+            // Select the 'next section' button that takes the user to the formula derivation activity
             const nextSectionButton = document.querySelector('.instruction-content').querySelector('.next-section-button');
             
+            // Select the current circuit diagram image element and its source attribute
             const currentImageEl = button.parentElement.parentElement.querySelector('.circuit-diagram-image');
             const currentImageSRC = String(currentImageEl.getAttribute('src'));
+
+            // Extract the current image number from the source attribute
             const currentImageNum = parseInt(currentImageSRC.charAt(currentImageSRC.length - 5));
 
+            // Select the caption container within the instruction content
             const captionContainer = document.querySelector('.instruction-content').querySelector('.circuit-diagram-caption');
 
             let nextNum = 0;
 
+            // Determine the next image number based on whether they clicked 'next' or 'back'
             if (action == 'circuit-button-next') {
                 nextNum = currentImageNum + 1;
             } else if (action == 'circuit-button-back') {
                 nextNum = currentImageNum - 1;
             }
 
+            // Check if they are on the last image
             if (nextNum >= 8) {
+                // Reveal the next section button
                 nextSectionButton.parentElement.classList.remove('hidden');
                 nextSectionButton.parentElement.style.scrollMarginTop = '150px';
+
+                // Smoothly scroll the current image into view
                 currentImageEl.scrollIntoView({ behavior: 'smooth' });
+
+                 // Hide the next button and set the next number to the maximum value (8)
                 nextButton.classList.add('hidden');
                 nextNum = 8;
             } else {
+                // Ensure the next button is visible if the next number is within the range
                 nextButton.classList.remove('hidden');
             }
 
+            // Check if they are on the first image
             if (nextNum <= 1) {
+                // Hide the back button and set the next number to the minimum value (1)
                 backButton.classList.add('hidden');
                 nextNum = 1;
             } else {
+                // Ensure the back button is visible if the next number is within the range
                 backButton.classList.remove('hidden');
             }
 
-            // update caption
+            // Update the caption based on the next circuit diagram
             const nextCircuit = `circuit_diagram_${nextNum}`;
             captionContainer.innerHTML = circuitDiagramMap[nextCircuit];
 
-            // update image
+            // Update the image source to the next circuit diagram
             currentImageEl.src = `/images/circuit-diagram-${nextNum}.svg`
 
         }

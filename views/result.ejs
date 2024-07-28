@@ -7,26 +7,55 @@
 	  <link rel="icon" type="image/x-icon" href="/images/ttb-fav-icon.png">
   	<link rel="stylesheet"  href="/css/main.css" />
 	<link rel="stylesheet"  href="/css/result.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" />
   	
-  	
+	<!-- Import Material Symbols font for icon usage -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Import Roboto font from Google Fonts (taken from MD3 README) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Import map for Material Web Components (taken from MD3 README) -->
+    <script type="importmap">
+        {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+        }
+    </script>
+    
+    <!-- Import all Material Web Components and typography styles (taken from MD3 README) -->
+    <script type="module">
+        import '@material/web/all.js';
+        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+
+    <!-- Polyfill for ES6 features, required for some SVG functionalities -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- MathJax library for rendering mathematical notation -->
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- GreenSock Animation Platform (GSAP) for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	
 </head>
 
 
 <body>
   	
-  	<div class="result">
-    		<img class="prize-icon" alt="prize" src="/images/results-icon.svg">
+  	<div class="result-container">
+			<img class="prize-icon" alt="prize" src="/images/results-icon.svg">
     		<div class="congratulations">Congratulations!</div>
-    		<div class="you-have-successfully-container">
-      			<p class="you-have-successfully">You have successfully finished the lab.</p>
-      			<p class="you-have-successfully">Great job!</p>
+    		<div class="caption-container">
+      			<p class="caption">You have successfully finished the lab.</p>
+      			<p class="caption">Great job!</p>
     		</div>
-    		<div class="button">
-      			<div class="state-layer">
-        				<div class="label-text">Go Back to Main Page</div>
-      			</div>
-    		</div>
+			<div class="button-container">
+				<md-filled-button class="main-page-button">Go Back to Main Page</md-filled-button>
+			</div>
   	</div>
   	
   	

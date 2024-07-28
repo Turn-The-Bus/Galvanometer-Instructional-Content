@@ -1,12 +1,3 @@
-.dropdown-submit-button {
-    width: 100%;
-}
-
-
-.dropdown-bullet {
-    padding-left: 20px;
-}
-
 .sim-controls-row {
     display: flex;
     align-items: center;
@@ -40,12 +31,6 @@
     padding-right: 10px;
     border-left: 1px solid #004A76; /* Adjust the color and width as needed */
     border-right: 1px solid #004A76; /* Adjust the color and width as needed */
-}
-
-.sim-reset {
-    margin-left: 10px;
-    --md-text-button-container-shape: 8px;
-    --md-text-button-container-height: 30px;
 }
 
 .sim-hidden {

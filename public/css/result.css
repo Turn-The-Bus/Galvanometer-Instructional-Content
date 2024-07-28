@@ -1,81 +1,67 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 body {
-    margin: 0;
     line-height: normal;
+    font-family: 'Roboto', sans-serif;
 }
 
-
-.prize-icon {
-    margin-top: 200px;
-    position: center;
-    top: 211px;
-    left: 130px;
-    width: 100px;
-    
-    object-fit: cover;
-}
-
-.congratulations {
-    position: absolute;
-    top: 342px;
-    left: calc(50% - 76px);
-    letter-spacing: 0.3px;
-    line-height: 28px;
-    font-weight: 600;
-    text-align: left;
-}
-.you-have-successfully {
-    margin: 0;
-}
-.you-have-successfully-container {
-    position: absolute;
-    top: 387px;
-    left: calc(50% - 111px);
-    font-size: 16px;
-    letter-spacing: 0.4px;
-    line-height: 24px;
-    display: inline-block;
-    width: 223px;
-}
-.label-text {
-    position: relative;
-    letter-spacing: 0.1px;
-    line-height: 20px;
-    font-weight: 500;
-}
-.state-layer {
-    align-self: stretch;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 24px;
-}
-.button {
-    position: absolute;
-    top: 493px;
-    left: calc(50% - 94px);
-    border-radius: 100px;
-    background-color: #004a76;
-    height: 40px;
-    overflow: hidden;
+.result-container {
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px;
+    color: #004a76;
+    width: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.prize-icon {
+    width: 100px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.congratulations {
+    letter-spacing: 0.3px;
+    line-height: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+.caption {
+    margin: 0;
+}
+
+.caption-container {
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+    display: inline-block;
+    width: 90%;
+    max-width: 200px;
+    margin: 20px 0;
+}
+
+.result-container .button-container {
+    border-radius: 100px;
+    background-color: #004a76;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 14px;
     color: #fff;
-}
-.result {
     width: 100%;
-    position: relative;
-    background-color: #fff;
-    height: 800px;
-    overflow: hidden;
-    text-align: center;
-    font-size: 20px;
-    color: #004a76;
-    font-family: Roboto;
+    margin: 20px 0;
 }
 

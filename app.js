@@ -27,9 +27,9 @@ app.get('/introduction-to-galvanometers', (req, res) => {
     res.render("introduction_to_g");  // Ensure the 'introduction_to_g.ejs' file exists in the 'views' directory
 });
 
-// Route for the interactive simulation page
+// Route for the deflection page
 app.get('/galvanometer-deflection', (req, res) => {
-    res.render("interactive_simulation");  
+    res.render("deflection");  
 });
 
 // Route for the working principle page
@@ -50,7 +50,7 @@ app.get('/half-deflection-method', (req, res) => {
 
 // Route for the circuit diagram page
 app.get('/circuit-setup', (req, res) => {
-    res.render("circuit_diagram"); 
+    res.render("circuit_setup"); 
 });
 
 // Route for the formula derivation page
@@ -78,7 +78,6 @@ app.get('/conclusion', (req, res) => {
 app.get('/result', (req, res) => {
     res.render("result"); 
 });
-
 
 // Start the server
 app.listen(port, hostname, () => {
