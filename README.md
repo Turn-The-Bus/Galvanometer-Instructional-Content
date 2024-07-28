@@ -1,23 +1,34 @@
-## Repo Overview
-This is a project in conjunction between Turn the Bus and the Carnegie Mellon University METALS Program. You can learn more about the project here (Link To Handoff Doc).
-The code is divided into 2 Repos:
-- [this one] Capstone-MVPThreeWebsite: The instructional content that comes before and after the lab
-- ________: The interactive virtual lab
+## CMU X Turn The Bus
+This repository contains the code for the lab simulation part of the virtual physics lab developed by METALS (Masters in Educational Technology and Applied Learning Sciences) students at Carnegie Mellon University in collaboration with Turn The Bus. The entire physics lab is divided into 2 parts -
 
-For more information about the code itself, please refer to the Wiki.
+* Instructional Content - Instructional Content (this repo)
+* Lab Simulation - [Lab Simulation](https://github.com/Dhruvisha01/Capstone-MVPThreeLab)
+* 
+You can learn more about this project here:
+* (link to project website)
+* (link to handoff doc) 
+For more information on the code itself refer to the Wiki
   
 
 ## Getting Started
 Once you clone the repo, here's how to get the code up and running:
-1. **Install Express for Node.JS**. (Note, you only need to do this the first time you clone the repo)
+1. **Install Node**
+
+Make sure you have node.js installed in your computer. If you don't, you can install it by following the instructions on this link - [Node.js](https://nodejs.org/en/download/package-manager)
+
+2. **Install Packages**
+
+Once the installation is complete and you have cloned the repository you need install all the packages used in this code. To do that, in your terminal/command prompt, copy and paste the following line of code to download all the node_modules used.
 ```
-npm install express
+npm install i
 ```
-2. **Start the Project**
+3. **Start the Project**
+
+In the terminal/command prompt, you can run the following command to launch the project.
 ```
 npm start
 ```
-3. **Open the Project in your Browser**
+4. **Open the Project in your Browser**
 
 Once you run 'npm start', you should get a message saying 'Server running at http://0.0.0.0:3000/' Copy the url into your browser to see the project running.
 
