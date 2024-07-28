@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const instructionContainer = document.querySelector('.instruction-content');
 
     const baseContent = `
-        <div id="fd-intro">
+        <div id="conc-intro">
             <h2>Come to Your Conclusion</h2>
             <p>
                 Now that we finished the lab simulation, let's write down our discoveries:
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             
             <div class="button-container">
-                <md-outlined-button class="next-button" data-key="next_section_principle">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_conc_k">Next</md-outlined-button>
             </div>
             
             </div>`

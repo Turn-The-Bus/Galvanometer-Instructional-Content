@@ -32,8 +32,9 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <!-- Polyfill for ES6 features, required for some SVG functionalities -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- Polyfill library to allow MathJax version 3 to work with IE11 -->
+    <!-- should be placed before the script that loads MathJax -->
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 
     <!-- MathJax library for rendering mathematical notation -->
     <script id="MathJax-script" async

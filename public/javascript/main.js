@@ -23,8 +23,8 @@ const sysOutlineColor = "#79747E";
 
 // introduction to galvanometers page content
 const introductionContentMap = {
-    next_section_principle: `
-        <div id="principle">
+    next_intro_q: `
+        <div id="intro-q">
             <p>Which principle does a galvanometer operate on?</p>
             <div class="mc-question">
                 <div class="mc-button-wrapper">
@@ -51,12 +51,12 @@ const introductionContentMap = {
                 <div class="feedback"></div>
             </div>
             <div class="button-container hidden-button">
-                <md-outlined-button class="next-button" data-key="next_section_ECG">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_ECG">Next</md-outlined-button>
             </div>
         </div>
     `,
 
-    next_section_ECG: `
+    next_ECG: `
         <div id="ECG">
             <p>The sensitivity makes galvanometers indispensable in applications requiring precision, such as scientific research and medical equipment like ECG machines.</p>
             <div class="instruction-image-container-green">
@@ -323,7 +323,7 @@ const deflectionContentMap = {
 
 // working principle page content
 const principleContentMap = {
-    next_section_k: `
+    next_galv_coil: `
         <p>A galvanometer contains a magnet, which is a core component of its operation. The interaction between the magnetic field from this magnet and the current flowing through the coil is what makes the galvanometer work.</p>
         <div class="instruction-image-container">
             <img src="/images/galvanometer-magnet.png" alt="galvanometer magnet structure">
@@ -371,11 +371,11 @@ const principleContentMap = {
 
                 </div>
                 <div class="button-container hidden-button">
-                    <md-outlined-button class="next-button" data-key="next_section_explanation">Next</md-outlined-button>
+                    <md-outlined-button class="next-button" data-key="next_coil_explanation">Next</md-outlined-button>
                 </div>
             </div>
     `,
-    next_section_explanation: `
+    next_coil_explanation: `
         <p>The coil rotates until the magnetic torque is balanced by the restoring torque of the spring or torsion wire, given by:</p>
         <div class="centered">
             \\(\\tau_r = k \\cdot \\theta \\)
@@ -460,7 +460,7 @@ const fomContentMap = {
 
 // half-delfection method page content
 const halfDeflectionContentMap = {
-    next_section_k: `
+    next_hd_q1: `
         <p>What do you think is the half-deflection method?</p>
         </div>
 
@@ -485,21 +485,21 @@ const halfDeflectionContentMap = {
 
             </div>
             <div class="button-container hidden-button">
-                <md-outlined-button class="next-button" data-key="next_section_explanation">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_hd_description">Next</md-outlined-button>
             </div>
         </div>
     `,
     
-    next_section_explanation: `
+    next_hd_description: `
         <p>In the half-deflection method, we take two measurements.</p>
         <p>The first measurement is called the initial deflection measurement.</p>
         <p>The second measurement is called the half-deflection measurement, and is equal to half the value of the initial deflection.</p>
         <div class="button-container">
-            <md-outlined-button class="next-button" data-key="next_section_measurement">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_hd_measurement">Next</md-outlined-button>
         </div>
     `,
 
-    next_section_measurement: `
+    next_hd_measurement: `
         <md-divider></md-divider>
         <p>A student is using the half-deflection method and took two measurements, pictured below. Label the measurements.</p>
         <div class="grid-container">
@@ -549,12 +549,12 @@ const halfDeflectionContentMap = {
             </div>
         </div>
         <div class="button-container">
-            <md-outlined-button class="next-button" data-key="next_section_quiz">Next</md-outlined-button>
+            <md-outlined-button class="next-button" data-key="next_hd_q3">Next</md-outlined-button>
         </div>
 
      `,
 
-    next_section_quiz: `
+    next_hd_q3: `
     <p>By combining the information we get from the two measurements, we can determine the figure of merit of the galvanometer. We’ll learn more about how we can do this in later sections. </p>
     <p>How can we get the half-deflection measurement?</p>
         </div>
@@ -579,12 +579,12 @@ const halfDeflectionContentMap = {
 
             </div>
             <div class="button-container hidden-button">
-                <md-outlined-button class="next-button" data-key="next_section_page">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_hd_conc">Next</md-outlined-button>
             </div>
         </div>
     `,
 
-    next_section_page: `
+    next_hd_conc: `
         <p>Remember the formula \\(I = k\\theta\\) shows that current \\((I)\\) is proportional to the galvanometer's deflection \\((\\theta)\\).</p>
         <p>In the next section, we'll learn how to set up our circuit in order to reduce the current flowing through the galvanometer.</p>
         <div class="button-container">
@@ -3473,7 +3473,7 @@ const formulaContentMap= {
 
 // conclusion page content
 const conclusionContentMap = {
-    next_section_principle: `
+    next_conc_k: `
         <div>
             <h2>Lab Findings on the Figure of Merit</h2>
 
@@ -3494,12 +3494,12 @@ const conclusionContentMap = {
             <p>Therefore, figure of merit is important in accurately measuring small currents, ensuring the reliability and precision of the galvanometer in various applications.</p>
             </div>
             <div class="button-container">
-                <md-outlined-button class="next-button" data-key="next_section_ECG">Next</md-outlined-button>
+                <md-outlined-button class="next-button" data-key="next_conc_summary">Next</md-outlined-button>
             </div>
         </div>
     `,
 
-    next_section_ECG: `
+    next_conc_summary: `
         <div>
             <h2>Summary</h2>
             <p>Now, think back to your initial hypotheses. Did your predictions align with the results? Science is all about making guesses, testing them out, and sometimes, being surprised by what you find.</p>
@@ -3529,7 +3529,7 @@ const mainContentMap = {
 // Dictionary Information
 //   key: the 'data-key' html attribute of the multiple choice button
 //   'info' refers to the 'I don't know yet' answer choice  
-const answerKey = {
+const mcAnswerKey = {
     "principleq1c1": ["correct", "Correct. A galvanometer operates on the principle that a current-carrying coil interacts with a magnetic field. We will learn more in next sections."],
     "principleq1c2": ["incorrect", "Incorrect. A voltmeter measures voltage directly, not a galvanometer."],
     "principleq1c3": ["incorrect", "Incorrect. An ohmmeter detects changes in electrical resistance, not a galvanometer."],
@@ -3855,9 +3855,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const wrapperDiv = button.parentElement;
             const questionDiv = wrapperDiv.parentElement;
 
-             // Check if the choice ID exists in the answerKey object
-            if (choiceID in answerKey) {
-                const [correctFlag, feedbackText] = answerKey[choiceID];
+             // Check if the choice ID exists in the mcAnswerKey object
+            if (choiceID in mcAnswerKey) {
+                const [correctFlag, feedbackText] = mcAnswerKey[choiceID];
                 const feedbackDiv = questionDiv.querySelector('.feedback');
                 const nextButton = questionDiv.parentElement.querySelector('.button-container');
                 MathJax.typeset();
