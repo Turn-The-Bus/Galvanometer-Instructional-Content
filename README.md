@@ -31,7 +31,8 @@ npm start
 ```
 4. **Open the Project in your Browser**
 
-Once you run 'npm start', you should get a message saying 'Server running at http://0.0.0.0:3000/' Copy the url into your browser to see the project running.
+Once you run 'npm start', you should get a message saying 'Server running at http://0.0.0.0:3000/' Copy the url into your browser to see the project running. 
+> Note: This web app is optimized for viewing on a mobile phone rather than desktop. As you develop and test the web app, we recommend using Chrome Dev Tools to view the project in a layout that mimics a mobile phone.
 
 
 ## Navigating to Different Pages
